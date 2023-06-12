@@ -157,7 +157,4 @@ Dependencies/
 ### SwiftPM ###
 Packages
 xcuserdata
-*.xcodeproj
-
-
 # End of https://www.toptal.com/developers/gitignore/api/swiftpm,swift,macos,objective-c
