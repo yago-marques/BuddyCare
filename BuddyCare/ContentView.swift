@@ -17,18 +17,6 @@ struct ContentView: View {
             Text("Hello, world!")
         }
         .padding()
-        .onAppear {
-            let cloudKitService = CloudKitService(database: CKContainer.default().privateCloudDatabase)
-            Task{
-                do {
-                    try await cloudKitService.createPet(.init(name: "rato", gender: "macho", species: "rato", avatar: "rato"))
-                } catch {
-                    print(error)
-                }
-                    
-            }
-
-        }
     }
 }
 
