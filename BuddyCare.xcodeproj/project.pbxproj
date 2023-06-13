@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE04815B2A39031D00CE5A18 /* registroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE04815A2A39031D00CE5A18 /* registroViewModel.swift */; };
+		AE2F4CA72A38AE4900425D59 /* registroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2F4CA62A38AE4900425D59 /* registroView.swift */; };
 		DFA2BD222A373BF800BFB964 /* BuddyCareApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA2BD212A373BF800BFB964 /* BuddyCareApp.swift */; };
 		DFA2BD242A373BF800BFB964 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA2BD232A373BF800BFB964 /* ContentView.swift */; };
 		DFA2BD262A373BF900BFB964 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFA2BD252A373BF900BFB964 /* Assets.xcassets */; };
@@ -59,6 +61,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AE04815A2A39031D00CE5A18 /* registroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registroViewModel.swift; sourceTree = "<group>"; };
+		AE2F4CA62A38AE4900425D59 /* registroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registroView.swift; sourceTree = "<group>"; };
 		DFA2BD1E2A373BF800BFB964 /* BuddyCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuddyCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFA2BD212A373BF800BFB964 /* BuddyCareApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyCareApp.swift; sourceTree = "<group>"; };
 		DFA2BD232A373BF800BFB964 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -136,6 +140,8 @@
 				DFA2BD232A373BF800BFB964 /* ContentView.swift */,
 				DFA2BD252A373BF900BFB964 /* Assets.xcassets */,
 				DFA2BD272A373BF900BFB964 /* Preview Content */,
+				AE2F4CA62A38AE4900425D59 /* registroView.swift */,
+				AE04815A2A39031D00CE5A18 /* registroViewModel.swift */,
 			);
 			path = BuddyCare;
 			sourceTree = "<group>";
@@ -345,6 +351,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE2F4CA72A38AE4900425D59 /* registroView.swift in Sources */,
+				AE04815B2A39031D00CE5A18 /* registroViewModel.swift in Sources */,
 				DFA2BD242A373BF800BFB964 /* ContentView.swift in Sources */,
 				DFA2BD222A373BF800BFB964 /* BuddyCareApp.swift in Sources */,
 			);
