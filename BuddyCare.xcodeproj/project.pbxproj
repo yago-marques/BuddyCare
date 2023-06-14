@@ -195,7 +195,7 @@
 		DFA2BD202A373BF800BFB964 /* BuddyCare */ = {
 			isa = PBXGroup;
 			children = (
-				DFE7B6492A3A0B2F002C7BBC /* PetManagercene */,
+				DFE7B6492A3A0B2F002C7BBC /* PetManagerScene */,
 				36F868332A3758DC008FB1BB /* iCloud */,
 				36F868322A3758AD008FB1BB /* BuddyCare.entitlements */,
 				DFA2BD212A373BF800BFB964 /* BuddyCareApp.swift */,
@@ -249,14 +249,14 @@
 			path = "BuddyCare Watch AppTests";
 			sourceTree = "<group>";
 		};
-		DFE7B6492A3A0B2F002C7BBC /* PetManagercene */ = {
+		DFE7B6492A3A0B2F002C7BBC /* PetManagerScene */ = {
 			isa = PBXGroup;
 			children = (
 				DFE7B64A2A3A0B3E002C7BBC /* Domain */,
 				DFE7B64B2A3A0B44002C7BBC /* UseCases */,
 				DFE7B64C2A3A0B4A002C7BBC /* Presentation */,
 			);
-			path = PetManagercene;
+			path = PetManagerScene;
 			sourceTree = "<group>";
 		};
 		DFE7B64A2A3A0B3E002C7BBC /* Domain */ = {
