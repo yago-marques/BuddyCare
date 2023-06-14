@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36E8556B2A39F26B000A58CD /* NotificationsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E8556A2A39F26B000A58CD /* NotificationsExtension.swift */; };
 		36F868312A374590008FB1BB /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F868302A37458F008FB1BB /* Pet.swift */; };
 		DF02219B2A38A12700877319 /* CloudKitUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02219A2A38A12700877319 /* CloudKitUseCases.swift */; };
 		DF02219D2A38AA2F00877319 /* BathSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02219C2A38AA2F00877319 /* BathSchedule.swift */; };
@@ -66,6 +67,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		36E8556A2A39F26B000A58CD /* NotificationsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsExtension.swift; sourceTree = "<group>"; };
 		36F868302A37458F008FB1BB /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		36F868322A3758AD008FB1BB /* BuddyCare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BuddyCare.entitlements; sourceTree = "<group>"; };
 		36F868342A3758FB008FB1BB /* CloudKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitService.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				36F868322A3758AD008FB1BB /* BuddyCare.entitlements */,
 				DFA2BD212A373BF800BFB964 /* BuddyCareApp.swift */,
 				DFA2BD232A373BF800BFB964 /* ContentView.swift */,
+				36E8556A2A39F26B000A58CD /* NotificationsExtension.swift */,
 				DFA2BD252A373BF900BFB964 /* Assets.xcassets */,
 				DFA2BD272A373BF900BFB964 /* Preview Content */,
 			);
@@ -394,6 +397,7 @@
 			files = (
 				DFB054F82A3891D200BD2844 /* CloudKitService.swift in Sources */,
 				36F868312A374590008FB1BB /* Pet.swift in Sources */,
+				36E8556B2A39F26B000A58CD /* NotificationsExtension.swift in Sources */,
 				DF0221A22A38AA9A00877319 /* CKCustomErrors.swift in Sources */,
 				DF02219B2A38A12700877319 /* CloudKitUseCases.swift in Sources */,
 				DFA2BD242A373BF800BFB964 /* ContentView.swift in Sources */,
