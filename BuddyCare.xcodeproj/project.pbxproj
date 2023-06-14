@@ -25,6 +25,15 @@
 		DFA2BD512A373BFA00BFB964 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFA2BD502A373BFA00BFB964 /* Preview Assets.xcassets */; };
 		DFA2BD5B2A373BFA00BFB964 /* BuddyCare_Watch_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA2BD5A2A373BFA00BFB964 /* BuddyCare_Watch_AppTests.swift */; };
 		DFB054F82A3891D200BD2844 /* CloudKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F868342A3758FB008FB1BB /* CloudKitService.swift */; };
+		DFE7B64E2A3A0B82002C7BBC /* CloudKitPetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE7B64D2A3A0B82002C7BBC /* CloudKitPetManager.swift */; };
+		DFE7B6502A3A0BAB002C7BBC /* FetchPet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE7B64F2A3A0BAB002C7BBC /* FetchPet.swift */; };
+		DFE7B6522A3A0BB8002C7BBC /* FunManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE7B6512A3A0BB8002C7BBC /* FunManagement.swift */; };
+		DFE7B6542A3A0BC3002C7BBC /* BathManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE7B6532A3A0BC3002C7BBC /* BathManagement.swift */; };
+		DFE7B6572A3A0D4D002C7BBC /* CustomButtin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE7B6562A3A0D4D002C7BBC /* CustomButtin.swift */; };
+		DFE7B6592A3A0D69002C7BBC /* DisplayedPet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE7B6582A3A0D69002C7BBC /* DisplayedPet.swift */; };
+		DFE7B65B2A3A0D89002C7BBC /* PetManagerCompositionRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE7B65A2A3A0D89002C7BBC /* PetManagerCompositionRoot.swift */; };
+		DFE7B65D2A3A0DA2002C7BBC /* PetManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE7B65C2A3A0DA2002C7BBC /* PetManagerView.swift */; };
+		DFE7B65F2A3A0DBF002C7BBC /* PetManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE7B65E2A3A0DBF002C7BBC /* PetManagerViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +97,15 @@
 		DFA2BD502A373BFA00BFB964 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DFA2BD562A373BFA00BFB964 /* BuddyCare Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BuddyCare Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFA2BD5A2A373BFA00BFB964 /* BuddyCare_Watch_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyCare_Watch_AppTests.swift; sourceTree = "<group>"; };
+		DFE7B64D2A3A0B82002C7BBC /* CloudKitPetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CloudKitPetManager.swift; path = ../../../../../Documents/CloudKitPetManager.swift; sourceTree = "<group>"; };
+		DFE7B64F2A3A0BAB002C7BBC /* FetchPet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FetchPet.swift; path = ../../../../../Documents/FetchPet.swift; sourceTree = "<group>"; };
+		DFE7B6512A3A0BB8002C7BBC /* FunManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FunManagement.swift; path = ../../../../../Documents/FunManagement.swift; sourceTree = "<group>"; };
+		DFE7B6532A3A0BC3002C7BBC /* BathManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BathManagement.swift; path = ../../../../../Documents/BathManagement.swift; sourceTree = "<group>"; };
+		DFE7B6562A3A0D4D002C7BBC /* CustomButtin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomButtin.swift; path = ../../../../../../Documents/CustomButtin.swift; sourceTree = "<group>"; };
+		DFE7B6582A3A0D69002C7BBC /* DisplayedPet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DisplayedPet.swift; path = ../../../../../Documents/DisplayedPet.swift; sourceTree = "<group>"; };
+		DFE7B65A2A3A0D89002C7BBC /* PetManagerCompositionRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PetManagerCompositionRoot.swift; path = ../../../../../Documents/PetManagerCompositionRoot.swift; sourceTree = "<group>"; };
+		DFE7B65C2A3A0DA2002C7BBC /* PetManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PetManagerView.swift; path = ../../../../../Documents/PetManagerView.swift; sourceTree = "<group>"; };
+		DFE7B65E2A3A0DBF002C7BBC /* PetManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PetManagerViewModel.swift; path = ../../../../../Documents/PetManagerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +195,7 @@
 		DFA2BD202A373BF800BFB964 /* BuddyCare */ = {
 			isa = PBXGroup;
 			children = (
+				DFE7B6492A3A0B2F002C7BBC /* PetManagercene */,
 				36F868332A3758DC008FB1BB /* iCloud */,
 				36F868322A3758AD008FB1BB /* BuddyCare.entitlements */,
 				DFA2BD212A373BF800BFB964 /* BuddyCareApp.swift */,
@@ -228,6 +247,54 @@
 				DFA2BD5A2A373BFA00BFB964 /* BuddyCare_Watch_AppTests.swift */,
 			);
 			path = "BuddyCare Watch AppTests";
+			sourceTree = "<group>";
+		};
+		DFE7B6492A3A0B2F002C7BBC /* PetManagercene */ = {
+			isa = PBXGroup;
+			children = (
+				DFE7B64A2A3A0B3E002C7BBC /* Domain */,
+				DFE7B64B2A3A0B44002C7BBC /* UseCases */,
+				DFE7B64C2A3A0B4A002C7BBC /* Presentation */,
+			);
+			path = PetManagercene;
+			sourceTree = "<group>";
+		};
+		DFE7B64A2A3A0B3E002C7BBC /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				DFE7B64D2A3A0B82002C7BBC /* CloudKitPetManager.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		DFE7B64B2A3A0B44002C7BBC /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				DFE7B64F2A3A0BAB002C7BBC /* FetchPet.swift */,
+				DFE7B6512A3A0BB8002C7BBC /* FunManagement.swift */,
+				DFE7B6532A3A0BC3002C7BBC /* BathManagement.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		DFE7B64C2A3A0B4A002C7BBC /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				DFE7B6552A3A0D2B002C7BBC /* UI Components */,
+				DFE7B6582A3A0D69002C7BBC /* DisplayedPet.swift */,
+				DFE7B65A2A3A0D89002C7BBC /* PetManagerCompositionRoot.swift */,
+				DFE7B65C2A3A0DA2002C7BBC /* PetManagerView.swift */,
+				DFE7B65E2A3A0DBF002C7BBC /* PetManagerViewModel.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		DFE7B6552A3A0D2B002C7BBC /* UI Components */ = {
+			isa = PBXGroup;
+			children = (
+				DFE7B6562A3A0D4D002C7BBC /* CustomButtin.swift */,
+			);
+			path = "UI Components";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -396,11 +463,20 @@
 				36F868312A374590008FB1BB /* Pet.swift in Sources */,
 				DF0221A22A38AA9A00877319 /* CKCustomErrors.swift in Sources */,
 				DF02219B2A38A12700877319 /* CloudKitUseCases.swift in Sources */,
+				DFE7B6502A3A0BAB002C7BBC /* FetchPet.swift in Sources */,
 				DFA2BD242A373BF800BFB964 /* ContentView.swift in Sources */,
+				DFE7B65F2A3A0DBF002C7BBC /* PetManagerViewModel.swift in Sources */,
+				DFE7B65B2A3A0D89002C7BBC /* PetManagerCompositionRoot.swift in Sources */,
 				DF0221A42A38AAC300877319 /* CKModelProtocol.swift in Sources */,
 				DFA2BD222A373BF800BFB964 /* BuddyCareApp.swift in Sources */,
+				DFE7B6572A3A0D4D002C7BBC /* CustomButtin.swift in Sources */,
+				DFE7B6522A3A0BB8002C7BBC /* FunManagement.swift in Sources */,
 				DF02219F2A38AA5B00877319 /* FunSchedule.swift in Sources */,
+				DFE7B64E2A3A0B82002C7BBC /* CloudKitPetManager.swift in Sources */,
+				DFE7B65D2A3A0DA2002C7BBC /* PetManagerView.swift in Sources */,
 				DF02219D2A38AA2F00877319 /* BathSchedule.swift in Sources */,
+				DFE7B6542A3A0BC3002C7BBC /* BathManagement.swift in Sources */,
+				DFE7B6592A3A0D69002C7BBC /* DisplayedPet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
