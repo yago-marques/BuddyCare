@@ -16,6 +16,12 @@
 		DF6C708D2A39EA3B001A83B2 /* FunManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6C708C2A39EA3B001A83B2 /* FunManagement.swift */; };
 		DF6C70902A39EBB5001A83B2 /* CloudKitPetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6C708F2A39EBB5001A83B2 /* CloudKitPetManager.swift */; };
 		DF6C70942A39FBD0001A83B2 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6C70932A39FBD0001A83B2 /* CustomButton.swift */; };
+		36F868312A374590008FB1BB /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F868302A37458F008FB1BB /* Pet.swift */; };
+		DF02219B2A38A12700877319 /* CloudKitUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02219A2A38A12700877319 /* CloudKitUseCases.swift */; };
+		DF02219D2A38AA2F00877319 /* BathSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02219C2A38AA2F00877319 /* BathSchedule.swift */; };
+		DF02219F2A38AA5B00877319 /* FunSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02219E2A38AA5B00877319 /* FunSchedule.swift */; };
+		DF0221A22A38AA9A00877319 /* CKCustomErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0221A12A38AA9A00877319 /* CKCustomErrors.swift */; };
+		DF0221A42A38AAC300877319 /* CKModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0221A32A38AAC300877319 /* CKModelProtocol.swift */; };
 		DFA2BD222A373BF800BFB964 /* BuddyCareApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA2BD212A373BF800BFB964 /* BuddyCareApp.swift */; };
 		DFA2BD242A373BF800BFB964 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA2BD232A373BF800BFB964 /* ContentView.swift */; };
 		DFA2BD262A373BF900BFB964 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFA2BD252A373BF900BFB964 /* Assets.xcassets */; };
@@ -27,6 +33,7 @@
 		DFA2BD4E2A373BFA00BFB964 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFA2BD4D2A373BFA00BFB964 /* Assets.xcassets */; };
 		DFA2BD512A373BFA00BFB964 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFA2BD502A373BFA00BFB964 /* Preview Assets.xcassets */; };
 		DFA2BD5B2A373BFA00BFB964 /* BuddyCare_Watch_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA2BD5A2A373BFA00BFB964 /* BuddyCare_Watch_AppTests.swift */; };
+		DFB054F82A3891D200BD2844 /* CloudKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F868342A3758FB008FB1BB /* CloudKitService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +84,14 @@
 		DF6C708C2A39EA3B001A83B2 /* FunManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunManagement.swift; sourceTree = "<group>"; };
 		DF6C708F2A39EBB5001A83B2 /* CloudKitPetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitPetManager.swift; sourceTree = "<group>"; };
 		DF6C70932A39FBD0001A83B2 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		36F868302A37458F008FB1BB /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
+		36F868322A3758AD008FB1BB /* BuddyCare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BuddyCare.entitlements; sourceTree = "<group>"; };
+		36F868342A3758FB008FB1BB /* CloudKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitService.swift; sourceTree = "<group>"; };
+		DF02219A2A38A12700877319 /* CloudKitUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitUseCases.swift; sourceTree = "<group>"; };
+		DF02219C2A38AA2F00877319 /* BathSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BathSchedule.swift; sourceTree = "<group>"; };
+		DF02219E2A38AA5B00877319 /* FunSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunSchedule.swift; sourceTree = "<group>"; };
+		DF0221A12A38AA9A00877319 /* CKCustomErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKCustomErrors.swift; sourceTree = "<group>"; };
+		DF0221A32A38AAC300877319 /* CKModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKModelProtocol.swift; sourceTree = "<group>"; };
 		DFA2BD1E2A373BF800BFB964 /* BuddyCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuddyCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFA2BD212A373BF800BFB964 /* BuddyCareApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyCareApp.swift; sourceTree = "<group>"; };
 		DFA2BD232A373BF800BFB964 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -171,6 +186,34 @@
 				DF6C70852A39E5DF001A83B2 /* DisplayedPet.swift */,
 			);
 			path = Presentation;
+		36F8682F2A37456B008FB1BB /* CKModels */ = {
+			isa = PBXGroup;
+			children = (
+				36F868302A37458F008FB1BB /* Pet.swift */,
+				DF02219C2A38AA2F00877319 /* BathSchedule.swift */,
+				DF02219E2A38AA5B00877319 /* FunSchedule.swift */,
+			);
+			path = CKModels;
+			sourceTree = "<group>";
+		};
+		36F868332A3758DC008FB1BB /* iCloud */ = {
+			isa = PBXGroup;
+			children = (
+				DF0221A02A38AA8D00877319 /* Utils */,
+				36F8682F2A37456B008FB1BB /* CKModels */,
+				DF02219A2A38A12700877319 /* CloudKitUseCases.swift */,
+				36F868342A3758FB008FB1BB /* CloudKitService.swift */,
+			);
+			path = iCloud;
+			sourceTree = "<group>";
+		};
+		DF0221A02A38AA8D00877319 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DF0221A12A38AA9A00877319 /* CKCustomErrors.swift */,
+				DF0221A32A38AAC300877319 /* CKModelProtocol.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		DFA2BD152A373BF800BFB964 = {
@@ -199,6 +242,8 @@
 			isa = PBXGroup;
 			children = (
 				DF6C707E2A39E46D001A83B2 /* PetMangerScene */,
+				36F868332A3758DC008FB1BB /* iCloud */,
+				36F868322A3758AD008FB1BB /* BuddyCare.entitlements */,
 				DFA2BD212A373BF800BFB964 /* BuddyCareApp.swift */,
 				DFA2BD232A373BF800BFB964 /* ContentView.swift */,
 				DFA2BD252A373BF900BFB964 /* Assets.xcassets */,
@@ -423,6 +468,15 @@
 				DFA2BD222A373BF800BFB964 /* BuddyCareApp.swift in Sources */,
 				DF6C70902A39EBB5001A83B2 /* CloudKitPetManager.swift in Sources */,
 				DF6C708D2A39EA3B001A83B2 /* FunManagement.swift in Sources */,
+				DFB054F82A3891D200BD2844 /* CloudKitService.swift in Sources */,
+				36F868312A374590008FB1BB /* Pet.swift in Sources */,
+				DF0221A22A38AA9A00877319 /* CKCustomErrors.swift in Sources */,
+				DF02219B2A38A12700877319 /* CloudKitUseCases.swift in Sources */,
+				DFA2BD242A373BF800BFB964 /* ContentView.swift in Sources */,
+				DF0221A42A38AAC300877319 /* CKModelProtocol.swift in Sources */,
+				DFA2BD222A373BF800BFB964 /* BuddyCareApp.swift in Sources */,
+				DF02219F2A38AA5B00877319 /* FunSchedule.swift in Sources */,
+				DF02219D2A38AA2F00877319 /* BathSchedule.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,6 +702,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BuddyCare/BuddyCare.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BuddyCare/Preview Content\"";
@@ -681,6 +736,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BuddyCare/BuddyCare.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BuddyCare/Preview Content\"";
