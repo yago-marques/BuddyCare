@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF6C70802A39E48E001A83B2 /* PetManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6C707F2A39E48E001A83B2 /* PetManagerView.swift */; };
+		DF6C70822A39E49E001A83B2 /* PetManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6C70812A39E49E001A83B2 /* PetManagerViewModel.swift */; };
+		DF6C70842A39E4C6001A83B2 /* PetManagerCompositionRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6C70832A39E4C6001A83B2 /* PetManagerCompositionRoot.swift */; };
+		DF6C70862A39E5DF001A83B2 /* DisplayedPet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6C70852A39E5DF001A83B2 /* DisplayedPet.swift */; };
+		DF6C70892A39E7A4001A83B2 /* FetchPet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6C70882A39E7A4001A83B2 /* FetchPet.swift */; };
+		DF6C708B2A39EA31001A83B2 /* BathManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6C708A2A39EA31001A83B2 /* BathManagement.swift */; };
+		DF6C708D2A39EA3B001A83B2 /* FunManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6C708C2A39EA3B001A83B2 /* FunManagement.swift */; };
+		DF6C70902A39EBB5001A83B2 /* CloudKitPetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6C708F2A39EBB5001A83B2 /* CloudKitPetManager.swift */; };
+		DF6C70942A39FBD0001A83B2 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6C70932A39FBD0001A83B2 /* CustomButton.swift */; };
 		DFA2BD222A373BF800BFB964 /* BuddyCareApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA2BD212A373BF800BFB964 /* BuddyCareApp.swift */; };
 		DFA2BD242A373BF800BFB964 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA2BD232A373BF800BFB964 /* ContentView.swift */; };
 		DFA2BD262A373BF900BFB964 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFA2BD252A373BF900BFB964 /* Assets.xcassets */; };
@@ -59,6 +68,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DF6C707F2A39E48E001A83B2 /* PetManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetManagerView.swift; sourceTree = "<group>"; };
+		DF6C70812A39E49E001A83B2 /* PetManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetManagerViewModel.swift; sourceTree = "<group>"; };
+		DF6C70832A39E4C6001A83B2 /* PetManagerCompositionRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetManagerCompositionRoot.swift; sourceTree = "<group>"; };
+		DF6C70852A39E5DF001A83B2 /* DisplayedPet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayedPet.swift; sourceTree = "<group>"; };
+		DF6C70882A39E7A4001A83B2 /* FetchPet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPet.swift; sourceTree = "<group>"; };
+		DF6C708A2A39EA31001A83B2 /* BathManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BathManagement.swift; sourceTree = "<group>"; };
+		DF6C708C2A39EA3B001A83B2 /* FunManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunManagement.swift; sourceTree = "<group>"; };
+		DF6C708F2A39EBB5001A83B2 /* CloudKitPetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitPetManager.swift; sourceTree = "<group>"; };
+		DF6C70932A39FBD0001A83B2 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		DFA2BD1E2A373BF800BFB964 /* BuddyCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuddyCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFA2BD212A373BF800BFB964 /* BuddyCareApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyCareApp.swift; sourceTree = "<group>"; };
 		DFA2BD232A373BF800BFB964 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -107,6 +125,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF6C707E2A39E46D001A83B2 /* PetMangerScene */ = {
+			isa = PBXGroup;
+			children = (
+				DF6C708E2A39EBA1001A83B2 /* Domain */,
+				DF6C70872A39E791001A83B2 /* UseCases */,
+				DF6C70922A39FB8F001A83B2 /* Presentation */,
+			);
+			path = PetMangerScene;
+			sourceTree = "<group>";
+		};
+		DF6C70872A39E791001A83B2 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				DF6C70882A39E7A4001A83B2 /* FetchPet.swift */,
+				DF6C708A2A39EA31001A83B2 /* BathManagement.swift */,
+				DF6C708C2A39EA3B001A83B2 /* FunManagement.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		DF6C708E2A39EBA1001A83B2 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				DF6C708F2A39EBB5001A83B2 /* CloudKitPetManager.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		DF6C70912A39FB84001A83B2 /* UI Components */ = {
+			isa = PBXGroup;
+			children = (
+				DF6C70932A39FBD0001A83B2 /* CustomButton.swift */,
+			);
+			path = "UI Components";
+			sourceTree = "<group>";
+		};
+		DF6C70922A39FB8F001A83B2 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				DF6C70912A39FB84001A83B2 /* UI Components */,
+				DF6C707F2A39E48E001A83B2 /* PetManagerView.swift */,
+				DF6C70812A39E49E001A83B2 /* PetManagerViewModel.swift */,
+				DF6C70832A39E4C6001A83B2 /* PetManagerCompositionRoot.swift */,
+				DF6C70852A39E5DF001A83B2 /* DisplayedPet.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
 		DFA2BD152A373BF800BFB964 = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +198,7 @@
 		DFA2BD202A373BF800BFB964 /* BuddyCare */ = {
 			isa = PBXGroup;
 			children = (
+				DF6C707E2A39E46D001A83B2 /* PetMangerScene */,
 				DFA2BD212A373BF800BFB964 /* BuddyCareApp.swift */,
 				DFA2BD232A373BF800BFB964 /* ContentView.swift */,
 				DFA2BD252A373BF900BFB964 /* Assets.xcassets */,
@@ -345,8 +412,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF6C70822A39E49E001A83B2 /* PetManagerViewModel.swift in Sources */,
+				DF6C70862A39E5DF001A83B2 /* DisplayedPet.swift in Sources */,
+				DF6C70892A39E7A4001A83B2 /* FetchPet.swift in Sources */,
+				DF6C708B2A39EA31001A83B2 /* BathManagement.swift in Sources */,
 				DFA2BD242A373BF800BFB964 /* ContentView.swift in Sources */,
+				DF6C70802A39E48E001A83B2 /* PetManagerView.swift in Sources */,
+				DF6C70842A39E4C6001A83B2 /* PetManagerCompositionRoot.swift in Sources */,
+				DF6C70942A39FBD0001A83B2 /* CustomButton.swift in Sources */,
 				DFA2BD222A373BF800BFB964 /* BuddyCareApp.swift in Sources */,
+				DF6C70902A39EBB5001A83B2 /* CloudKitPetManager.swift in Sources */,
+				DF6C708D2A39EA3B001A83B2 /* FunManagement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
