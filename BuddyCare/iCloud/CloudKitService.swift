@@ -12,7 +12,7 @@ typealias CloudKitServiceDelegate = PetUseCases & BathScheduleUseCases & FunSche
 
 struct CloudKitService {
     let database = CKContainer.default().privateCloudDatabase
-    static let iCloud: CloudKitServiceDelegate = CloudKitService()
+    static let shared: CloudKitServiceDelegate = CloudKitService()
 
     private init() { }
 }
