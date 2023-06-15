@@ -43,30 +43,35 @@ struct RegisterPetView: View {
                                 avatar: $avatar,
                                 avatars: viewModel.avatars[species]!
                             )
-                        }
-                        .listRowBackground(Color.clear)
-                    
+                            
                     Button("Next") {
                         if username.isEmpty || avatar.isEmpty {
                             print("vc n preencheu tudo")
                         } else {
                             printAlgo()
+                                }
+                            }
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            .padding(8)
+                            .background(Color.pink)
+                            .foregroundColor(.white)
+                            .cornerRadius(12)
+                            .padding(.bottom, 30)
+                            .listRowBackground(Color.clear)
+                            #if os(iOS)
+                            .listRowSeparatorTint(.clear)
+                            #endif
                         }
-                    }
-                    .frame(width: 200)
-                    .padding()
-                    .background(Color.pink)
-                    .foregroundColor(.white)
-                    .cornerRadius(12)
-                    .padding(.bottom, 25)
-                    .listRowBackground(Color.clear)
+                        .listRowBackground(Color.clear)
+                
+            
+                    
                 }
                 .foregroundColor(Color.pink)
                 .accentColor(.pink)
                 .navigationTitle("Let's Start!")
                 .navigationBarTitleDisplayMode(.inline)
             }
-            
         }
         .environmentObject(viewModel)
     }

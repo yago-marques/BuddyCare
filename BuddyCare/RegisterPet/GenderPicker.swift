@@ -17,12 +17,12 @@ struct GenderPicker: View {
                 Image("male")
                     .resizable()
                     .foregroundColor(self.index == 0 ? .black : .gray)
-                    .frame(width: 40, height: 40, alignment: .center)
+                    .frame(width: 70, height: 70, alignment: .center)
                 
                 Text(" Male ")
                     .foregroundColor(self.index == 0 ? .black : .gray)
             }
-            .padding(.vertical, 40)
+            .padding(.vertical, 20)
             .padding(.horizontal, 50)
             .background((Color.white).opacity(self.index == 0 ? 1 : 0))
             .clipShape(RoundedRectangle(cornerRadius: 12))
@@ -31,13 +31,13 @@ struct GenderPicker: View {
             VStack {
                 Image("female")
                     .resizable()
-                    .frame(width: 40, height: 40, alignment: .center)
+                    .frame(width: 70, height: 70, alignment: .center)
                     .foregroundColor(self.index == 1 ? .black : .gray)
                 
                 Text("Female")
                     .foregroundColor(self.index == 1 ? .black : .gray)
             }
-            .padding(.vertical, 40)
+            .padding(.vertical, 20)
             .padding(.horizontal, 50)
             .background((Color.white).opacity(self.index == 1 ? 1 : 0))
             .clipShape(RoundedRectangle(cornerRadius: 12))

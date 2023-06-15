@@ -4,7 +4,7 @@ import SwiftUI
 struct BuddyCareApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RegisterPetView()
         }
     }
 }

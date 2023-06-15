@@ -16,6 +16,7 @@ struct SelectAvatarTabView: View {
                             .frame(width: 100, height: 100)
                             .padding(4)
                             .background(selectedAvatar == avatar ? Color.pink : Color.clear)
+                            .clipShape(RoundedRectangle(cornerRadius: 12))
                             .onTapGesture {
                                 avatar = selectedAvatar
                             }

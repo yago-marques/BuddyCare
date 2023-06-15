@@ -20,8 +20,8 @@ struct AnimalTypePicker: View {
                 Text(" Cat ")
                     .foregroundColor(self.index == 0 ? .black : .gray)
             }
-            .padding(.vertical, 30)
-            .padding(.horizontal, 45)
+            .padding(.vertical, 20)
+            .padding(.horizontal, 55)
             .background((Color.white).opacity(self.index == 0 ? 1 : 0))
             .clipShape(RoundedRectangle(cornerRadius: 12))
             .onTapGesture { self.index = 0; species = .cat }
@@ -35,8 +35,8 @@ struct AnimalTypePicker: View {
                 Text("Dog")
                     .foregroundColor(self.index == 1 ? .black : .gray)
             }
-            .padding(.vertical, 30)
-            .padding(.horizontal, 45)
+            .padding(.vertical, 20)
+            .padding(.horizontal, 55)
             .background((Color.white).opacity(self.index == 1 ? 1 : 0))
             .clipShape(RoundedRectangle(cornerRadius: 12))
             .onTapGesture { self.index = 1; species = .dog }
