@@ -9,15 +9,10 @@
 /* Begin PBXBuildFile section */
 		36F868312A374590008FB1BB /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F868302A37458F008FB1BB /* Pet.swift */; };
 		ABF061EC2A3A9E3800AE2491 /* RegisterPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF061EB2A3A9E3800AE2491 /* RegisterPetView.swift */; };
-		ABF061ED2A3A9E3800AE2491 /* RegisterPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF061EB2A3A9E3800AE2491 /* RegisterPetView.swift */; };
 		ABF061EF2A3A9E5500AE2491 /* GenderPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF061EE2A3A9E5500AE2491 /* GenderPicker.swift */; };
-		ABF061F02A3A9E5500AE2491 /* GenderPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF061EE2A3A9E5500AE2491 /* GenderPicker.swift */; };
 		ABF061F22A3A9E9D00AE2491 /* AnimalTypePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF061F12A3A9E9D00AE2491 /* AnimalTypePicker.swift */; };
-		ABF061F32A3A9E9D00AE2491 /* AnimalTypePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF061F12A3A9E9D00AE2491 /* AnimalTypePicker.swift */; };
 		ABF061F52A3A9EEC00AE2491 /* RegisterPetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF061F42A3A9EEC00AE2491 /* RegisterPetViewModel.swift */; };
-		ABF061F62A3A9EEC00AE2491 /* RegisterPetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF061F42A3A9EEC00AE2491 /* RegisterPetViewModel.swift */; };
 		ABF061F82A3A9F2400AE2491 /* SelectAvatarTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF061F72A3A9F2400AE2491 /* SelectAvatarTabView.swift */; };
-		ABF061F92A3A9F2400AE2491 /* SelectAvatarTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF061F72A3A9F2400AE2491 /* SelectAvatarTabView.swift */; };
 		DF02219B2A38A12700877319 /* CloudKitUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02219A2A38A12700877319 /* CloudKitUseCases.swift */; };
 		DF02219D2A38AA2F00877319 /* BathSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02219C2A38AA2F00877319 /* BathSchedule.swift */; };
 		DF02219F2A38AA5B00877319 /* FunSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02219E2A38AA5B00877319 /* FunSchedule.swift */; };
@@ -525,13 +520,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABF061F02A3A9E5500AE2491 /* GenderPicker.swift in Sources */,
 				DFA2BD4C2A373BF900BFB964 /* ContentView.swift in Sources */,
 				DFA2BD4A2A373BF900BFB964 /* BuddyCareApp.swift in Sources */,
-				ABF061F62A3A9EEC00AE2491 /* RegisterPetViewModel.swift in Sources */,
-				ABF061F32A3A9E9D00AE2491 /* AnimalTypePicker.swift in Sources */,
-				ABF061F92A3A9F2400AE2491 /* SelectAvatarTabView.swift in Sources */,
-				ABF061ED2A3A9E3800AE2491 /* RegisterPetView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

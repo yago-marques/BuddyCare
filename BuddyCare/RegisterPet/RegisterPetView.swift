@@ -1,11 +1,12 @@
 import SwiftUI
 
 struct RegisterPetView: View {
+    
     @StateObject private var viewModel = RegisterPetViewModel()
     @State private var username: String = ""
-    @State private var gender: Gender = .male
-    @State private var species: Species = .cat
-    @State private var avatar: String = String()
+    @State private var gender: String = "male"
+    @State private var species: String = "cat"
+    @State private var avatar: String = ""
     
     var body: some View {
         NavigationView {
@@ -45,45 +46,52 @@ struct RegisterPetView: View {
                             )
                             
                     Button("Next") {
-                        if username.isEmpty || avatar.isEmpty {
-                            print("vc n preencheu tudo")
-                        } else {
-                            printAlgo()
-                                }
+                            if username.isEmpty || avatar.isEmpty {
+                                print("vc n preencheu tudo")
+                            } else {
+                                
+                                Task {
+                                    do {
+                                        printAlgo()
+                                        try await CloudKitService.shared.createPet(
+                                            Pet(
+                                                name: username,
+                                                gender: gender,
+                                                species: species,
+                                                avatar: avatar
+                                            )
+                                        )
+                                    } catch {
+                                        print("Erro ao criar o pet: \(error)")
+                                      }
                             }
-                            .frame(maxWidth: .infinity, maxHeight: .infinity)
-                            .padding(8)
-                            .background(Color.pink)
-                            .foregroundColor(.white)
-                            .cornerRadius(12)
-                            .padding(.bottom, 30)
-                            .listRowBackground(Color.clear)
-                            #if os(iOS)
-                            .listRowSeparatorTint(.clear)
-                            #endif
                         }
-                        .listRowBackground(Color.clear)
-                
-            
-                    
+                       
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .padding(8)
+                    .background(Color.pink)
+                    .foregroundColor(.white)
+                    .cornerRadius(12)
+                    .padding(.bottom, 30)
+                    .listRowBackground(Color.clear)
+                    #if os(iOS)
+                        .listRowSeparatorTint(.clear)
+                    #endif
                 }
-                .foregroundColor(Color.pink)
-                .accentColor(.pink)
-                .navigationTitle("Let's Start!")
-                .navigationBarTitleDisplayMode(.inline)
+                .listRowBackground(Color.clear)
             }
+            .foregroundColor(Color.pink)
+            .accentColor(.pink)
+            .navigationTitle("Let's Start!")
+            .navigationBarTitleDisplayMode(.inline)
         }
-        .environmentObject(viewModel)
     }
+    .environmentObject(viewModel)
+}
     
     func printAlgo() {
           print("\(username), \(gender), \(species), \(avatar)")
       }
 }
 
-struct RegisterPetView_Previews: PreviewProvider {
-    static var previews: some View {
-        RegisterPetView()
-
-    }
-}

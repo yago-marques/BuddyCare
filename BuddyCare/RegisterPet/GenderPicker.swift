@@ -2,14 +2,9 @@ import Foundation
 
 import SwiftUI
 
-enum Gender: Hashable {
-    case female
-    case male
-}
-
 struct GenderPicker: View {
     @State var index = 0
-    @Binding var gender: Gender
+    @Binding var gender: String
     
     var body: some View {
         HStack(spacing: 0) {
@@ -26,7 +21,7 @@ struct GenderPicker: View {
             .padding(.horizontal, 50)
             .background((Color.white).opacity(self.index == 0 ? 1 : 0))
             .clipShape(RoundedRectangle(cornerRadius: 12))
-            .onTapGesture { self.index = 0; gender = .male }
+            .onTapGesture { self.index = 0; gender = "male" }
             
             VStack {
                 Image("female")
@@ -41,7 +36,7 @@ struct GenderPicker: View {
             .padding(.horizontal, 50)
             .background((Color.white).opacity(self.index == 1 ? 1 : 0))
             .clipShape(RoundedRectangle(cornerRadius: 12))
-            .onTapGesture { self.index = 1; gender = .male }
+            .onTapGesture { self.index = 1; gender = "female" }
         }
         .padding(4)
         .background(Color.black.opacity(0.06))
