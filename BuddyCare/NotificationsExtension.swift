@@ -6,11 +6,16 @@
 //
 
 import Foundation
+
+#if(canImport(Notification))
 import NotificationCenter
+#endif
 
 extension ContentView {
 
     func dispatchFunNotification(date: Date, identifier: String) {
+        #if(canImport(Notification))
+
 
         let title = "Time to play with your buddy!"
         let body = "Your pet is needing some attention"
@@ -37,16 +42,16 @@ extension ContentView {
 
         notificationCenter.removePendingNotificationRequests(withIdentifiers: [identifier])
         notificationCenter.add(request)
+        #endif
     }
 
     func dispatchBathNotification(date: Date, identifier: String) {
-
+        #if(canImport(Notification))
         let title = "Time for some clean up!"
         let body = "It's time for your pet's hygiene"
 
         let notificationCenter = UNUserNotificationCenter.current()
         let content = UNMutableNotificationContent()
-
 
         content.title = title
         content.body = body
@@ -67,10 +72,12 @@ extension ContentView {
 
         notificationCenter.removePendingNotificationRequests(withIdentifiers: [identifier])
         notificationCenter.add(request)
+        #endif
 
     }
 
     func checkForNotificationAuthorization() {
+        #if(canImport(Notification))
         let notificationCenter = UNUserNotificationCenter.current()
         notificationCenter.getNotificationSettings { settings in
             switch settings.authorizationStatus {
@@ -88,5 +95,7 @@ extension ContentView {
                     return
             }
         }
+        #endif
     }
 }
+

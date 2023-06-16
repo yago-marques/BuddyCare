@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36C7BBA12A3C9FF800AD1721 /* NotificationsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E8556A2A39F26B000A58CD /* NotificationsExtension.swift */; };
 		36E8556B2A39F26B000A58CD /* NotificationsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E8556A2A39F26B000A58CD /* NotificationsExtension.swift */; };
 		36F868312A374590008FB1BB /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F868302A37458F008FB1BB /* Pet.swift */; };
 		DF02219B2A38A12700877319 /* CloudKitUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02219A2A38A12700877319 /* CloudKitUseCases.swift */; };
@@ -421,6 +422,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFA2BD4C2A373BF900BFB964 /* ContentView.swift in Sources */,
+				36C7BBA12A3C9FF800AD1721 /* NotificationsExtension.swift in Sources */,
 				DFA2BD4A2A373BF900BFB964 /* BuddyCareApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
