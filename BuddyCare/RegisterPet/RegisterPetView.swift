@@ -49,10 +49,8 @@ struct RegisterPetView: View {
                             if username.isEmpty || avatar.isEmpty {
                                 print("vc n preencheu tudo")
                             } else {
-                                
                                 Task {
                                     do {
-                                        printAlgo()
                                         try await CloudKitService.shared.createPet(
                                             Pet(
                                                 name: username,
@@ -89,9 +87,5 @@ struct RegisterPetView: View {
     }
     .environmentObject(viewModel)
 }
-    
-    func printAlgo() {
-          print("\(username), \(gender), \(species), \(avatar)")
-      }
 }
 
