@@ -92,14 +92,14 @@ struct registroView: View {
                             do {
                                 if viewModel.selectedLazyTimes == 1{
                                     try await CloudKitService.shared.createFunSchedule(FunSchedule(frequency: viewModel.selectedLazyTimes, times: viewModel.dates))
-                                    try await CloudKitService.shared.createBathSchedule(BathSchedule(frequency: viewModel.selectedDayTimes, times: [viewModel.timeOne]))
+                                    try await CloudKitService.shared.createBathSchedule(BathSchedule(frequency: viewModel.selectedDayTimes))
                                 }
                                 else if viewModel.selectedLazyTimes == 2{
                                     try await CloudKitService.shared.createFunSchedule(FunSchedule(frequency: viewModel.selectedLazyTimes, times: viewModel.dates))
-                                    try await CloudKitService.shared.createBathSchedule(BathSchedule(frequency: viewModel.selectedDayTimes, times: [viewModel.timeOne, viewModel.timeTwo]))
+                                    try await CloudKitService.shared.createBathSchedule(BathSchedule(frequency: viewModel.selectedDayTimes))
                                 }else{
                                     try await CloudKitService.shared.createFunSchedule(FunSchedule(frequency: viewModel.selectedLazyTimes, times: viewModel.dates))
-                                    try await CloudKitService.shared.createBathSchedule(BathSchedule(frequency: viewModel.selectedDayTimes, times: [viewModel.timeOne, viewModel.timeTwo, viewModel.timeThree]))
+                                    try await CloudKitService.shared.createBathSchedule(BathSchedule(frequency: viewModel.selectedDayTimes))
                                 }
                             }catch {
                                 print("Erro ao criar o pet: \(error)")

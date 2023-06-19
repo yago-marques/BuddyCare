@@ -30,7 +30,7 @@ final class PetManagerViewModel: ObservableObject {
     }
 
     func registerFunAction() async throws {
-        try await useCases.registerFunAction(at: Date())
+        try await useCases.registerFunAction(at: Date(), id: "")
     }
 
 
@@ -44,7 +44,7 @@ private extension PetManagerViewModel {
 
     @MainActor
     func verifyNeededActions() async throws {
-        self.funActionIsActive = try await useCases.funActionIsNeeded()
+        self.funActionIsActive = try await useCases.funActionIsNeeded(id: "")
         self.bathActionIsActive = try await useCases.bathActionIsNeeded()
     }
 }
