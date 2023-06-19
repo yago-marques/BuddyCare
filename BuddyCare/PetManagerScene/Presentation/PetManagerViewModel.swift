@@ -26,11 +26,11 @@ final class PetManagerViewModel: ObservableObject {
     }
 
     func registerBathAction() async throws {
-        try await useCases.registerBathAction(at: Date())
+//        try await useCases.registerBathAction(at: Date())
     }
 
     func registerFunAction() async throws {
-        try await useCases.registerFunAction(at: Date(), id: "")
+//        try await useCases.registerFunAction(at: Date(), id: "")
     }
 
 
