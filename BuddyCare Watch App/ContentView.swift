@@ -17,6 +17,8 @@ struct ContentView: View {
         }
         .padding()
         .onAppear {
+            checkForNotificationAuthorization()
+            dispatchBathNotification(date: Date.now, identifier: "sdasdas", frequency: 0)
             
         }
     }

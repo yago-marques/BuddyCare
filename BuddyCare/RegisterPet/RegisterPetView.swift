@@ -84,6 +84,7 @@ struct RegisterPetView: View {
             .navigationTitle("Let's Start!")
             .navigationBarTitleDisplayMode(.inline)
         }
+            
     }
     .environmentObject(viewModel)
 }
