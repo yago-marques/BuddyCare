@@ -14,6 +14,8 @@
 		ABF061F22A3A9E9D00AE2491 /* AnimalTypePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF061F12A3A9E9D00AE2491 /* AnimalTypePicker.swift */; };
 		ABF061F52A3A9EEC00AE2491 /* RegisterPetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF061F42A3A9EEC00AE2491 /* RegisterPetViewModel.swift */; };
 		ABF061F82A3A9F2400AE2491 /* SelectAvatarTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF061F72A3A9F2400AE2491 /* SelectAvatarTabView.swift */; };
+		AE0481612A3B3C7C00CE5A18 /* registroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0481602A3B3C7C00CE5A18 /* registroModel.swift */; };
+		AE0481632A3B3C8600CE5A18 /* registroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0481622A3B3C8600CE5A18 /* registroView.swift */; };
 		DF02219B2A38A12700877319 /* CloudKitUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02219A2A38A12700877319 /* CloudKitUseCases.swift */; };
 		DF02219D2A38AA2F00877319 /* BathSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02219C2A38AA2F00877319 /* BathSchedule.swift */; };
 		DF02219F2A38AA5B00877319 /* FunSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02219E2A38AA5B00877319 /* FunSchedule.swift */; };
@@ -92,6 +94,8 @@
 		ABF061F12A3A9E9D00AE2491 /* AnimalTypePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTypePicker.swift; sourceTree = "<group>"; };
 		ABF061F42A3A9EEC00AE2491 /* RegisterPetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPetViewModel.swift; sourceTree = "<group>"; };
 		ABF061F72A3A9F2400AE2491 /* SelectAvatarTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAvatarTabView.swift; sourceTree = "<group>"; };
+		AE0481602A3B3C7C00CE5A18 /* registroModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = registroModel.swift; sourceTree = "<group>"; };
+		AE0481622A3B3C8600CE5A18 /* registroView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = registroView.swift; sourceTree = "<group>"; };
 		DF02219A2A38A12700877319 /* CloudKitUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitUseCases.swift; sourceTree = "<group>"; };
 		DF02219C2A38AA2F00877319 /* BathSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BathSchedule.swift; sourceTree = "<group>"; };
 		DF02219E2A38AA5B00877319 /* FunSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunSchedule.swift; sourceTree = "<group>"; };
@@ -314,6 +318,8 @@
 			children = (
 				DFC4FA442A3A24B700A78E51 /* UI Components */,
 				DFC4FA3E2A3A248C00A78E51 /* PetManagerView.swift */,
+				AE0481602A3B3C7C00CE5A18 /* registroModel.swift */,
+				AE0481622A3B3C8600CE5A18 /* registroView.swift */,
 				DFC4FA402A3A249B00A78E51 /* PetManagerCompositionRoot.swift */,
 				DFC4FA422A3A24AB00A78E51 /* PetManagerViewModel.swift */,
 				DFC4FA472A3A24F300A78E51 /* DisplayedPet.swift */,
@@ -507,6 +513,8 @@
 				DFA2BD242A373BF800BFB964 /* ContentView.swift in Sources */,
 				DF0221A42A38AAC300877319 /* CKModelProtocol.swift in Sources */,
 				DFA2BD222A373BF800BFB964 /* BuddyCareApp.swift in Sources */,
+				AE0481632A3B3C8600CE5A18 /* registroView.swift in Sources */,
+				AE0481612A3B3C7C00CE5A18 /* registroModel.swift in Sources */,
 				DFC4FA3A2A3A23EC00A78E51 /* FunManagement.swift in Sources */,
 				DFC4FA482A3A24F300A78E51 /* DisplayedPet.swift in Sources */,
 				DF02219F2A38AA5B00877319 /* FunSchedule.swift in Sources */,
