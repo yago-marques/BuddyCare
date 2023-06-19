@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct registroView: View {
-    
+    @Binding var idPet: String
     @StateObject private var viewModel = NumberPickerViewModel()
     @State private var isPickerShown: Bool = false
     
@@ -122,7 +122,7 @@ struct registroView: View {
                 
             }
             Spacer()
-        }
+        }.onAppear(){print("aaaaaa \(self.idPet)")}
     }
 }
 private func formattedTime(_ date: Date) -> String {

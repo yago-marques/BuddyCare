@@ -7,6 +7,8 @@ struct RegisterPetView: View {
     @State private var gender: String = "male"
     @State private var species: String = "cat"
     @State private var avatar: String = ""
+    @State private var navigateToCleaner: Bool = false
+    @State private var idPed: String = ""
     
     var body: some View {
         NavigationView {
@@ -46,12 +48,12 @@ struct RegisterPetView: View {
                             )
                             
                     Button("Next") {
-                            if username.isEmpty || avatar.isEmpty {
+                        if username.isEmpty || avatar.isEmpty {
                                 print("vc n preencheu tudo")
                             } else {
                                 Task {
                                     do {
-                                        try await CloudKitService.shared.createPet(
+                                        let idPet = try await CloudKitService.shared.createPet(
                                             Pet(
                                                 name: username,
                                                 gender: gender,
@@ -59,12 +61,13 @@ struct RegisterPetView: View {
                                                 avatar: avatar
                                             )
                                         )
+                                        print("\(idPet)")
+                                            navigateToCleaner = true
                                     } catch {
                                         print("Erro ao criar o pet: \(error)")
                                       }
                             }
                         }
-                       
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .padding(8)
@@ -86,6 +89,35 @@ struct RegisterPetView: View {
         }
     }
     .environmentObject(viewModel)
+    .navigate(to: registroView(idPet: self.$idPed), when: $navigateToCleaner)
 }
 }
 
+extension View {
+    func navigate<NewView: View>(to view: NewView, when binding: Binding<Bool>) -> some View {
+        NavigationView {
+            ZStack {
+                self
+                    .navigationBarTitle("")
+                    .navigationBarHidden(true)
+                NavigationLink(
+                    destination: view
+                        .navigationBarTitle("")
+                        .navigationBarHidden(true),
+                    isActive: binding
+                ) {
+                    EmptyView()
+                }
+            }
+        }
+        .navigationViewStyle(.stack)
+    }
+
+    func deviceWidth(multiplier: Double = 1) -> Double {
+        UIScreen.main.bounds.width * multiplier
+    }
+
+    func deviceHeight(multiplier: Double = 1) -> Double {
+        UIScreen().bounds.width * multiplier
+    }
+}
