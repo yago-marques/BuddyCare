@@ -1,13 +1,8 @@
 import SwiftUI
 
-enum Species: Hashable {
-    case dog
-    case cat
-}
-
 struct AnimalTypePicker: View {
     @State var index = 0
-    @Binding var species: Species
+    @Binding var species: String
     
     var body: some View {
         HStack(spacing: 0) {
@@ -24,7 +19,7 @@ struct AnimalTypePicker: View {
             .padding(.horizontal, 55)
             .background((Color.white).opacity(self.index == 0 ? 1 : 0))
             .clipShape(RoundedRectangle(cornerRadius: 12))
-            .onTapGesture { self.index = 0; species = .cat }
+            .onTapGesture { self.index = 0; species = "cat" }
             
             VStack {
                 Image("dog2")
@@ -39,7 +34,7 @@ struct AnimalTypePicker: View {
             .padding(.horizontal, 55)
             .background((Color.white).opacity(self.index == 1 ? 1 : 0))
             .clipShape(RoundedRectangle(cornerRadius: 12))
-            .onTapGesture { self.index = 1; species = .dog }
+            .onTapGesture { self.index = 1; species = "dog" }
         }
         .padding(4)
         .background(Color.black.opacity(0.06))

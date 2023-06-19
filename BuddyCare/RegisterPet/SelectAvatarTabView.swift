@@ -2,7 +2,7 @@ import SwiftUI
 
 struct SelectAvatarTabView: View {
     
-    @Binding var species: Species
+    @Binding var species: String
     @Binding var avatar: String
     var avatars: [String]
     
