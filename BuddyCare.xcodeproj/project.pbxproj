@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		36E8556B2A39F26B000A58CD /* NotificationsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E8556A2A39F26B000A58CD /* NotificationsExtension.swift */; };
 		36F868312A374590008FB1BB /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F868302A37458F008FB1BB /* Pet.swift */; };
+		AB9D74932A4091B800BC5A07 /* PetCareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9D74922A4091B800BC5A07 /* PetCareView.swift */; };
 		ABF061EC2A3A9E3800AE2491 /* RegisterPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF061EB2A3A9E3800AE2491 /* RegisterPetView.swift */; };
 		ABF061EF2A3A9E5500AE2491 /* GenderPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF061EE2A3A9E5500AE2491 /* GenderPicker.swift */; };
 		ABF061F22A3A9E9D00AE2491 /* AnimalTypePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF061F12A3A9E9D00AE2491 /* AnimalTypePicker.swift */; };
@@ -89,6 +90,7 @@
 		36F868302A37458F008FB1BB /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		36F868322A3758AD008FB1BB /* BuddyCare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BuddyCare.entitlements; sourceTree = "<group>"; };
 		36F868342A3758FB008FB1BB /* CloudKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitService.swift; sourceTree = "<group>"; };
+		AB9D74922A4091B800BC5A07 /* PetCareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCareView.swift; sourceTree = "<group>"; };
 		ABF061EB2A3A9E3800AE2491 /* RegisterPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPetView.swift; sourceTree = "<group>"; };
 		ABF061EE2A3A9E5500AE2491 /* GenderPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderPicker.swift; sourceTree = "<group>"; };
 		ABF061F12A3A9E9D00AE2491 /* AnimalTypePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTypePicker.swift; sourceTree = "<group>"; };
@@ -183,6 +185,14 @@
 			path = iCloud;
 			sourceTree = "<group>";
 		};
+		AB9D74912A40916300BC5A07 /* PetCare */ = {
+			isa = PBXGroup;
+			children = (
+				AB9D74922A4091B800BC5A07 /* PetCareView.swift */,
+			);
+			path = PetCare;
+			sourceTree = "<group>";
+		};
 		ABF061EA2A3A9DB000AE2491 /* RegisterPet */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +271,7 @@
 		DFA2BD482A373BF900BFB964 /* BuddyCare Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				AB9D74912A40916300BC5A07 /* PetCare */,
 				DFA2BD492A373BF900BFB964 /* BuddyCareApp.swift */,
 				DFA2BD4B2A373BF900BFB964 /* ContentView.swift */,
 				DFA2BD4D2A373BFA00BFB964 /* Assets.xcassets */,
@@ -541,6 +552,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFA2BD4C2A373BF900BFB964 /* ContentView.swift in Sources */,
+				AB9D74932A4091B800BC5A07 /* PetCareView.swift in Sources */,
 				DFA2BD4A2A373BF900BFB964 /* BuddyCareApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
