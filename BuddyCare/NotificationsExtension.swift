@@ -35,7 +35,7 @@ extension ContentView {
 
         var dateComponents = DateComponents(calendar: calendar, timeZone: TimeZone.current)
         dateComponents.hour = hour
-        dateComponents.minute = minute
+        dateComponents.minute = minute + 1
 
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: isDaily)
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
@@ -45,7 +45,7 @@ extension ContentView {
         #endif
     }
 
-    func dispatchBathNotification(date: Date, identifier: String) {
+    func dispatchBathNotification(date: Date, identifier: String, frequency: Int) {
         #if(canImport(Notification))
         let title = "Time for some clean up!"
         let body = "It's time for your pet's hygiene"
