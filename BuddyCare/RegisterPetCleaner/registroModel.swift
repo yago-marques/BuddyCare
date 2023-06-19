@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 class NumberPickerViewModel: ObservableObject {
-    @Published var selectedDayTimes: Int = 5
+    @Published var selectedDayTimes: Int = 10
     @Published var selectedWeekTimes: Int = 1
     @Published var selectedLazyTimes: Int = 1
     @Published var selectedTimes: String = "Dias"

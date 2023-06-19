@@ -195,6 +195,15 @@
 			path = RegisterPet;
 			sourceTree = "<group>";
 		};
+		AE8DB81E2A40937B007EB0A9 /* RegisterPetCleaner */ = {
+			isa = PBXGroup;
+			children = (
+				AE0481602A3B3C7C00CE5A18 /* registroModel.swift */,
+				AE0481622A3B3C8600CE5A18 /* registroView.swift */,
+			);
+			path = RegisterPetCleaner;
+			sourceTree = "<group>";
+		};
 		DF0221A02A38AA8D00877319 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,6 +238,7 @@
 		DFA2BD202A373BF800BFB964 /* BuddyCare */ = {
 			isa = PBXGroup;
 			children = (
+				AE8DB81E2A40937B007EB0A9 /* RegisterPetCleaner */,
 				ABF061EA2A3A9DB000AE2491 /* RegisterPet */,
 				DFC4FA322A3A238C00A78E51 /* PetManagerScene */,
 				36F868332A3758DC008FB1BB /* iCloud */,
@@ -318,8 +328,6 @@
 			children = (
 				DFC4FA442A3A24B700A78E51 /* UI Components */,
 				DFC4FA3E2A3A248C00A78E51 /* PetManagerView.swift */,
-				AE0481602A3B3C7C00CE5A18 /* registroModel.swift */,
-				AE0481622A3B3C8600CE5A18 /* registroView.swift */,
 				DFC4FA402A3A249B00A78E51 /* PetManagerCompositionRoot.swift */,
 				DFC4FA422A3A24AB00A78E51 /* PetManagerViewModel.swift */,
 				DFC4FA472A3A24F300A78E51 /* DisplayedPet.swift */,
