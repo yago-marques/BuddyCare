@@ -7,6 +7,6 @@
 
 import Foundation
 
-enum PetModelError: Error {
+enum CKModelError: Error {
     case invalidDecoding
 }
