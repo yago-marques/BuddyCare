@@ -29,14 +29,8 @@ struct registroView: View {
                         GeometryReader { geometry in
                             HStack(spacing: 0) {
                                 Picker("Selecione uma opção", selection: $viewModel.selectedDayTimes) {
-                                    if viewModel.selectedTimes == "Semanas"{
-                                        ForEach(viewModel.weekTimes, id: \.self) { number in
-                                            Text("\(number)").tag(number)
-                                        }
-                                    } else {
-                                        ForEach(viewModel.dayTimes, id: \.self) { number in
-                                            Text("\(number)").tag(number)
-                                        }
+                                    ForEach(viewModel.dayTimes, id: \.self) { number in
+                                        Text("\(number)").tag(number)
                                     }
                                 }
                                 .frame(maxWidth: geometry.size.width / 2)
@@ -94,34 +88,37 @@ struct registroView: View {
                         .frame(maxWidth: .infinity)
                     }
                     Button("Confirmar") {
-                        saveTimes()
                         Task {
                             do {
-                                try await CloudKitService.shared.createPet(Pet(name: "rato", gender: "rato", species: "rato", avatar: "rato"))
-                                
-                            } catch {
-                                print("socoooroo")
+                                if viewModel.selectedLazyTimes == 1{
+                                    try await CloudKitService.shared.createFunSchedule(FunSchedule(frequency: viewModel.selectedLazyTimes, times: viewModel.dates))
+                                    try await CloudKitService.shared.createBathSchedule(BathSchedule(frequency: viewModel.selectedDayTimes, times: [viewModel.timeOne]))
+                                }
+                                else if viewModel.selectedLazyTimes == 2{
+                                    try await CloudKitService.shared.createFunSchedule(FunSchedule(frequency: viewModel.selectedLazyTimes, times: viewModel.dates))
+                                    try await CloudKitService.shared.createBathSchedule(BathSchedule(frequency: viewModel.selectedDayTimes, times: [viewModel.timeOne, viewModel.timeTwo]))
+                                }else{
+                                    try await CloudKitService.shared.createFunSchedule(FunSchedule(frequency: viewModel.selectedLazyTimes, times: viewModel.dates))
+                                    try await CloudKitService.shared.createBathSchedule(BathSchedule(frequency: viewModel.selectedDayTimes, times: [viewModel.timeOne, viewModel.timeTwo, viewModel.timeThree]))
+                                }
+                            }catch {
+                                print("Erro ao criar o pet: \(error)")
                             }
                         }
                     }
                     
-                  
+                    
                 }
-               
+                
             }
         }
     }
-
-    func saveTimes() {
-        print("\(formattedTime(viewModel.timeOne))")
-        print("\(formattedTime(viewModel.timeTwo))")
-        print("\(formattedTime(viewModel.timeThree))")
-    }
+    
     private func formattedTime(_ date: Date) -> String {
-            let formatter = DateFormatter()
-            formatter.timeStyle = .short
-            return formatter.string(from: date)
-        }
+        let formatter = DateFormatter()
+        formatter.timeStyle = .short
+        return formatter.string(from: date)
+    }
     
 }
 

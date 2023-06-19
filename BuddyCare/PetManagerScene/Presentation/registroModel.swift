@@ -14,15 +14,14 @@ class NumberPickerViewModel: ObservableObject {
     @Published var selectedLazyTimes: Int = 1
     @Published var selectedTimes: String = "Dias"
     @Published var selectedTime = Date()
+    @Published var dates: [Date] = []
     
-    @Published var timeOne = Date.now
-    @Published var timeTwo: Date = Date()
-    @Published var timeThree: Date = Date()
-    
+    @Published var timeOne: Date = Date()
+    @Published var timeTwo = Date.now
+    @Published var timeThree = Date.now
     
     let lazyTimes: [Int] = Array(1...3)
     let dayTimes: [Int] = Array(5...15)
-    let weekTimes: [Int] = Array(1...4)
-    let times = ["Dias", "Semanas"]
+    let times = ["Dias"]
     
 }
