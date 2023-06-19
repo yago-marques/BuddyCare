@@ -99,14 +99,15 @@ struct registroView: View {
                         do {
                             if viewModel.selectedLazyTimes == 1{
                                 try await CloudKitService.shared.createFunSchedule(FunSchedule(frequency: viewModel.selectedLazyTimes, times: viewModel.dates))
-                                try await CloudKitService.shared.createBathSchedule(BathSchedule(frequency: viewModel.selectedDayTimes, times: [viewModel.timeOne]))
+                                try await CloudKitService.shared.createFunSchedule(FunSchedule(frequency: viewModel.selectedDayTimes, times: [viewModel.timeOne]))
+                               
                             }
                             else if viewModel.selectedLazyTimes == 2{
                                 try await CloudKitService.shared.createFunSchedule(FunSchedule(frequency: viewModel.selectedLazyTimes, times: viewModel.dates))
-                                try await CloudKitService.shared.createBathSchedule(BathSchedule(frequency: viewModel.selectedDayTimes, times: [viewModel.timeOne, viewModel.timeTwo]))
+                                try await CloudKitService.shared.createFunSchedule(FunSchedule(frequency: viewModel.selectedDayTimes, times: [viewModel.timeOne, viewModel.timeTwo]))
                             }else{
                                 try await CloudKitService.shared.createFunSchedule(FunSchedule(frequency: viewModel.selectedLazyTimes, times: viewModel.dates))
-                                try await CloudKitService.shared.createBathSchedule(BathSchedule(frequency: viewModel.selectedDayTimes, times: [viewModel.timeOne, viewModel.timeTwo, viewModel.timeThree]))
+                                try await CloudKitService.shared.createFunSchedule(FunSchedule(frequency: viewModel.selectedDayTimes, times: [viewModel.timeOne, viewModel.timeTwo, viewModel.timeThree]))
                             }
                         }catch {
                             print("Erro ao criar o pet: \(error)")
