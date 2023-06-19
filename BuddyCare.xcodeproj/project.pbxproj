@@ -34,6 +34,8 @@
 		DFC4FA432A3A24AB00A78E51 /* PetManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC4FA422A3A24AB00A78E51 /* PetManagerViewModel.swift */; };
 		DFC4FA462A3A24CC00A78E51 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC4FA452A3A24CC00A78E51 /* CustomButton.swift */; };
 		DFC4FA482A3A24F300A78E51 /* DisplayedPet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC4FA472A3A24F300A78E51 /* DisplayedPet.swift */; };
+		DFC4FA4A2A3A2C7100A78E51 /* FunAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC4FA492A3A2C7100A78E51 /* FunAction.swift */; };
+		DFC4FA4C2A3A2C7C00A78E51 /* BathAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC4FA4B2A3A2C7C00A78E51 /* BathAction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +108,8 @@
 		DFC4FA422A3A24AB00A78E51 /* PetManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetManagerViewModel.swift; sourceTree = "<group>"; };
 		DFC4FA452A3A24CC00A78E51 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		DFC4FA472A3A24F300A78E51 /* DisplayedPet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayedPet.swift; sourceTree = "<group>"; };
+		DFC4FA492A3A2C7100A78E51 /* FunAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FunAction.swift; path = "../../../../../.Trash/BuddyCare 13.47.19/BuddyCare/iCloud/CKModels/FunAction.swift"; sourceTree = "<group>"; };
+		DFC4FA4B2A3A2C7C00A78E51 /* BathAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BathAction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,8 @@
 				36F868302A37458F008FB1BB /* Pet.swift */,
 				DF02219C2A38AA2F00877319 /* BathSchedule.swift */,
 				DF02219E2A38AA5B00877319 /* FunSchedule.swift */,
+				DFC4FA492A3A2C7100A78E51 /* FunAction.swift */,
+				DFC4FA4B2A3A2C7C00A78E51 /* BathAction.swift */,
 			);
 			path = CKModels;
 			sourceTree = "<group>";
@@ -459,6 +465,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFC4FA4C2A3A2C7C00A78E51 /* BathAction.swift in Sources */,
 				DFB054F82A3891D200BD2844 /* CloudKitService.swift in Sources */,
 				36F868312A374590008FB1BB /* Pet.swift in Sources */,
 				DF0221A22A38AA9A00877319 /* CKCustomErrors.swift in Sources */,
@@ -473,6 +480,7 @@
 				DFC4FA482A3A24F300A78E51 /* DisplayedPet.swift in Sources */,
 				DF02219F2A38AA5B00877319 /* FunSchedule.swift in Sources */,
 				DFC4FA3F2A3A248C00A78E51 /* PetManagerView.swift in Sources */,
+				DFC4FA4A2A3A2C7100A78E51 /* FunAction.swift in Sources */,
 				DFC4FA462A3A24CC00A78E51 /* CustomButton.swift in Sources */,
 				DFC4FA352A3A23B400A78E51 /* CloudKitPetManager.swift in Sources */,
 				DF02219D2A38AA2F00877319 /* BathSchedule.swift in Sources */,

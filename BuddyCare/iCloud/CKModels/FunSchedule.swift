@@ -34,7 +34,7 @@ struct FunSchedule: CKModel {
             let frequency = record["frequency"] as? Int,
             let times = record["times"] as? [Date]
         else {
-            throw PetModelError.invalidDecoding
+            throw CKModelError.invalidDecoding
         }
 
         return FunSchedule(id: record.recordID.recordName,petId: petID, frequency: frequency, times: times)
