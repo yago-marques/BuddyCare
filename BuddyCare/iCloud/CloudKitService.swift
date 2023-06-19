@@ -17,9 +17,12 @@ struct CloudKitService {
     private init() { }
 }
 
-extension CloudKitService: PetUseCases {
-    func createPet(_ pet: Pet) async throws {
-        try await database.save(pet.record())
+extension CloudKitService: PetUseCases {    
+    func createPet(_ pet: Pet) async throws -> String{
+        let record = pet.record()
+        try await database.save(record)
+        
+        return record.recordID.recordName
     }
 
     func updatePet(of id: String, new pet: Pet) async throws {
