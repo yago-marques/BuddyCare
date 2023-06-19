@@ -9,5 +9,6 @@ import Foundation
 
 protocol FunManagement {
     func funActionIsNeeded(id: String) async throws -> Bool
-    func registerFunAction(at time: Date, id: String) async throws
+    func registerFunActionIfNeeded(id: String) async throws
+    func markFunActionAsCompleted(id: String) async throws
 }
