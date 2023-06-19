@@ -30,7 +30,7 @@ struct Pet: CKModel {
             let species = record["species"] as? String,
             let avatar = record["avatar"] as? String
         else {
-            throw PetModelError.invalidDecoding
+            throw CKModelError.invalidDecoding
         }
 
         return Pet(id: record.recordID.recordName, name: name, gender: gender, species: species, avatar: avatar)

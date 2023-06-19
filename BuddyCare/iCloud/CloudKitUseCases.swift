@@ -27,3 +27,15 @@ protocol FunScheduleUseCases {
     func fetchFunSchedules() async throws -> [FunSchedule]
     func deleteFunSchedule(of id: String) async throws
 }
+
+protocol FunActionUseCases {
+    func createFunAction(_ action: FunAction) async throws
+    func fetchFunActions() async throws -> [FunAction]
+    func deleteFunAction(of id: String) async throws
+}
+
+protocol BathActionUseCases {
+    func createBathAction(_ action: BathAction) async throws
+    func fetchBathActions() async throws -> [BathAction]
+    func deleteBathAction(of id: String) async throws
+}
