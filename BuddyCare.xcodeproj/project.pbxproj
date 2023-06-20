@@ -10,13 +10,13 @@
 		365D96182A408FA800F513F4 /* PetNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E8556A2A39F26B000A58CD /* PetNotifications.swift */; };
 		36E8556B2A39F26B000A58CD /* PetNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E8556A2A39F26B000A58CD /* PetNotifications.swift */; };
 		36F868312A374590008FB1BB /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F868302A37458F008FB1BB /* Pet.swift */; };
-		ABF061EC2A3A9E3800AE2491 /* RegisterPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF061EB2A3A9E3800AE2491 /* RegisterPetView.swift */; };
 		ABF061EF2A3A9E5500AE2491 /* GenderPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF061EE2A3A9E5500AE2491 /* GenderPicker.swift */; };
 		ABF061F22A3A9E9D00AE2491 /* AnimalTypePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF061F12A3A9E9D00AE2491 /* AnimalTypePicker.swift */; };
 		ABF061F52A3A9EEC00AE2491 /* RegisterPetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF061F42A3A9EEC00AE2491 /* RegisterPetViewModel.swift */; };
 		ABF061F82A3A9F2400AE2491 /* SelectAvatarTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF061F72A3A9F2400AE2491 /* SelectAvatarTabView.swift */; };
 		AE0481612A3B3C7C00CE5A18 /* registroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0481602A3B3C7C00CE5A18 /* registroModel.swift */; };
 		AE0481632A3B3C8600CE5A18 /* registroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0481622A3B3C8600CE5A18 /* registroView.swift */; };
+		AE4987612A41CF5E004B27D8 /* PetRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4987602A41CF5E004B27D8 /* PetRegisterView.swift */; };
 		DF02219B2A38A12700877319 /* CloudKitUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02219A2A38A12700877319 /* CloudKitUseCases.swift */; };
 		DF02219D2A38AA2F00877319 /* BathSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02219C2A38AA2F00877319 /* BathSchedule.swift */; };
 		DF02219F2A38AA5B00877319 /* FunSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02219E2A38AA5B00877319 /* FunSchedule.swift */; };
@@ -93,13 +93,13 @@
 		36F868302A37458F008FB1BB /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		36F868322A3758AD008FB1BB /* BuddyCare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BuddyCare.entitlements; sourceTree = "<group>"; };
 		36F868342A3758FB008FB1BB /* CloudKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitService.swift; sourceTree = "<group>"; };
-		ABF061EB2A3A9E3800AE2491 /* RegisterPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPetView.swift; sourceTree = "<group>"; };
 		ABF061EE2A3A9E5500AE2491 /* GenderPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderPicker.swift; sourceTree = "<group>"; };
 		ABF061F12A3A9E9D00AE2491 /* AnimalTypePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTypePicker.swift; sourceTree = "<group>"; };
 		ABF061F42A3A9EEC00AE2491 /* RegisterPetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPetViewModel.swift; sourceTree = "<group>"; };
 		ABF061F72A3A9F2400AE2491 /* SelectAvatarTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAvatarTabView.swift; sourceTree = "<group>"; };
 		AE0481602A3B3C7C00CE5A18 /* registroModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = registroModel.swift; sourceTree = "<group>"; };
 		AE0481622A3B3C8600CE5A18 /* registroView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = registroView.swift; sourceTree = "<group>"; };
+		AE4987602A41CF5E004B27D8 /* PetRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetRegisterView.swift; sourceTree = "<group>"; };
 		DF02219A2A38A12700877319 /* CloudKitUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitUseCases.swift; sourceTree = "<group>"; };
 		DF02219C2A38AA2F00877319 /* BathSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BathSchedule.swift; sourceTree = "<group>"; };
 		DF02219E2A38AA5B00877319 /* FunSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunSchedule.swift; sourceTree = "<group>"; };
@@ -192,7 +192,7 @@
 		ABF061EA2A3A9DB000AE2491 /* RegisterPet */ = {
 			isa = PBXGroup;
 			children = (
-				ABF061EB2A3A9E3800AE2491 /* RegisterPetView.swift */,
+				AE4987602A41CF5E004B27D8 /* PetRegisterView.swift */,
 				ABF061EE2A3A9E5500AE2491 /* GenderPicker.swift */,
 				ABF061F12A3A9E9D00AE2491 /* AnimalTypePicker.swift */,
 				ABF061F42A3A9EEC00AE2491 /* RegisterPetViewModel.swift */,
@@ -534,9 +534,9 @@
 				DFFEC0DA2A40EFEE00A2D897 /* CDModelProtocol.swift in Sources */,
 				DFC4FA4C2A3A2C7C00A78E51 /* BathAction.swift in Sources */,
 				DFB054F82A3891D200BD2844 /* CloudKitService.swift in Sources */,
-				ABF061EC2A3A9E3800AE2491 /* RegisterPetView.swift in Sources */,
 				36F868312A374590008FB1BB /* Pet.swift in Sources */,
 				36E8556B2A39F26B000A58CD /* PetNotifications.swift in Sources */,
+				AE4987612A41CF5E004B27D8 /* PetRegisterView.swift in Sources */,
 				DF0221A22A38AA9A00877319 /* CKCustomErrors.swift in Sources */,
 				ABF061EF2A3A9E5500AE2491 /* GenderPicker.swift in Sources */,
 				DFC4FA412A3A249B00A78E51 /* PetManagerCompositionRoot.swift in Sources */,
