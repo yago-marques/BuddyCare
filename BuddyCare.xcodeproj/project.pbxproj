@@ -44,6 +44,9 @@
 		DFC4FA482A3A24F300A78E51 /* DisplayedPet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC4FA472A3A24F300A78E51 /* DisplayedPet.swift */; };
 		DFC4FA4C2A3A2C7C00A78E51 /* BathAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC4FA4B2A3A2C7C00A78E51 /* BathAction.swift */; };
 		DFFEC0CF2A408BCE00A2D897 /* FunAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFEC0CE2A408BCE00A2D897 /* FunAction.swift */; };
+		DFFEC0D32A40EF5F00A2D897 /* BuddyCare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DFFEC0D12A40EF5F00A2D897 /* BuddyCare.xcdatamodeld */; };
+		DFFEC0D62A40EF7B00A2D897 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFEC0D52A40EF7B00A2D897 /* CoreDataService.swift */; };
+		DFFEC0DA2A40EFEE00A2D897 /* CDModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFEC0D92A40EFEE00A2D897 /* CDModelProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +129,9 @@
 		DFC4FA472A3A24F300A78E51 /* DisplayedPet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayedPet.swift; sourceTree = "<group>"; };
 		DFC4FA4B2A3A2C7C00A78E51 /* BathAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BathAction.swift; sourceTree = "<group>"; };
 		DFFEC0CE2A408BCE00A2D897 /* FunAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunAction.swift; sourceTree = "<group>"; };
+		DFFEC0D22A40EF5F00A2D897 /* BuddyCare.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BuddyCare.xcdatamodel; sourceTree = "<group>"; };
+		DFFEC0D52A40EF7B00A2D897 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		DFFEC0D92A40EFEE00A2D897 /* CDModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDModelProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,7 +166,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		36F8682F2A37456B008FB1BB /* CKModels */ = {
+		36F8682F2A37456B008FB1BB /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				36F868302A37458F008FB1BB /* Pet.swift */,
@@ -169,14 +175,13 @@
 				DFC4FA4B2A3A2C7C00A78E51 /* BathAction.swift */,
 				DFFEC0CE2A408BCE00A2D897 /* FunAction.swift */,
 			);
-			path = CKModels;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		36F868332A3758DC008FB1BB /* iCloud */ = {
 			isa = PBXGroup;
 			children = (
 				DF0221A02A38AA8D00877319 /* Utils */,
-				36F8682F2A37456B008FB1BB /* CKModels */,
 				DF02219A2A38A12700877319 /* CloudKitUseCases.swift */,
 				36F868342A3758FB008FB1BB /* CloudKitService.swift */,
 			);
@@ -238,10 +243,10 @@
 		DFA2BD202A373BF800BFB964 /* BuddyCare */ = {
 			isa = PBXGroup;
 			children = (
+				DFFEC0DB2A40F17100A2D897 /* Persistence */,
 				AE8DB81E2A40937B007EB0A9 /* RegisterPetCleaner */,
 				ABF061EA2A3A9DB000AE2491 /* RegisterPet */,
 				DFC4FA322A3A238C00A78E51 /* PetManagerScene */,
-				36F868332A3758DC008FB1BB /* iCloud */,
 				36F868322A3758AD008FB1BB /* BuddyCare.entitlements */,
 				DFA2BD212A373BF800BFB964 /* BuddyCareApp.swift */,
 				DFA2BD232A373BF800BFB964 /* ContentView.swift */,
@@ -341,6 +346,26 @@
 				DFC4FA452A3A24CC00A78E51 /* CustomButton.swift */,
 			);
 			path = "UI Components";
+			sourceTree = "<group>";
+		};
+		DFFEC0D02A40EEF100A2D897 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				DFFEC0D12A40EF5F00A2D897 /* BuddyCare.xcdatamodeld */,
+				DFFEC0D52A40EF7B00A2D897 /* CoreDataService.swift */,
+				DFFEC0D92A40EFEE00A2D897 /* CDModelProtocol.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		DFFEC0DB2A40F17100A2D897 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				36F8682F2A37456B008FB1BB /* Models */,
+				36F868332A3758DC008FB1BB /* iCloud */,
+				DFFEC0D02A40EEF100A2D897 /* CoreData */,
+			);
+			path = Persistence;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -505,6 +530,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFFEC0DA2A40EFEE00A2D897 /* CDModelProtocol.swift in Sources */,
 				DFC4FA4C2A3A2C7C00A78E51 /* BathAction.swift in Sources */,
 				DFB054F82A3891D200BD2844 /* CloudKitService.swift in Sources */,
 				ABF061EC2A3A9E3800AE2491 /* RegisterPetView.swift in Sources */,
@@ -527,12 +553,14 @@
 				DFC4FA482A3A24F300A78E51 /* DisplayedPet.swift in Sources */,
 				DF02219F2A38AA5B00877319 /* FunSchedule.swift in Sources */,
 				DFC4FA3F2A3A248C00A78E51 /* PetManagerView.swift in Sources */,
+				DFFEC0D62A40EF7B00A2D897 /* CoreDataService.swift in Sources */,
 				DFC4FA462A3A24CC00A78E51 /* CustomButton.swift in Sources */,
 				DFC4FA352A3A23B400A78E51 /* CloudKitPetManager.swift in Sources */,
 				DF02219D2A38AA2F00877319 /* BathSchedule.swift in Sources */,
 				DFFEC0CF2A408BCE00A2D897 /* FunAction.swift in Sources */,
 				DFC4FA3C2A3A23F900A78E51 /* BathManagement.swift in Sources */,
 				ABF061F22A3A9E9D00AE2491 /* AnimalTypePicker.swift in Sources */,
+				DFFEC0D32A40EF5F00A2D897 /* BuddyCare.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -956,6 +984,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DFFEC0D12A40EF5F00A2D897 /* BuddyCare.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DFFEC0D22A40EF5F00A2D897 /* BuddyCare.xcdatamodel */,
+			);
+			currentVersion = DFFEC0D22A40EF5F00A2D897 /* BuddyCare.xcdatamodel */;
+			path = BuddyCare.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DFA2BD162A373BF800BFB964 /* Project object */;
 }

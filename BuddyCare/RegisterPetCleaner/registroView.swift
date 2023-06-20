@@ -94,35 +94,25 @@ struct registroView: View {
                     .padding(.all)
                     .frame(maxWidth: .infinity)
                 }
-                Button("Start!") {
+                Button(viewModel.buttonIsActive ? "Start!" : "Loading...") {
                     Task {
                         do {
-                            if viewModel.selectedLazyTimes == 1{
-                                try await CloudKitService.shared.createFunSchedule(FunSchedule(frequency: viewModel.selectedLazyTimes, times: viewModel.dates))
-                                try await CloudKitService.shared.createFunSchedule(FunSchedule(frequency: viewModel.selectedDayTimes, times: [viewModel.timeOne]))
-                               
-                            }
-                            else if viewModel.selectedLazyTimes == 2{
-                                try await CloudKitService.shared.createFunSchedule(FunSchedule(frequency: viewModel.selectedLazyTimes, times: viewModel.dates))
-                                try await CloudKitService.shared.createFunSchedule(FunSchedule(frequency: viewModel.selectedDayTimes, times: [viewModel.timeOne, viewModel.timeTwo]))
-                            }else{
-                                try await CloudKitService.shared.createFunSchedule(FunSchedule(frequency: viewModel.selectedLazyTimes, times: viewModel.dates))
-                                try await CloudKitService.shared.createFunSchedule(FunSchedule(frequency: viewModel.selectedDayTimes, times: [viewModel.timeOne, viewModel.timeTwo, viewModel.timeThree]))
-                            }
-                        }catch {
+                            try await viewModel.startButtonHandler(for: idPet)
+                        } catch {
                             print("Erro ao criar o pet: \(error)")
                         }
                     }
                 }.frame(maxWidth: 350, maxHeight: 30)
                     .padding(8)
-                    .background(Color.pink)
+                    .background(viewModel.buttonIsActive ? Color.pink : .gray)
                     .foregroundColor(.white)
                     .cornerRadius(12)
                     .padding(.bottom, 30)
                 
             }
             Spacer()
-        }.onAppear(){print("aaaaaa \(self.idPet)")}
+        }
+        .navigate(to: PetManagerCompositionRoot.make(), when: $viewModel.navigateToMainView)
     }
 }
 private func formattedTime(_ date: Date) -> String {
@@ -130,7 +120,6 @@ private func formattedTime(_ date: Date) -> String {
     formatter.timeStyle = .short
     return formatter.string(from: date)
 }
-
 
 struct TimePicker: View {
     @Binding var selectedTime: Date
