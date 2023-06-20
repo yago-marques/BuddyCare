@@ -44,7 +44,7 @@ struct BuddyCareWidgetEntryView : View {
     var body: some View {
         ZStack{
             ContainerRelativeShape()
-                .fill(Color("WidgetColor"))
+                .fill(Gradient(colors: [Color("WidgetColorOne"), Color("WidgetColorTwo")]))
             VStack {
                 Text("Next bath")
                     .padding(.bottom, -10)
