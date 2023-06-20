@@ -7,16 +7,15 @@
 
 import Foundation
 
-#if(canImport(Notification))
-import NotificationCenter
-#endif
+import UserNotifications
 
-extension ContentView {
+class PetNotifications {
+
+    let shared = PetNotifications()
+
+    private init () {}
 
     func dispatchFunNotification(date: Date, identifier: String) {
-        #if(canImport(Notification))
-
-
         let title = "Time to play with your buddy!"
         let body = "Your pet is needing some attention"
         let isDaily = true
@@ -34,19 +33,18 @@ extension ContentView {
         let minute = calendar.component(.minute, from: date)
 
         var dateComponents = DateComponents(calendar: calendar, timeZone: TimeZone.current)
+
         dateComponents.hour = hour
-        dateComponents.minute = minute + 1
+        dateComponents.minute = minute
 
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: isDaily)
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
 
         notificationCenter.removePendingNotificationRequests(withIdentifiers: [identifier])
         notificationCenter.add(request)
-        #endif
     }
 
     func dispatchBathNotification(date: Date, identifier: String, frequency: Int) {
-        #if(canImport(Notification))
         let title = "Time for some clean up!"
         let body = "It's time for your pet's hygiene"
 
@@ -63,21 +61,35 @@ extension ContentView {
         let day = calendar.component(.day, from: date)
 
         var dateComponents = DateComponents(calendar: calendar, timeZone: TimeZone.current)
-        dateComponents.day = day
-        dateComponents.month = month
-        dateComponents.hour = 8
+
+        if month == 02 {
+            if day + frequency > 28 {
+                dateComponents.day = (day + frequency) - 30
+                dateComponents.month = month + 1
+
+            } else {
+                dateComponents.day = day + frequency
+                dateComponents.month = month
+            }
+        } else {
+            if day + frequency > 30 {
+                dateComponents.day = (day + frequency) - 30
+                dateComponents.month = month + 1
+
+            } else {
+                dateComponents.day = day + frequency
+                dateComponents.month = month
+            }
+        }
 
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
 
         notificationCenter.removePendingNotificationRequests(withIdentifiers: [identifier])
         notificationCenter.add(request)
-        #endif
-
     }
 
     func checkForNotificationAuthorization() {
-        #if(canImport(Notification))
         let notificationCenter = UNUserNotificationCenter.current()
         notificationCenter.getNotificationSettings { settings in
             switch settings.authorizationStatus {
@@ -95,7 +107,6 @@ extension ContentView {
                     return
             }
         }
-        #endif
     }
 }
 
