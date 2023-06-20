@@ -9,7 +9,11 @@ import Foundation
 
 import UserNotifications
 
-extension ContentView {
+class PetNotifications {
+
+    let shared = PetNotifications()
+
+    private init () {}
 
     func dispatchFunNotification(date: Date, identifier: String) {
         let title = "Time to play with your buddy!"
@@ -67,7 +71,6 @@ extension ContentView {
                 dateComponents.day = day + frequency
                 dateComponents.month = month
             }
-
         } else {
             if day + frequency > 30 {
                 dateComponents.day = (day + frequency) - 30
@@ -78,7 +81,6 @@ extension ContentView {
                 dateComponents.month = month
             }
         }
-
 
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
