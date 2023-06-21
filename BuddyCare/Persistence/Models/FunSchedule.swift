@@ -9,7 +9,7 @@ import Foundation
 import CloudKit
 
 struct FunSchedule: CKModel, CDModel {
-    let id: String
+    var id: String
     let petId: String
     let frequency: Int
     let times: [Date]
@@ -41,7 +41,7 @@ struct FunSchedule: CKModel, CDModel {
     }
 
     static func fromData(_ data: Data) throws -> CDModel {
-        try JSONDecoder().decode(BathSchedule.self, from: data)
+        try JSONDecoder().decode(FunSchedule.self, from: data)
     }
 
     func toData() throws -> Data {

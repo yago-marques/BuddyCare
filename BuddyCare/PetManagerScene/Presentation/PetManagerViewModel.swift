@@ -13,6 +13,7 @@ final class PetManagerViewModel: ObservableObject {
     @Published var pet: DisplayedPet? = nil
     @Published var funActionIsActive = false
     @Published var bathActionIsActive = false
+    private var systemId: String = ""
 
     private let useCases: PetManagerUseCases
 
@@ -21,7 +22,10 @@ final class PetManagerViewModel: ObservableObject {
     }
 
     func buildLayout() async throws {
+        self.systemId = try CoreDataService.shared.getId()
         try await fetchPet()
+        try await useCases.registerFunActionIfNeeded(id: systemId)
+        try await useCases.registerBathActionIfNeeded(id: systemId)
         try await verifyNeededActions()
     }
 
@@ -33,7 +37,6 @@ final class PetManagerViewModel: ObservableObject {
 //        try await useCases.registerFunAction(at: Date(), id: "")
     }
 
-
 }
 
 private extension PetManagerViewModel {
@@ -44,7 +47,7 @@ private extension PetManagerViewModel {
 
     @MainActor
     func verifyNeededActions() async throws {
-        self.funActionIsActive = try await useCases.funActionIsNeeded(id: "")
-        self.bathActionIsActive = try await useCases.bathActionIsNeeded()
+        self.funActionIsActive = try await useCases.funActionIsNeeded(id: systemId)
+        self.bathActionIsActive = try await useCases.bathActionIsNeeded(id: systemId)
     }
 }
