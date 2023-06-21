@@ -5,14 +5,13 @@
 //  Created by Mateus Calisto on 13/06/23.
 //
 
-import Foundation
 import SwiftUI
 
 struct registroView: View {
     @Binding var idPet: String
     @StateObject private var viewModel = NumberPickerViewModel()
     @State private var isPickerShown: Bool = false
-    
+
     var body: some View {
         ZStack{
             Color.init(UIColor(red: 0.95, green: 0.92, blue: 0.98, alpha: 1.00))
@@ -98,6 +97,7 @@ struct registroView: View {
                     Task {
                         do {
                             try await viewModel.startButtonHandler(for: idPet)
+                            viewModel.isFirstAccess = false
                         } catch {
                             print("Erro ao criar o pet: \(error)")
                         }
@@ -115,6 +115,7 @@ struct registroView: View {
         .navigate(to: PetManagerCompositionRoot.make(), when: $viewModel.navigateToMainView)
     }
 }
+
 private func formattedTime(_ date: Date) -> String {
     let formatter = DateFormatter()
     formatter.timeStyle = .short
