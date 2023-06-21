@@ -9,16 +9,16 @@ import Foundation
 import SwiftUI
 
 struct RegisterPetView: View {
-    
+
         @StateObject private var viewModel = RegisterPetViewModel()
         @State private var username: String = ""
         @State private var gender: String = "male"
         @State private var species: String = "cat"
         @State private var avatar: String = ""
-    
+
     @State private var navigateToCleaner: Bool = false
     @State private var idPed: String = ""
-    
+
     var body: some View {
         ZStack{
             Color.init(UIColor(red: 0.95, green: 0.92, blue: 0.98, alpha: 1.00))
@@ -31,7 +31,7 @@ struct RegisterPetView: View {
                         .multilineTextAlignment(.center)
                         .padding(.horizontal, 15.0)
                         .padding(.top, 30.0)
-                    
+
                     TextField("Username",
                               text: $username,
                               prompt: Text("Insert here a name!"))
@@ -45,11 +45,11 @@ struct RegisterPetView: View {
                         .padding(.horizontal, 15)
                         .padding(.top, 20)
                         .padding(.bottom, 20)
-                    
+
                     GenderPicker(gender: $gender)
                         .listRowBackground(Color.clear)
                         .listRowSeparatorTint(.clear)
-                    
+
                             Text("Is your pet a cat or a dog?")
                                 .font(.subheadline)
                                 .foregroundColor(Color.pink)
@@ -58,7 +58,7 @@ struct RegisterPetView: View {
                                 .padding(.top, 30)
                                 .padding(.bottom, 20)
                             AnimalTypePicker(species: $species)
-                
+
                         .listRowBackground(Color.clear)
                         .listRowSeparatorTint(.clear)
 
@@ -74,7 +74,7 @@ struct RegisterPetView: View {
                         avatar: $avatar,
                         avatars: viewModel.avatars[species]!
                     )
-                            
+
                     Button(viewModel.buttonIsActive ? "Next" : "Loading...") {
                         if username.isEmpty || avatar.isEmpty {
                             print("vc n preencheu tudo")
@@ -112,7 +112,7 @@ struct RegisterPetView: View {
                 .navigationTitle("Let's Start!")
                 .navigationBarTitleDisplayMode(.inline)
             }
-        
+
         .environmentObject(viewModel)
         .navigate(to: registroView(idPet: $viewModel.petId), when: $viewModel.navigateToCleaner)
     }
@@ -137,11 +137,11 @@ extension View {
         }
         .navigationViewStyle(.stack)
     }
-    
+
     func deviceWidth(multiplier: Double = 1) -> Double {
         UIScreen.main.bounds.width * multiplier
     }
-    
+
     func deviceHeight(multiplier: Double = 1) -> Double {
         UIScreen().bounds.width * multiplier
     }

@@ -45,6 +45,7 @@
 		DFA2BD512A373BFA00BFB964 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFA2BD502A373BFA00BFB964 /* Preview Assets.xcassets */; };
 		DFA2BD5B2A373BFA00BFB964 /* BuddyCare_Watch_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA2BD5A2A373BFA00BFB964 /* BuddyCare_Watch_AppTests.swift */; };
 		DFB054F82A3891D200BD2844 /* CloudKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F868342A3758FB008FB1BB /* CloudKitService.swift */; };
+		DFB758D22A438ACC00176553 /* PetRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB758D12A438ACC00176553 /* PetRegisterView.swift */; };
 		DFC4FA352A3A23B400A78E51 /* CloudKitPetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC4FA342A3A23B400A78E51 /* CloudKitPetManager.swift */; };
 		DFC4FA382A3A23E200A78E51 /* FetchPet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC4FA372A3A23E200A78E51 /* FetchPet.swift */; };
 		DFC4FA3A2A3A23EC00A78E51 /* FunManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC4FA392A3A23EC00A78E51 /* FunManagement.swift */; };
@@ -142,6 +143,7 @@
 		DFA2BD502A373BFA00BFB964 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DFA2BD562A373BFA00BFB964 /* BuddyCare Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BuddyCare Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFA2BD5A2A373BFA00BFB964 /* BuddyCare_Watch_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyCare_Watch_AppTests.swift; sourceTree = "<group>"; };
+		DFB758D12A438ACC00176553 /* PetRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetRegisterView.swift; sourceTree = "<group>"; };
 		DFC4FA342A3A23B400A78E51 /* CloudKitPetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitPetManager.swift; sourceTree = "<group>"; };
 		DFC4FA372A3A23E200A78E51 /* FetchPet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPet.swift; sourceTree = "<group>"; };
 		DFC4FA392A3A23EC00A78E51 /* FunManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunManagement.swift; sourceTree = "<group>"; };
@@ -226,11 +228,11 @@
 		ABF061EA2A3A9DB000AE2491 /* RegisterPet */ = {
 			isa = PBXGroup;
 			children = (
-				AE4987602A41CF5E004B27D8 /* PetRegisterView.swift */,
 				ABF061EE2A3A9E5500AE2491 /* GenderPicker.swift */,
 				ABF061F12A3A9E9D00AE2491 /* AnimalTypePicker.swift */,
 				ABF061F42A3A9EEC00AE2491 /* RegisterPetViewModel.swift */,
 				ABF061F72A3A9F2400AE2491 /* SelectAvatarTabView.swift */,
+				DFB758D12A438ACC00176553 /* PetRegisterView.swift */,
 			);
 			path = RegisterPet;
 			sourceTree = "<group>";
@@ -589,7 +591,6 @@
 				DFB054F82A3891D200BD2844 /* CloudKitService.swift in Sources */,
 				36F868312A374590008FB1BB /* Pet.swift in Sources */,
 				36E8556B2A39F26B000A58CD /* PetNotifications.swift in Sources */,
-				AE4987612A41CF5E004B27D8 /* PetRegisterView.swift in Sources */,
 				DF0221A22A38AA9A00877319 /* CKCustomErrors.swift in Sources */,
 				ABF061EF2A3A9E5500AE2491 /* GenderPicker.swift in Sources */,
 				DFC4FA412A3A249B00A78E51 /* PetManagerCompositionRoot.swift in Sources */,
@@ -609,6 +610,7 @@
 				AE0481612A3B3C7C00CE5A18 /* registroModel.swift in Sources */,
 				DF7F215D2A41E49A0007AB30 /* BathActionUseCases.swift in Sources */,
 				DFC4FA3A2A3A23EC00A78E51 /* FunManagement.swift in Sources */,
+				DFB758D22A438ACC00176553 /* PetRegisterView.swift in Sources */,
 				DFC4FA482A3A24F300A78E51 /* DisplayedPet.swift in Sources */,
 				DF02219F2A38AA5B00877319 /* FunSchedule.swift in Sources */,
 				DFC4FA3F2A3A248C00A78E51 /* PetManagerView.swift in Sources */,
