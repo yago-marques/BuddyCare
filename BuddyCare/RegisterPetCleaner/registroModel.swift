@@ -10,6 +10,7 @@ import SwiftUI
 
 final class NumberPickerViewModel: ObservableObject {
     private let iCloud = CloudKitService.shared
+    private let localStarage = CoreDataService.shared
 
     @Published var selectedDayTimes: Int = 10
     @Published var selectedWeekTimes: Int = 1
@@ -31,6 +32,7 @@ final class NumberPickerViewModel: ObservableObject {
     public func startButtonHandler(for id: String) async throws {
         if buttonIsActive {
             disableStartButton()
+            try localStarage.saveId(id)
             try await registerFunScheduleForThisUserPet(id: id)
             try await registerBathScheduleForThisUserPet(id: id)
             navigateToPetManagerView()
@@ -41,20 +43,21 @@ final class NumberPickerViewModel: ObservableObject {
 extension NumberPickerViewModel {
     @MainActor
     func registerFunScheduleForThisUserPet(id: String) async throws {
-        try await iCloud.createFunSchedule(
-            .init(
-                petId: id,
-                frequency: selectedDayTimes,
-                times: getValidDatesFromHourPickerCounter()
-            )
+        let schedule: FunSchedule = .init(
+            petId: id,
+            frequency: selectedDayTimes,
+            times: getValidDatesFromHourPickerCounter()
         )
+
+        try await iCloud.createFunSchedule(schedule)
+        try await localStarage.createFunSchedule(schedule)
     }
 
     @MainActor
     func registerBathScheduleForThisUserPet(id: String) async throws {
-        try await iCloud.createBathSchedule(
-            .init(petId: id, frequency: selectedDayTimes)
-        )
+        let schedule: BathSchedule = .init(petId: id, frequency: selectedDayTimes)
+        try await iCloud.createBathSchedule(schedule)
+        try await localStarage.createBathSchedule(schedule)
     }
 
     @MainActor

@@ -8,6 +8,7 @@
 import Foundation
 
 protocol BathManagement {
-    func bathActionIsNeeded() async throws -> Bool
-    func registerBathAction(at time: Date) async throws
+    func bathActionIsNeeded(id: String) async throws -> Bool
+    func registerBathActionIfNeeded(id: String) async throws
+    func markBathActionAsCompleted(id: String) async throws
 }

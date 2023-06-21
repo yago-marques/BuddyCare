@@ -8,7 +8,7 @@
 import Foundation
 import CloudKit
 
-struct BathAction: CKModel {
+struct BathAction: CKModel, CDModel {
     let id: String
     let petId: String
     let isDone: Int
@@ -36,6 +36,14 @@ struct BathAction: CKModel {
             isDone: isDone,
             day: day
         )
+    }
+
+    static func fromData(_ data: Data) throws -> CDModel {
+        try JSONDecoder().decode(BathAction.self, from: data)
+    }
+
+    func toData() throws -> Data {
+        try JSONEncoder().encode(self)
     }
 
     func record() -> CKRecord {

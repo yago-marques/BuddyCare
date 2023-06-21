@@ -8,7 +8,7 @@
 import Foundation
 import CloudKit
 
-struct FunAction: CKModel {
+struct FunAction: CKModel, CDModel {
     let id: String
     let petId: String
     let isDone: Int
@@ -40,6 +40,14 @@ struct FunAction: CKModel {
             start: start,
             end: end
         )
+    }
+
+    static func fromData(_ data: Data) throws -> CDModel {
+        try JSONDecoder().decode(FunAction.self, from: data)
+    }
+
+    func toData() throws -> Data {
+        try JSONEncoder().encode(self)
     }
 
     func record() -> CKRecord {

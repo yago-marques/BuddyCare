@@ -11,10 +11,12 @@ import CloudKit
 typealias CloudKitServiceDelegate = PetUseCases & BathScheduleUseCases & FunScheduleUseCases & FunActionUseCases & BathActionUseCases
 
 struct CloudKitService {
-    let database = CKContainer.default().privateCloudDatabase
+    let database: CKDatabase
     static let shared: CloudKitServiceDelegate = CloudKitService()
 
-    private init() { }
+    private init(database: CKDatabase = CKContainer.default().privateCloudDatabase) {
+        self.database = database
+    }
 }
 
 extension CloudKitService: PetUseCases {    

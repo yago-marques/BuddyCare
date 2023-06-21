@@ -9,7 +9,7 @@ import Foundation
 import CloudKit
 
 struct BathSchedule: CKModel, CDModel {
-    let id: String
+    var id: String
     let petId: String
     let frequency: Int
 
