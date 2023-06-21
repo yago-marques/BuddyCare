@@ -48,9 +48,7 @@ struct RegisterPetView: View {
                     
                     GenderPicker(gender: $gender)
                         .listRowBackground(Color.clear)
-#if os(iOS)
                         .listRowSeparatorTint(.clear)
-#endif
                     
                             Text("Is your pet a cat or a dog?")
                                 .font(.subheadline)
@@ -62,9 +60,7 @@ struct RegisterPetView: View {
                             AnimalTypePicker(species: $species)
                 
                         .listRowBackground(Color.clear)
-#if os(iOS)
                         .listRowSeparatorTint(.clear)
-#endif
 
                             Text("Select Your Buddy")
                                 .font(.subheadline)
@@ -106,10 +102,7 @@ struct RegisterPetView: View {
                                 .foregroundColor(.white)
                                 .cornerRadius(12)
                                 .padding(.bottom, 30)
-                    
-#if os(iOS)
                             .listRowSeparatorTint(.clear)
-#endif
                         }
                         .listRowBackground(Color.clear)
                 }

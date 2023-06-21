@@ -2,9 +2,14 @@ import SwiftUI
 
 @main
 struct BuddyCareApp: App {
+    
     var body: some Scene {
         WindowGroup {
-            RegisterPetView()
+            if NumberPickerViewModel().isFirstAccess {
+                RegisterPetView()
+            } else {
+                PetManagerCompositionRoot.make()
+            }
         }
     }
 }
