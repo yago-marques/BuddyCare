@@ -10,6 +10,12 @@
 		365D96182A408FA800F513F4 /* PetNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E8556A2A39F26B000A58CD /* PetNotifications.swift */; };
 		36E8556B2A39F26B000A58CD /* PetNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E8556A2A39F26B000A58CD /* PetNotifications.swift */; };
 		36F868312A374590008FB1BB /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F868302A37458F008FB1BB /* Pet.swift */; };
+		ABBEE5802A4343B800421168 /* PetCareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBEE57F2A4343B800421168 /* PetCareView.swift */; };
+		ABBEE5822A4343E000421168 /* NotRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBEE5812A4343E000421168 /* NotRegisterView.swift */; };
+		ABBEE5842A43441700421168 /* HygieneNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBEE5832A43441700421168 /* HygieneNotificationView.swift */; };
+		ABBEE5862A43443800421168 /* PlayNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBEE5852A43443800421168 /* PlayNotificationView.swift */; };
+		ABBEE5882A43445C00421168 /* PlayTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBEE5872A43445C00421168 /* PlayTimerView.swift */; };
+		ABBEE58A2A43450F00421168 /* Stay_Pixel_DEMO.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ABBEE5892A43450F00421168 /* Stay_Pixel_DEMO.ttf */; };
 		ABF061EF2A3A9E5500AE2491 /* GenderPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF061EE2A3A9E5500AE2491 /* GenderPicker.swift */; };
 		ABF061F22A3A9E9D00AE2491 /* AnimalTypePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF061F12A3A9E9D00AE2491 /* AnimalTypePicker.swift */; };
 		ABF061F52A3A9EEC00AE2491 /* RegisterPetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF061F42A3A9EEC00AE2491 /* RegisterPetViewModel.swift */; };
@@ -93,6 +99,13 @@
 		36F868302A37458F008FB1BB /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		36F868322A3758AD008FB1BB /* BuddyCare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BuddyCare.entitlements; sourceTree = "<group>"; };
 		36F868342A3758FB008FB1BB /* CloudKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitService.swift; sourceTree = "<group>"; };
+		ABBEE57F2A4343B800421168 /* PetCareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetCareView.swift; sourceTree = "<group>"; };
+		ABBEE5812A4343E000421168 /* NotRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotRegisterView.swift; sourceTree = "<group>"; };
+		ABBEE5832A43441700421168 /* HygieneNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HygieneNotificationView.swift; sourceTree = "<group>"; };
+		ABBEE5852A43443800421168 /* PlayNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayNotificationView.swift; sourceTree = "<group>"; };
+		ABBEE5872A43445C00421168 /* PlayTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayTimerView.swift; sourceTree = "<group>"; };
+		ABBEE5892A43450F00421168 /* Stay_Pixel_DEMO.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Stay_Pixel_DEMO.ttf; sourceTree = "<group>"; };
+		ABBEE58B2A43454500421168 /* BuddyCare-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "BuddyCare-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		ABF061EE2A3A9E5500AE2491 /* GenderPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderPicker.swift; sourceTree = "<group>"; };
 		ABF061F12A3A9E9D00AE2491 /* AnimalTypePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTypePicker.swift; sourceTree = "<group>"; };
 		ABF061F42A3A9EEC00AE2491 /* RegisterPetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPetViewModel.swift; sourceTree = "<group>"; };
@@ -189,6 +202,18 @@
 			path = iCloud;
 			sourceTree = "<group>";
 		};
+		ABBEE57E2A4343A000421168 /* PetCare */ = {
+			isa = PBXGroup;
+			children = (
+				ABBEE57F2A4343B800421168 /* PetCareView.swift */,
+				ABBEE5812A4343E000421168 /* NotRegisterView.swift */,
+				ABBEE5832A43441700421168 /* HygieneNotificationView.swift */,
+				ABBEE5852A43443800421168 /* PlayNotificationView.swift */,
+				ABBEE5872A43445C00421168 /* PlayTimerView.swift */,
+			);
+			path = PetCare;
+			sourceTree = "<group>";
+		};
 		ABF061EA2A3A9DB000AE2491 /* RegisterPet */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,9 +302,12 @@
 		DFA2BD482A373BF900BFB964 /* BuddyCare Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				ABBEE58B2A43454500421168 /* BuddyCare-Watch-App-Info.plist */,
+				ABBEE57E2A4343A000421168 /* PetCare */,
 				DFA2BD492A373BF900BFB964 /* BuddyCareApp.swift */,
 				DFA2BD4B2A373BF900BFB964 /* ContentView.swift */,
 				DFA2BD4D2A373BFA00BFB964 /* Assets.xcassets */,
+				ABBEE5892A43450F00421168 /* Stay_Pixel_DEMO.ttf */,
 				DFA2BD4F2A373BFA00BFB964 /* Preview Content */,
 			);
 			path = "BuddyCare Watch App";
@@ -512,6 +540,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABBEE58A2A43450F00421168 /* Stay_Pixel_DEMO.ttf in Resources */,
 				DFA2BD512A373BFA00BFB964 /* Preview Assets.xcassets in Resources */,
 				DFA2BD4E2A373BFA00BFB964 /* Assets.xcassets in Resources */,
 			);
@@ -577,9 +606,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABBEE5882A43445C00421168 /* PlayTimerView.swift in Sources */,
+				ABBEE5822A4343E000421168 /* NotRegisterView.swift in Sources */,
 				DFA2BD4C2A373BF900BFB964 /* ContentView.swift in Sources */,
 				365D96182A408FA800F513F4 /* PetNotifications.swift in Sources */,
 				DFA2BD4A2A373BF900BFB964 /* BuddyCareApp.swift in Sources */,
+				ABBEE5862A43443800421168 /* PlayNotificationView.swift in Sources */,
+				ABBEE5802A4343B800421168 /* PetCareView.swift in Sources */,
+				ABBEE5842A43441700421168 /* HygieneNotificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -732,6 +766,7 @@
 				DEVELOPMENT_TEAM = 3PC4MSN8T7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "BuddyCare-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = BuddyCare;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = br.com.yago.BuddyCare;
@@ -762,6 +797,7 @@
 				DEVELOPMENT_TEAM = 3PC4MSN8T7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "BuddyCare-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = BuddyCare;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = br.com.yago.BuddyCare;
