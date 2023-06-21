@@ -22,6 +22,7 @@ final class NumberPickerViewModel: ObservableObject {
     @Published var timeOne: Date = Date()
     @Published var timeTwo = Date.now
     @Published var timeThree = Date.now
+    @AppStorage("BOOL_ACCESS") var isFirstAccess = true
     
     let lazyTimes: [Int] = Array(1...3)
     let dayTimes: [Int] = Array(5...15)
