@@ -14,7 +14,7 @@ struct PetRegisterLazy: View {
     @EnvironmentObject var viewModel: OnboardingModel
     @Binding var idPet: String
     @State private var isActive: Bool = false
-    
+
     var body: some View {
         
         ZStack{
@@ -29,20 +29,25 @@ struct PetRegisterLazy: View {
                 Text("How many times a day do you want to be reminded to play with your buddy?")
                     .font(Font.custom("StayPixel-Regular", size: 30))
                     .foregroundColor(.white)
+                    .multilineTextAlignment(.center)
+                    .padding(30)
                 
                 
                 
-                Picker("Dias pra o cachorro cagar", selection: $viewModel.selectedLazyTimes) {
+                Picker("Days pra o cachorro cagar", selection: $viewModel.selectedLazyTimes) {
                     ForEach(viewModel.lazyTimes, id: \.self) { number in
                         Text("\(number)").tag(number)
                     }
                 }
                 .padding(.all, 15.0)
+                .padding(.bottom, 15)
                 .pickerStyle(.segmented)
                 
                 Text("choose the time you want to be reminded:")
                     .font(Font.custom("StayPixel-Regular", size: 30))
                     .foregroundColor(.white)
+                    .multilineTextAlignment(.center)
+                    .padding(30)
                 
                 if viewModel.selectedLazyTimes == 1 {
                     TimePicker(selectedTime: $viewModel.timeOne)
@@ -119,6 +124,7 @@ struct TimePicker: View {
             selection: $selectedTime,
             displayedComponents: [.hourAndMinute]
         )
+        
         .labelsHidden()
         .datePickerStyle(CompactDatePickerStyle())
     }
