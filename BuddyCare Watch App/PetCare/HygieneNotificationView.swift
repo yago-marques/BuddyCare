@@ -29,8 +29,8 @@ struct HygieneNotificationView: View {
                    
                 
                 VStack {
-                    Button("Clean up now!") {
-                        
+                    NavigationLink(destination: PetCareView()) {
+                        Text("Clean up now!")
                     }
                     .background(Color.white)
                     .foregroundColor(Color(red: 0.85, green: 0.25, blue: 0.45))
@@ -44,6 +44,7 @@ struct HygieneNotificationView: View {
                 }
             }
         }
+        .toolbar(.hidden)
     }
 }
 

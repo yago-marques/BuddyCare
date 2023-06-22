@@ -15,7 +15,7 @@ struct PlayTimerView: View {
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [Color(red: 0.98, green: 0.45, blue: 0.63), Color(red: 0.85, green: 0.25, blue: 0.45)]), startPoint: .top, endPoint: .bottom)
-                 .edgesIgnoringSafeArea(.all)
+                .edgesIgnoringSafeArea(.all)
             
             VStack(spacing: 0) {
                 Text("Play Time")
@@ -32,8 +32,8 @@ struct PlayTimerView: View {
                     }
                 
                 VStack {
-                    Button("End activity") {
-                        
+                    NavigationLink(destination: PetCareView()) {
+                        Text("End activity")
                     }
                     .background(Color.white)
                     .foregroundColor(Color(red: 0.85, green: 0.25, blue: 0.45))
@@ -43,10 +43,12 @@ struct PlayTimerView: View {
                     .padding(.top)
                     .font(.custom("StayPixel-Regular", size: 17))
                     .shadow(color: Color.black.opacity(0.5), radius: 4, x: 0, y: 4)
-                                        
+                    
                 }
             }
         }
+        .toolbar(.hidden)
+
     }
     
     func timeString(from seconds: Int) -> String {
@@ -59,6 +61,9 @@ struct PlayTimerView: View {
 
 struct PlayTimerView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayTimerView()
+        NavigationStack {
+            PlayTimerView()
+                .toolbar(.hidden)
+        }
     }
 }
