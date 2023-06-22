@@ -13,13 +13,12 @@ struct CustomButton: View {
 
     var body: some View {
         RoundedRectangle(cornerRadius: 10)
-            .fill(isActive ? .blue : .gray)
+            .fill(isActive ? .white : .init(red: 0.88, green: 0.88, blue: 0.88))
             .padding(20)
             .overlay {
-                Text(title)
-                    .fontWeight(.bold)
+                Image(title)
                     .foregroundColor(.white)
             }
-            .opacity(isActive ? 1 : 0.5)
+            .opacity(isActive ? 1 : 0.8)
     }
 }
