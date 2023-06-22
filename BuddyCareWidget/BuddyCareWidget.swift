@@ -10,22 +10,33 @@ import SwiftUI
 
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date())
+        SimpleEntry(date: Date(), timer: 0)
     }
 
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date())
+        let entry = SimpleEntry(date: Date(), timer: 0)
         completion(entry)
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [SimpleEntry] = []
 
+        //mocked -------------------------------------------------------
+//        var dateNow = Date.now
+//        var dateDay = Calendar.current.component(.hour, from: dateNow)
+//        var bathDate = dateDay + 8
+//
+//        let entryTimer = bathDate - dateDay
+
+        //--------------------------------------------------------------
+
+
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
         for hourOffset in 0 ..< 5 {
+            let entryTimer = Calendar.current.component(.hour, from: currentDate)
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate)
+            let entry = SimpleEntry(date: entryDate, timer: entryTimer)
             entries.append(entry)
         }
 
@@ -36,6 +47,7 @@ struct Provider: TimelineProvider {
 
 struct SimpleEntry: TimelineEntry {
     let date: Date
+    let timer: Int
 }
 
 struct BuddyCareWidgetEntryView : View {
@@ -51,7 +63,7 @@ struct BuddyCareWidgetEntryView : View {
                 Image("Soap")
                     .resizable()
                     .frame(width: 80, height: 80)
-                Text("\(08)d \(09)h")
+                Text("\(entry.date) days")
                     .fontWeight(.medium)
                     .font(.system(size: 22))
             }
@@ -66,14 +78,14 @@ struct BuddyCareWidget: Widget {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             BuddyCareWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("Pet Bath")
+        .description("See when's your next pet hygiene time")
     }
 }
 
 struct BuddyCareWidget_Previews: PreviewProvider {
     static var previews: some View {
-        BuddyCareWidgetEntryView(entry: SimpleEntry(date: Date()))
+        BuddyCareWidgetEntryView(entry: SimpleEntry(date: Date(), timer: 0))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
