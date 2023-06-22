@@ -1,51 +1,56 @@
-//
-//  PetManagerView.swift
-//  BuddyCare
-//
-//  Created by Yago Marques on 14/06/23.
-//
 
 import SwiftUI
 
 struct PetManagerView: View {
     @ObservedObject var viewModel: PetManagerViewModel
-
+    
     var body: some View {
+        
         NavigationView {
-            GeometryReader { proxy in
-                VStack {
-                    Spacer()
-                    imageView
-                        .frame(
-                            width: proxy.size.width,
-                            height: proxy.size.width
-                        )
-                    Spacer()
-                    customTabBar
-                        .frame(maxHeight: proxy.size.height * 0.25)
+                GeometryReader { proxy in
+                    ZStack {
+                        background
+                            .ignoresSafeArea()
+                        
+                        VStack {
+                            Spacer()
+                            imageView
+                                .frame(
+                                    width: proxy.size.width,
+                                    height: proxy.size.width
+                                )
+                            Spacer()
+                            customTabBar
+                                .frame(maxHeight: proxy.size.height * 0.25)
+                        }
+                    }
+                }
+                .toolbar {
+                    ToolbarItem {
+                        Button(action: {
+                            print("ok")
+                        }, label: {
+                            Image("adjustsButtonIcon")
+                                .resizable()
+                                .frame(width: 50, height: 50)
+                        })
+                    }
+                }
+                .onAppear {
+                    Task {
+                        try await viewModel.buildLayout()
+                    }
                 }
             }
-            .toolbar {
-                ToolbarItem {
-                    Button(action: {
-                        print("ok")
-                    }, label: {
-                        Image(systemName: "pencil")
-                    })
-                }
-            }
-            .onAppear {
-                Task {
-                    try await viewModel.buildLayout()
-                }
-            }
-        }
+        .background(.clear)
+            
     }
-
+    
+    
     private var customTabBar: some View {
         HStack {
             Spacer()
-            CustomButton(title: "Lazer", isActive: $viewModel.funActionIsActive)
+            CustomButton(title: "ball", isActive: $viewModel.funActionIsActive)
                 .onTapGesture {
                     if viewModel.funActionIsActive {
                         Task {
@@ -54,7 +59,7 @@ struct PetManagerView: View {
                     }
                 }
             Spacer()
-            CustomButton(title: "Higiene", isActive: $viewModel.bathActionIsActive)
+            CustomButton(title: "catHygiene", isActive: $viewModel.bathActionIsActive)
                 .onTapGesture {
                     if viewModel.bathActionIsActive {
                         Task {
@@ -66,11 +71,15 @@ struct PetManagerView: View {
         }
         .padding(5)
     }
-
+    
     private var imageView: some View {
-        Image(systemName: "..")
+        Image("cat1")
             .resizable()
             .scaledToFit()
-            .background(.gray)
+    }
+    
+    private var background: some View {
+        Image("petHomeBackground")
+            .resizable()
     }
 }
