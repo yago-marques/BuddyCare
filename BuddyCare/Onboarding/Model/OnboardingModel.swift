@@ -15,7 +15,7 @@ final class OnboardingModel: ObservableObject {
     @Published var selectedDayTimes: Int = 10
     @Published var selectedWeekTimes: Int = 1
     @Published var selectedLazyTimes: Int = 1
-    @Published var selectedTimes: String = "Dias"
+    @Published var selectedTimes: String = "Days"
     @Published var selectedTime = Date()
     @Published var dates: [Date] = []
     @Published var navigateToMainView = false
@@ -40,7 +40,7 @@ final class OnboardingModel: ObservableObject {
     
     let lazyTimes: [Int] = Array(1...3)
     let dayTimes: [Int] = Array(5...15)
-    let times = ["Dias"]
+    let times = ["Days"]
     @MainActor
     public func nextButtonHandler(with pet: Pet) async throws {
 //        disableNextButton()

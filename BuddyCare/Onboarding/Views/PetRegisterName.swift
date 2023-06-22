@@ -34,15 +34,19 @@ struct PetRegisterName: View {
                         .textFieldStyle(.plain)
                         .padding(.top, 30)
                         .multilineTextAlignment(.center)
-                        .font(Font.custom("StayPixel-Regular", size: 35))
+                        .font(Font.custom("StayPixel-Regular", size: 50))
                         .foregroundColor(.white)
                     Rectangle()
                         .frame(height: 1)
                         .foregroundColor(.white)
-                        .padding(.horizontal, 100)
+                        .padding(.horizontal, 70)
                     Spacer()
                     Button("Next") {
-                        isActive = true
+                        if viewModel.username.isEmpty {
+                            
+                        }else{
+                            isActive = true
+                        }
                     }.frame(maxWidth: 325, maxHeight: 50)
                         .background(.white)
                         .foregroundColor(.pink)

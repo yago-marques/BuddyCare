@@ -30,10 +30,12 @@ struct PetRegisterBuddy: View {
                 Text("IS YOUR PET A CAT OR A DOG?")
                     .font(Font.custom("StayPixel-Regular", size: 30))
                     .foregroundColor(.white)
+                    .padding(.bottom, 35)
                 AnimalTypePicker(species: $species)
                 Text("CHOOSE YOUR BUDDY:")
                     .font(Font.custom("StayPixel-Regular", size: 30))
                     .foregroundColor(.white)
+                    .padding(.top, 50)
                 SelectAvatarTabView(
                     species: $species,
                     avatar: $avatar,
@@ -41,18 +43,22 @@ struct PetRegisterBuddy: View {
                 )
                 Spacer()
                 Button("Next") {
-                    isActive = true
-                    Task {
-                        do {
-                            let pet = Pet (
-                                name: viewModel.username,
-                                gender: genderAll,
-                                species: species,
-                                avatar: avatar
-                            )
-                            try await viewModel.nextButtonHandler(with: pet)
-                        } catch {
-                            print("Erro ao criar o pet: \(error)")
+                    if avatar.isEmpty {
+                        
+                    }else{
+                        isActive = true
+                        Task {
+                            do {
+                                let pet = Pet (
+                                    name: viewModel.username,
+                                    gender: genderAll,
+                                    species: species,
+                                    avatar: avatar
+                                )
+                                try await viewModel.nextButtonHandler(with: pet)
+                            } catch {
+                                print("Erro ao criar o pet: \(error)")
+                            }
                         }
                     }
                 }.frame(maxWidth: 325, maxHeight: 50)

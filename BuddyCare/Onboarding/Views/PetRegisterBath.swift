@@ -25,22 +25,32 @@ struct PetRegisterBath: View {
             .ignoresSafeArea()
             VStack{
                 Spacer()
-                Text("How often do you want to be reminded to change your cat litter?")
+                Text("How often do you want to be reminded to change your buddy litter?")
                     .font(Font.custom("StayPixel-Regular", size: 30))
                     .foregroundColor(.white)
-                
-                
+                    .multilineTextAlignment(.center)
+                    .padding(30)
                 
                 HStack(spacing: 0) {
                     Picker("Selecione uma opção", selection: $viewModel.selectedDayTimes) {
                         ForEach(viewModel.dayTimes, id: \.self) { number in
                             Text("\(number)").tag(number)
+                                .foregroundColor(.white)
+//                                .font(Font.custom("StayPixel-Regular", size: 20))
+                                .font(.system(size: 30, design: .rounded))
+                                .fontWeight(.bold)
+                            
                         }
                     }
                     .pickerStyle(.wheel)
                     Picker("Selecione uma opção", selection: $viewModel.selectedTimes) {
                         ForEach(viewModel.times, id: \.self) { times in
                             Text("\(times)").tag(times)
+                                .foregroundColor(.white)
+//                                .font(Font.custom("StayPixel-Regular", size: 30))
+                                .font(.system(size: 30, design: .rounded))
+                                .fontWeight(.bold)
+//                                .font(.system(size: 30, design: .rounded))
                         }
                     }
                     .pickerStyle(.wheel)
