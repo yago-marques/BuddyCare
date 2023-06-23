@@ -36,9 +36,9 @@ enum AlertType {
     var leftActionText: String {
         switch self {
         case .success:
-            return "Go"
+            return "OK"
         case .error(_, _):
-            return "Go"
+            return "OK"
         }
     }
     
@@ -60,6 +60,7 @@ enum AlertType {
             return isShowVerticalButtons ? 220 : 150
         }
     }
+    
 }
 
 /// A boolean State variable is required in order to present the view.
@@ -84,7 +85,7 @@ struct CustomAlert: View {
         ZStack {
             
             // faded background
-            Color.black.opacity(0.75)
+            Color.black.opacity(0.35)
                 .edgesIgnoringSafeArea(.all)
             VStack(spacing: 0) {
                 
@@ -92,8 +93,9 @@ struct CustomAlert: View {
                     
                     // alert title
                     Text(alertType.title())
-                        .font(.system(size: 16, weight: .bold))
-                        .foregroundColor(.black)
+//                        .font(.system(size: 16, weight: .bold))
+                        .font(.custom("StayPixel-Regular", size: 35))
+                        .foregroundColor(.white)
                         .multilineTextAlignment(.center)
                         .frame(height: 25)
                         .padding(.top, 16)
@@ -104,9 +106,10 @@ struct CustomAlert: View {
                 // alert message
                 Text(alertType.message())
                     .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-                    .font(.system(size: 14))
-                    .foregroundColor(.black)
+                    .font(.custom("StayPixel-Regular", size: 30))
+                    .foregroundColor(.white)
                     .multilineTextAlignment(.center)
+                    .padding(.top, 10)
                     .padding(.horizontal, 16)
                     .padding(.bottom, 16)
                     .minimumScaleFactor(0.5)
@@ -124,8 +127,8 @@ struct CustomAlert: View {
                                 leftButtonAction?()
                             } label: {
                                 Text(alertType.leftActionText)
-                                    .font(.system(size: 16, weight: .bold))
-                                    .foregroundColor(.black)
+                                    .font(.custom("StayPixel-Regular", size: 30))
+                                    .foregroundColor(.white)
                                     .multilineTextAlignment(.center)
                                     .padding()
                                     .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
@@ -133,18 +136,18 @@ struct CustomAlert: View {
                             Divider()
                                 .frame(minWidth: 0, maxWidth: 0.5, minHeight: 0, maxHeight: .infinity)
                         }
-                        
-                        // right button (default)
-                        Button {
-                            rightButtonAction?()
-                        } label: {
-                            Text(alertType.rightActionText)
-                                .font(.system(size: 16, weight: .bold))
-                                .foregroundColor(.pink)
-                                .multilineTextAlignment(.center)
-                                .padding(15)
-                                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-                        }
+//                        
+//                        // right button (default)
+//                        Button {
+//                            rightButtonAction?()
+//                        } label: {
+//                            Text(alertType.rightActionText)
+//                                .font(.system(size: 16, weight: .bold))
+//                                .foregroundColor(.pink)
+//                                .multilineTextAlignment(.center)
+//                                .padding(15)
+//                                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+//                        }
                         
                     }
                     .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 55)
@@ -185,9 +188,9 @@ struct CustomAlert: View {
             }
             .frame(width: 270, height: alertType.height(isShowVerticalButtons: isShowVerticalButtons))
             .background(
-                Color.white
+                Color(UIColor(red: 0.98, green: 0.45, blue: 0.63, alpha: 1.00))
             )
-            .cornerRadius(4)
+            .cornerRadius(10)
         }
         .zIndex(2)
     }

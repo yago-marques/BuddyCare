@@ -25,7 +25,7 @@ struct PetRegisterBath: View {
             .ignoresSafeArea()
             VStack{
                 Spacer()
-                Text("How often do you want to be reminded to change your buddy litter?")
+                Text("How often do you want to be reminded to bathe \(viewModel.username)?")
                     .font(Font.custom("StayPixel-Regular", size: 30))
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)

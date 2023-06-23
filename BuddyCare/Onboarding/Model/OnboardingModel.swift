@@ -24,9 +24,12 @@ final class OnboardingModel: ObservableObject {
     @Published var timeTwo = Date.now
     @Published var timeThree = Date.now
     @Published var avatars: [String: [String]]
+    
     @Published var navigateToCleaner: Bool = false
     @Published var username: String = ""
     @Published var petId = String()
+    
+    @Published var genterTypes: [String: [String]]
     
     @AppStorage("BOOL_ACCESS") var isFirstAccess = true
     
@@ -34,6 +37,10 @@ final class OnboardingModel: ObservableObject {
         avatars = [
             "cat": ["cat1", "cat2", "cat3"],
             "dog": ["dog1", "dog2", "dog3"]
+        ]
+        genterTypes = [
+            "cat": ["cat3"],
+            "dog": ["dog3"]
         ]
     }
     

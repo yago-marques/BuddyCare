@@ -13,6 +13,7 @@ struct PetRegisterBuddy: View {
     
     @EnvironmentObject var viewModel: OnboardingModel
     
+    @State var presentAlert = false
     @State private var isActive: Bool = false
     @State private var species: String = "cat"
     @State private var avatar: String = ""
@@ -27,12 +28,12 @@ struct PetRegisterBuddy: View {
             .ignoresSafeArea()
             VStack{
                 Spacer()
-                Text("IS YOUR PET A CAT OR A DOG?")
+                Text("IS \(viewModel.username) A CAT OR DOG?")
                     .font(Font.custom("StayPixel-Regular", size: 30))
                     .foregroundColor(.white)
                     .padding(.bottom, 35)
-                AnimalTypePicker(species: $species)
-                Text("CHOOSE YOUR BUDDY:")
+                AnimalTypePicker(species: $species) 
+                Text("AND IT'S LOOK LIKE:")
                     .font(Font.custom("StayPixel-Regular", size: 30))
                     .foregroundColor(.white)
                     .padding(.top, 50)
@@ -44,7 +45,9 @@ struct PetRegisterBuddy: View {
                 Spacer()
                 Button("Next") {
                     if avatar.isEmpty {
-                        
+                        withAnimation{
+                            presentAlert.toggle()
+                        }
                     }else{
                         isActive = true
                         Task {
@@ -78,9 +81,21 @@ struct PetRegisterBuddy: View {
                     label: { EmptyView() }
                 )
             }
-            
         }
         .navigationBarHidden(true)
-        
+        .overlay{
+            if presentAlert{
+                CustomAlert(presentAlert: $presentAlert, alertType: .error(title: "OOOOOPS...", message: "select a companion that most resembles yours"), isShowVerticalButtons: false){
+                    withAnimation{
+                        presentAlert.toggle()
+                    }
+                } rightButtonAction: {
+                    withAnimation{
+                        presentAlert.toggle()
+                    }
+                }
+            }
+        }
+
     }
 }
