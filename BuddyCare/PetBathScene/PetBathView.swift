@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct PetBathView: View {
+    @Binding var isShowing: Bool
+
     var body: some View {
         VStack {
             title
             content
             icon
             button
+            remindlater
         }
         .padding()
         .multilineTextAlignment(.center)
@@ -24,7 +27,7 @@ struct PetBathView: View {
 
 struct PetBath_Previews: PreviewProvider {
     static var previews: some View {
-        PetBathView()
+        PetBathView(isShowing: .constant(true))
     }
 }
 
@@ -34,7 +37,7 @@ private extension PetBathView {
     }
     
     var title: some View {
-        Text ("Its time to change the litter")
+        Text ("change the litter")
         
             .font(.custom("StayPixel-Regular", size: 32))
             .foregroundColor(.white)
@@ -42,16 +45,16 @@ private extension PetBathView {
     }
     
     var content: some View {
-        Text ("Que tal deixar seu pet limpinho?")
-            .font(.custom("StayPixel-Regular", size: 20))
+        Text ("Keeping your pet's space clean is always good!")
+            .font(.custom("StayPixel-Regular", size: 17))
             .foregroundColor(.white)
             .padding(.bottom)
     }
     
         var button: some View {
             VStack {
-                NavigationLink(destination: PetManagerCompositionRoot.make()) {
-                    Text("Play now")
+                Button(" Clean up now   ") {
+                    isShowing = false
                 }
                 .padding()
                 .background(Color.white)
@@ -61,9 +64,24 @@ private extension PetBathView {
                 .font(.custom("StayPixel-Regular", size: 24))
                 .shadow(color: Color.black.opacity(0.5), radius: 4, x: 0, y: 4)
             }
-            .padding(.bottom)
             .padding(.top, 20)
         }
+    
+    var remindlater: some View {
+        VStack {
+            Button("remind me later") {
+                isShowing = false
+            }
+            .padding()
+            .background(Color.white)
+            .foregroundColor(Color(red: 0.85, green: 0.25, blue: 0.45))
+            .cornerRadius(12)
+            .listRowBackground(Color.clear)
+            .font(.custom("StayPixel-Regular", size: 24))
+            .shadow(color: Color.black.opacity(0.5), radius: 4, x: 0, y: 4)
+        }
+        .padding(.bottom)
+    }
     
 }
 

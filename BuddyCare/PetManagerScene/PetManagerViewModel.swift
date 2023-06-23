@@ -11,8 +11,8 @@ typealias PetManagerUseCases = FetchPet & BathManagement & FunManagement
 
 final class PetManagerViewModel: ObservableObject {
     @Published var pet: DisplayedPet? = nil
-    @Published var funActionIsActive = false
-    @Published var bathActionIsActive = false
+    @Published var funActionIsActive = true
+    @Published var bathActionIsActive = true
     private var systemId: String = ""
 
     private let useCases: PetManagerUseCases

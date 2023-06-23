@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct PetPlayView: View {
+    
+    @Binding var isShowing: Bool
+    
     var body: some View {
         VStack {
             title
             content
             icon
             button
+            remindlater
         }
         .padding()
         .multilineTextAlignment(.center)
@@ -24,7 +28,7 @@ struct PetPlayView: View {
 
 struct PetPlayView_Previews: PreviewProvider {
     static var previews: some View {
-        PetPlayView()
+        PetPlayView(isShowing: .constant(true))
     }
 }
 
@@ -49,8 +53,8 @@ private extension PetPlayView {
     
         var button: some View {
             VStack {
-                NavigationLink(destination: PetManagerCompositionRoot.make()) {
-                    Text("Play now")
+                Button(" Let's start play") {
+                    isShowing = false
                 }
                 .padding()
                 .background(Color.white)
@@ -60,7 +64,22 @@ private extension PetPlayView {
                 .font(.custom("StayPixel-Regular", size: 24))
                 .shadow(color: Color.black.opacity(0.5), radius: 4, x: 0, y: 4)
             }
-            .padding(.bottom)
         }
+    
+    var remindlater: some View {
+        VStack {
+            Button("remind me later") {
+                isShowing = false
+            }
+            .padding()
+            .background(Color.white)
+            .foregroundColor(Color(red: 0.85, green: 0.25, blue: 0.45))
+            .cornerRadius(12)
+            .listRowBackground(Color.clear)
+            .font(.custom("StayPixel-Regular", size: 24))
+            .shadow(color: Color.black.opacity(0.5), radius: 4, x: 0, y: 4)
+        }
+        .padding(.bottom)
+    }
     
 }
