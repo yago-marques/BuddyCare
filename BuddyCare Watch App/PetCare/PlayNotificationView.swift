@@ -15,7 +15,7 @@ struct PlayNotificationView: View {
                
                 
                 VStack(spacing: 0) {
-                    Text("'name' needs attention!")
+                    Text("Olivia needs attention!")
                         .font(.custom("StayPixel-Regular", size: 17))
                         .foregroundColor(.white)
                         .padding(.bottom)
