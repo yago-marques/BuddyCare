@@ -10,11 +10,11 @@ import SwiftUI
 
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), timer: 0)
+        SimpleEntry(date: Date(), timer: 9)
     }
 
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), timer: 0)
+        let entry = SimpleEntry(date: Date(), timer: 9)
         completion(entry)
     }
 

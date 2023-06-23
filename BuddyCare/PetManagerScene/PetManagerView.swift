@@ -60,6 +60,9 @@ struct PetManagerView: View {
             }
         }
         .background(.clear)
+        .onAppear {
+            print(viewModel.pet?.avatar)
+        }
     }
     
     
