@@ -9,7 +9,7 @@ import SwiftUI
 
 enum PetManagerCompositionRoot {
     static func make() -> some View {
-        let cloudKitUseCases = CloudKitPetManager()
+        let cloudKitUseCases = SynchedCloudKitPetManager()
         let viewModel = PetManagerViewModel(useCases: cloudKitUseCases)
         let view = PetManagerView(viewModel: viewModel)
 
