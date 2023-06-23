@@ -37,8 +37,8 @@ struct PetRegisterName: View {
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
                         .font(Font.custom("StayPixel-Regular", size: 50))
-                        
-                        
+                    
+                    
                     Rectangle()
                         .frame(height: 1)
                         .foregroundColor(.white)
@@ -85,8 +85,35 @@ struct PetRegisterName: View {
             }
             
             .navigationBarBackButtonHidden()
-            .navigationBarHidden(true)
             .navigate(to: PetRegisterLazy(idPet: $viewModel.petId), when: $viewModel.navigateToCleaner)
+            
         }
+        
+    }
+}
+
+extension View {
+    func navigate<NewView: View>(to view: NewView, when binding: Binding<Bool>) -> some View {
+        ZStack {
+            self
+                .navigationBarTitle("")
+//                .navigationBarHidden(true)
+            NavigationLink(
+                destination: view
+                    .navigationBarTitle(""),
+//                    .navigationBarHidden(true),
+                isActive: binding
+            ) {
+                EmptyView()
+            }
+        }
+    }
+    
+    func deviceWidth(multiplier: Double = 1) -> Double {
+        UIScreen.main.bounds.width * multiplier
+    }
+    
+    func deviceHeight(multiplier: Double = 1) -> Double {
+        UIScreen().bounds.width * multiplier
     }
 }

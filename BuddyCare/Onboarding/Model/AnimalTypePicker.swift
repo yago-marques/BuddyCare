@@ -3,6 +3,7 @@ import SwiftUI
 struct AnimalTypePicker: View {
     @State var index = 0
     @Binding var species: String
+    @EnvironmentObject var viewModel: OnboardingModel
     
     var species2: [String] = ["cat3", "dog3"]
     @State var selectedAvatar: String = ""
@@ -21,11 +22,17 @@ struct AnimalTypePicker: View {
                         selectedAvatar = species2[index]
                         if index == 0 {
                             species = "cat"
+                            viewModel.selectedSpecies = "cat"
                         } else if index == 1 {
                             species = "dog"
+                            viewModel.selectedSpecies = "dog"
                         }
                     }
             }
+        }
+        .onAppear {
+            selectedAvatar = species2[0]
+            species = "cat"
         }
     }
 }

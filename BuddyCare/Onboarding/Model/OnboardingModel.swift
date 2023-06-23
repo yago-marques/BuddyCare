@@ -28,7 +28,7 @@ final class OnboardingModel: ObservableObject {
     @Published var navigateToCleaner: Bool = false
     @Published var username: String = ""
     @Published var petId = String()
-    
+    @Published var selectedSpecies: String = "cat"
     @Published var genterTypes: [String: [String]]
     
     @AppStorage("BOOL_ACCESS") var isFirstAccess = true
