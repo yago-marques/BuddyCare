@@ -11,14 +11,14 @@ enum CloudKitPetManagerError: Error {
     case invalidFetch
 }
 
-struct CloudKitPetManager {
+struct SynchedCloudKitPetManager {
     private let iCloud = CloudKitService.shared
     private let localStorage = CoreDataService.shared
 }
 
-extension CloudKitPetManager: FetchPet {
+extension SynchedCloudKitPetManager: FetchPet {
     func fetchPet() async throws -> DisplayedPet {
-        let pets = try await iCloud.fetchPets()
+        let pets = try await getPets()
         let systemPetID = try localStorage.getId()
         guard let selectedPet = pets.first(where: { $0.id == systemPetID }) else {
             throw CloudKitPetManagerError.invalidFetch
@@ -36,9 +36,19 @@ extension CloudKitPetManager: FetchPet {
             avatar: pet.avatar
         )
     }
+
+    private func getPets() async throws -> [Pet] {
+        let pets = try await localStorage.fetchPets()
+
+        if pets.isEmpty {
+            return try await iCloud.fetchPets()
+        }
+
+        return pets
+    }
 }
 
-extension CloudKitPetManager: BathManagement {
+extension SynchedCloudKitPetManager: BathManagement {
     func bathActionIsNeeded(id: String) async throws -> Bool {
         try await getNeededBathActions(id: id).isEmpty ? false : true
     }
@@ -137,7 +147,7 @@ extension CloudKitPetManager: BathManagement {
     }
 }
 
-extension CloudKitPetManager: FunManagement {
+extension SynchedCloudKitPetManager: FunManagement {
     func funActionIsNeeded(id: String) async throws -> Bool {
         let remoteFunActions = try await getFunActions()
         let neededAction = getNeededFunActions(remoteFunActions, for: id)
@@ -147,7 +157,7 @@ extension CloudKitPetManager: FunManagement {
 
     func registerFunActionIfNeeded(id: String) async throws {
         let existsValidActionForToday = try await hasValidActions(id: id)
-
+        
         if !existsValidActionForToday {
             try await deleteLastFunActionsIfNeeded(id: id)
             try await registerDailyFunActions(id: id)
@@ -225,104 +235,3 @@ extension CloudKitPetManager: FunManagement {
     }
 }
 
-extension Date {
-    static func make(hour: Int, minute: Int) -> Date? {
-        if let date = Calendar.current.date(bySettingHour: hour, minute: minute, second: 0, of: Date()){
-            return date
-        } else { return nil }
-    }
-
-    static func make(day: Int, month: Int) -> Date? {
-        let dayString = String(day)
-        let formattedDay = dayString.count < 2 ? "0\(dayString)" : dayString
-
-        let monthString = String(month)
-        let formattedMonth = monthString.count < 2 ? "0\(monthString)" : monthString
-
-        let currentYear = Calendar.current.component(.year, from: Date())
-        let formattedYear = String(currentYear)
-
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd HH:mm"
-
-        let dateAugmented = formatter.date(from: "\(formattedYear)/\(formattedMonth)/\(formattedDay) 08:30")
-
-        return dateAugmented
-    }
-
-    static func dateWithTwoHoursAugmented(_ date: Date) -> Date? {
-        let hour = Calendar.current.component(.hour, from: date)
-        let minute = Calendar.current.component(.minute, from: date)
-
-        if let newDate = self.make(hour: hour+2, minute: minute) {
-            return newDate
-        } else { return nil }
-    }
-
-    static func dateWithFrequencyAugmented(frequency: Int) -> Date? {
-        let now = Date()
-        let day = Calendar.current.component(.day, from: now)
-        var currentMonth = Calendar.current.component(.month, from: Date())
-
-        var futureDay = day + frequency
-
-        if futureDay > 30 {
-            futureDay -= 30
-            currentMonth += 1
-        }
-
-        if let newDate = self.make(day: futureDay, month: currentMonth) {
-            return newDate
-        } else { return nil }
-    }
-
-    static func isBetween(start: Date, end: Date) -> Bool {
-        let hourOfStart = Calendar.current.component(.hour, from: start)
-        let minuteOfStart = Calendar.current.component(.hour, from: start)
-        let startHourInDoubleFormat = Double(hourOfStart) + (Double(minuteOfStart)/100)
-
-        let hourOfEnd = Calendar.current.component(.hour, from: end)
-        let minuteOfEnd = Calendar.current.component(.hour, from: end)
-        let endHourInDoubleFormat = Double(hourOfEnd) + (Double(minuteOfEnd)/100)
-
-        let currentHour = Calendar.current.component(.hour, from: Date())
-        let currentMinute = Calendar.current.component(.hour, from: Date())
-        let currentHourInDoubleFormat = Double(currentHour) + (Double(currentMinute)/100)
-
-        if currentHourInDoubleFormat <= endHourInDoubleFormat, currentHourInDoubleFormat >= startHourInDoubleFormat {
-            return true
-        } else { return false }
-    }
-
-    static func isToday(_ date: Date) -> Bool {
-        let day = Calendar.current.component(.day, from: date)
-        let month = Calendar.current.component(.month, from: date)
-
-        let currentDay = Calendar.current.component(.day, from: Date())
-        let currentMonth = Calendar.current.component(.month, from: Date())
-
-        if currentDay == day, currentMonth == month {
-            return true
-        } else { return false }
-    }
-
-    func isFuture() -> Bool {
-        let day = Calendar.current.component(.day, from: self)
-        let month = Calendar.current.component(.month, from: self)
-        let hour = Calendar.current.component(.hour, from: self)
-
-        let currentDay = Calendar.current.component(.day, from: Date())
-        let currentMonth = Calendar.current.component(.month, from: Date())
-        let currentHour = Calendar.current.component(.hour, from: Date())
-
-        if
-            day > currentDay,
-            month > currentMonth,
-            hour > currentHour
-        {
-            return true
-        }
-
-        return false
-    }
-}

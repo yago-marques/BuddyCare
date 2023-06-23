@@ -2,6 +2,7 @@ import Foundation
 
 final class RegisterPetViewModel: ObservableObject {
     private let iCloud = CloudKitService.shared
+    private let localStorage = CoreDataService.shared
     @Published var avatars: [String: [String]]
     @Published var navigateToCleaner: Bool = false
     @Published var buttonIsActive: Bool = true
@@ -26,7 +27,10 @@ final class RegisterPetViewModel: ObservableObject {
 private extension RegisterPetViewModel {
     @MainActor
     func registerNewPetAndGiveId(_ pet: Pet) async throws  {
+        var pet = pet
         self.petId = try await iCloud.createPet(pet)
+        pet.id = self.petId
+        _ = try await localStorage.createPet(pet)
     }
 
     @MainActor

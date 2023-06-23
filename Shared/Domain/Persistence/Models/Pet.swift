@@ -8,8 +8,8 @@
 import Foundation
 import CloudKit
 
-struct Pet: CKModel {
-    let id: String
+struct Pet: CKModel, CDModel {
+    var id: String
     let name: String
     let gender: String
     let species: String
@@ -34,6 +34,14 @@ struct Pet: CKModel {
         }
 
         return Pet(id: record.recordID.recordName, name: name, gender: gender, species: species, avatar: avatar)
+    }
+
+    static func fromData(_ data: Data) throws -> CDModel {
+        try JSONDecoder().decode(Pet.self, from: data)
+    }
+
+    func toData() throws -> Data {
+        try JSONEncoder().encode(self)
     }
 
     func record() -> CKRecord {

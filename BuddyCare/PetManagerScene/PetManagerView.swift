@@ -36,7 +36,11 @@ struct PetManagerView: View {
             }
             .onAppear {
                 Task {
-                    try await viewModel.buildLayout()
+                    do {
+                        try await viewModel.buildLayout()
+                    } catch {
+                        print(error)
+                    }
                 }
             }
         }
