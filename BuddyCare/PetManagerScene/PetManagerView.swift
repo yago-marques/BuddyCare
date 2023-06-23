@@ -3,6 +3,7 @@ import SwiftUI
 
 struct PetManagerView: View {
     @ObservedObject var viewModel: PetManagerViewModel
+    @State var petSprite: String = ""
     
     var body: some View {
         
@@ -19,6 +20,12 @@ struct PetManagerView: View {
                                 width: proxy.size.width,
                                 height: proxy.size.width
                             )
+                            .position(
+                                x:proxy.size.width * 0.5,
+                                y:proxy.size.height * 0.6)
+                            .onAppear() {
+                                petAnimationTimer()
+                            }
                         Spacer()
                         customTabBar
                             .frame(maxHeight: proxy.size.height * 0.25)
@@ -89,7 +96,7 @@ struct PetManagerView: View {
     }
     
     private var imageView: some View {
-        Image("cat1")
+        Image(petSprite)
             .resizable()
             .scaledToFit()
     }
@@ -97,5 +104,20 @@ struct PetManagerView: View {
     private var background: some View {
         Image("petHomeBackground")
             .resizable()
+    }
+
+    func petAnimationTimer() {
+        var index = 1
+          let timer = Timer.scheduledTimer(withTimeInterval: 0.08, repeats: true) { (Timer) in
+
+              petSprite = "\(viewModel.pet?.avatar)\(index)"
+
+                index += 1
+
+                if (index > 5){
+                    index = 1
+
+            }
+        }
     }
 }
