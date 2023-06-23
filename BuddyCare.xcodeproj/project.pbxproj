@@ -14,6 +14,8 @@
 		36A2E3752A41DDB0009B64B5 /* BuddyCareWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A2E3742A41DDB0009B64B5 /* BuddyCareWidget.swift */; };
 		36A2E3772A41DDB1009B64B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36A2E3762A41DDB1009B64B5 /* Assets.xcassets */; };
 		36A2E37B2A41DDB1009B64B5 /* BuddyCareWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 36A2E36B2A41DDB0009B64B5 /* BuddyCareWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		36DC24162A45E36D007207C4 /* Stay_Pixel_DEMO.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ABBEE5892A43450F00421168 /* Stay_Pixel_DEMO.ttf */; };
+		36DC24172A45E374007207C4 /* StayPixel.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE5EC3032A447BDD00B18703 /* StayPixel.ttf */; };
 		36E8556B2A39F26B000A58CD /* PetNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E8556A2A39F26B000A58CD /* PetNotifications.swift */; };
 		36F868312A374590008FB1BB /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F868302A37458F008FB1BB /* Pet.swift */; };
 		ABBEE5802A4343B800421168 /* PetCareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBEE57F2A4343B800421168 /* PetCareView.swift */; };
@@ -724,6 +726,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				36A2E3772A41DDB1009B64B5 /* Assets.xcassets in Resources */,
+				36DC24172A45E374007207C4 /* StayPixel.ttf in Resources */,
+				36DC24162A45E36D007207C4 /* Stay_Pixel_DEMO.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

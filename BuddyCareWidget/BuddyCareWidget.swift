@@ -21,22 +21,13 @@ struct Provider: TimelineProvider {
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [SimpleEntry] = []
 
-        //mocked -------------------------------------------------------
-//        var dateNow = Date.now
-//        var dateDay = Calendar.current.component(.hour, from: dateNow)
-//        var bathDate = dateDay + 8
-//
-//        let entryTimer = bathDate - dateDay
-
-        //--------------------------------------------------------------
-
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
         let frequency = 8
         for hourOffset in 0 ..< frequency {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
             let entryTimer = Calendar.current.component(.hour, from: currentDate)
-            let entry = SimpleEntry(date: entryDate, timer: entryTimer)
+            let entry = SimpleEntry(date: entryDate, timer: entryTimer + frequency)
             entries.append(entry)
         }
 
@@ -62,11 +53,15 @@ struct BuddyCareWidgetEntryView : View {
             VStack {
                 Text("Next bath")
                     .padding(.bottom, -10)
+                    .font(.custom("StayPixel-Regular", size: 20))
+                    .foregroundColor(.white)
                 Image("Soap")
                     .resizable()
                     .frame(width: 80, height: 80)
-                Text("\(entry.timer) days")
-                    .fontWeight(.medium)
+                Text("\(entry.timer - 9) days")
+                    .fontWeight(.bold)
+                    .font(.system(size: 20, design: .rounded))
+                    .foregroundColor(.white)
                     .font(.system(size: 22))
             }
         }
