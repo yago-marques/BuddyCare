@@ -14,7 +14,7 @@ struct HygieneNotificationView: View {
                  .edgesIgnoringSafeArea(.all)
             
             VStack(spacing: 0) {
-                Text("Change the litter pls!")
+                Text("Change the litter!")
                     .padding(.bottom)
                     .foregroundColor(.white)
                     .font(.custom("StayPixel-Regular", size: 17))

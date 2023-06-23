@@ -31,7 +31,7 @@ struct PetCareView: View {
                         
                                             
                         NavigationLink(destination: HygieneNotificationView()) {
-                            Text("Bath")
+                            Text("Clean")
                         }
                         .background(Color.white)
                         .foregroundColor(Color(red: 0.85, green: 0.25, blue: 0.45))
