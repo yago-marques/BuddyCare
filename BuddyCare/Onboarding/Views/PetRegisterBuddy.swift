@@ -12,7 +12,7 @@ import SwiftUI
 struct PetRegisterBuddy: View {
     
     @EnvironmentObject var viewModel: OnboardingModel
-    
+    @Environment(\.dismiss) private var dismiss
     @State var presentAlert = false
     @State private var isActive: Bool = false
     @State private var species: String = "cat"
@@ -32,7 +32,7 @@ struct PetRegisterBuddy: View {
                     .font(Font.custom("StayPixel-Regular", size: 30))
                     .foregroundColor(.white)
                     .padding(.bottom, 35)
-                AnimalTypePicker(species: $species) 
+                AnimalTypePicker(species: $species)
                 Text("AND IT'S LOOK LIKE:")
                     .font(Font.custom("StayPixel-Regular", size: 30))
                     .foregroundColor(.white)
@@ -70,7 +70,7 @@ struct PetRegisterBuddy: View {
                     .font(.custom("StayPixel-Regular", size: 24))
                     .cornerRadius(15)
                     .shadow(radius: 1, y: 5)
-                .padding(.bottom, 50)
+                    .padding(.bottom, 50)
                 
                 NavigationLink(
                     destination:
@@ -82,7 +82,10 @@ struct PetRegisterBuddy: View {
                 )
             }
         }
-        .navigationBarHidden(true)
+        
+        .navigationBarBackButtonHidden()
+        .navigationBarItems(leading: backButton)
+        
         .overlay{
             if presentAlert{
                 CustomAlert(presentAlert: $presentAlert, alertType: .error(title: "OOOOOPS...", message: "select a companion that most resembles yours"), isShowVerticalButtons: false){
@@ -96,6 +99,23 @@ struct PetRegisterBuddy: View {
                 }
             }
         }
-
+        
     }
-}
+    private var backButton: some View {
+        Button {
+            dismiss()
+        } label: {
+            HStack {
+                Image(systemName: "lessthan")
+                    .font(.system(size: 20))
+                    .foregroundColor(.white)
+                
+                    .padding(.bottom, 3)
+                Text("Back")
+                    .font(Font.custom("StayPixel-Regular", size: 30))
+                    .foregroundColor(.white)
+            }
+        }
+    }
+   }
+

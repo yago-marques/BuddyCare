@@ -12,7 +12,7 @@ import SwiftUI
 struct PetRegisterBath: View {
     
     @EnvironmentObject var viewModel: OnboardingModel
-    
+    @Environment(\.dismiss) private var dismiss
     @State private var isActive: Bool = false
     
     var body: some View {
@@ -25,18 +25,26 @@ struct PetRegisterBath: View {
             .ignoresSafeArea()
             VStack{
                 Spacer()
-                Text("How often do you want to be reminded to bathe \(viewModel.username)?")
-                    .font(Font.custom("StayPixel-Regular", size: 30))
-                    .foregroundColor(.white)
-                    .multilineTextAlignment(.center)
-                    .padding(30)
+                if viewModel.selectedSpecies == "dog"{
+                    Text("How often do you want to be reminded to bathe \(viewModel.username)?")
+                        .font(Font.custom("StayPixel-Regular", size: 30))
+                        .foregroundColor(.white)
+                        .multilineTextAlignment(.center)
+                        .padding(30)
+                } else {
+                    Text("How many times a day do you want to be reminded to clean the \(viewModel.username) litter box ?")
+                        .font(Font.custom("StayPixel-Regular", size: 30))
+                        .foregroundColor(.white)
+                        .multilineTextAlignment(.center)
+                        .padding(30)
+                }
                 
                 HStack(spacing: 0) {
                     Picker("Selecione uma opção", selection: $viewModel.selectedDayTimes) {
                         ForEach(viewModel.dayTimes, id: \.self) { number in
                             Text("\(number)").tag(number)
                                 .foregroundColor(.white)
-//                                .font(Font.custom("StayPixel-Regular", size: 20))
+                            //                                .font(Font.custom("StayPixel-Regular", size: 20))
                                 .font(.system(size: 30, design: .rounded))
                                 .fontWeight(.bold)
                             
@@ -47,10 +55,10 @@ struct PetRegisterBath: View {
                         ForEach(viewModel.times, id: \.self) { times in
                             Text("\(times)").tag(times)
                                 .foregroundColor(.white)
-//                                .font(Font.custom("StayPixel-Regular", size: 30))
+                            //                                .font(Font.custom("StayPixel-Regular", size: 30))
                                 .font(.system(size: 30, design: .rounded))
                                 .fontWeight(.bold)
-//                                .font(.system(size: 30, design: .rounded))
+                            //                                .font(.system(size: 30, design: .rounded))
                         }
                     }
                     .pickerStyle(.wheel)
@@ -66,7 +74,7 @@ struct PetRegisterBath: View {
                     .font(.custom("StayPixel-Regular", size: 24))
                     .cornerRadius(15)
                     .shadow(radius: 1, y: 5)
-                .padding(.bottom, 50)
+                    .padding(.bottom, 50)
                 
                 NavigationLink(
                     destination:
@@ -78,8 +86,27 @@ struct PetRegisterBath: View {
                 )
             }
         }
-        .navigationBarBackButtonHidden(true)
-        .navigationBarHidden(true)
+        
+        .navigationBarBackButtonHidden()
+        .navigationBarItems(leading: backButton)
         .navigate(to: PetRegisterLazy(idPet: $viewModel.petId), when: $viewModel.navigateToCleaner)
+       
+        
+    }
+    private var backButton: some View {
+        Button {
+            dismiss()
+        } label: {
+            HStack {
+                Image(systemName: "lessthan")
+                    .font(.system(size: 20))
+                    .foregroundColor(.white)
+                
+                    .padding(.bottom, 3)
+                Text("Back")
+                    .font(Font.custom("StayPixel-Regular", size: 30))
+                    .foregroundColor(.white)
+            }
+        }
     }
 }

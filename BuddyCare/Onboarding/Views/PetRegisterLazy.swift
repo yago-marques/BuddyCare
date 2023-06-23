@@ -11,6 +11,8 @@ import SwiftUI
 
 struct PetRegisterLazy: View {
     
+    @Environment(\.dismiss) private var dismiss
+    
     @EnvironmentObject var viewModel: OnboardingModel
     @Binding var idPet: String
     @State private var isActive: Bool = false
@@ -102,11 +104,28 @@ struct PetRegisterLazy: View {
                     label: { EmptyView() }
                 )
             }
-            .navigationBarHidden(true)
+//            .navigationBarHidden(true)
         }
         
-        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden()
+        .navigationBarItems(leading: backButton)
         .navigate(to: PetManagerCompositionRoot.make(), when: $viewModel.navigateToMainView)
+    }
+    private var backButton: some View {
+        Button {
+            dismiss()
+        } label: {
+            HStack {
+                Image(systemName: "lessthan")
+                    .font(.system(size: 20))
+                    .foregroundColor(.white)
+                
+                    .padding(.bottom, 3)
+                Text("Back")
+                    .font(Font.custom("StayPixel-Regular", size: 30))
+                    .foregroundColor(.white)
+            }
+        }
     }
 }
 
@@ -131,30 +150,5 @@ struct TimePicker: View {
         .background(Color.white)
         .clipShape(RoundedRectangle(cornerRadius: 10))
     }
-}
-
-extension View {
-    func navigate<NewView: View>(to view: NewView, when binding: Binding<Bool>) -> some View {
-        ZStack {
-            self
-                .navigationBarTitle("")
-                .navigationBarHidden(true)
-            NavigationLink(
-                destination: view
-                    .navigationBarTitle("")
-                    .navigationBarHidden(true),
-                isActive: binding
-            ) {
-                EmptyView()
-            }
-        }
-    }
     
-    func deviceWidth(multiplier: Double = 1) -> Double {
-        UIScreen.main.bounds.width * multiplier
-    }
-    
-    func deviceHeight(multiplier: Double = 1) -> Double {
-        UIScreen().bounds.width * multiplier
-    }
 }
