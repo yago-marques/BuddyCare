@@ -25,6 +25,8 @@
 		AE5EC3012A446FAA00B18703 /* PetRegisterBath.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5EC2FD2A446FAA00B18703 /* PetRegisterBath.swift */; };
 		AE5EC3022A446FAA00B18703 /* PetRegisterName.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5EC2FE2A446FAA00B18703 /* PetRegisterName.swift */; };
 		AE5EC3042A447BDD00B18703 /* StayPixel.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE5EC3032A447BDD00B18703 /* StayPixel.ttf */; };
+		AE5EC30B2A44B69B00B18703 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5EC3092A44B69B00B18703 /* CustomAlert.swift */; };
+		AE5EC30D2A44C11B00B18703 /* AnimalTypePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF061F12A3A9E9D00AE2491 /* AnimalTypePicker.swift */; };
 		DF02219D2A38AA2F00877319 /* BathSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02219C2A38AA2F00877319 /* BathSchedule.swift */; };
 		DF02219F2A38AA5B00877319 /* FunSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02219E2A38AA5B00877319 /* FunSchedule.swift */; };
 		DF0221A22A38AA9A00877319 /* CKCustomErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0221A12A38AA9A00877319 /* CKCustomErrors.swift */; };
@@ -121,9 +123,10 @@
 		AE5EC2FB2A446FAA00B18703 /* PetRegisterLazy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetRegisterLazy.swift; sourceTree = "<group>"; };
 		AE5EC2FC2A446FAA00B18703 /* PetRegisterBuddy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetRegisterBuddy.swift; sourceTree = "<group>"; };
 		AE5EC2FD2A446FAA00B18703 /* PetRegisterBath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetRegisterBath.swift; sourceTree = "<group>"; };
-		AE5EC2FE2A446FAA00B18703 /* PetRegisterName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetRegisterName.swift; sourceTree = "<group>"; };
+		AE5EC2FE2A446FAA00B18703 /* PetRegisterName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetRegisterName.swift; sourceTree = "<group>"; usesTabs = 0; };
 		AE5EC3032A447BDD00B18703 /* StayPixel.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = StayPixel.ttf; sourceTree = "<group>"; };
 		AE5EC3052A447BF300B18703 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		AE5EC3092A44B69B00B18703 /* CustomAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		DF02219C2A38AA2F00877319 /* BathSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BathSchedule.swift; sourceTree = "<group>"; };
 		DF02219E2A38AA5B00877319 /* FunSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunSchedule.swift; sourceTree = "<group>"; };
 		DF0221A12A38AA9A00877319 /* CKCustomErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKCustomErrors.swift; sourceTree = "<group>"; };
@@ -233,16 +236,41 @@
 		AE5EC2F82A446EA400B18703 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				AE5EC3082A44B68900B18703 /* Views */,
+				AE5EC3072A44B67F00B18703 /* Model */,
+				AE5EC3062A44B67000B18703 /* AlertView */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		AE5EC3062A44B67000B18703 /* AlertView */ = {
+			isa = PBXGroup;
+			children = (
+				AE5EC3092A44B69B00B18703 /* CustomAlert.swift */,
+			);
+			path = AlertView;
+			sourceTree = "<group>";
+		};
+		AE5EC3072A44B67F00B18703 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ABF061EE2A3A9E5500AE2491 /* GenderPicker.swift */,
+				ABF061F12A3A9E9D00AE2491 /* AnimalTypePicker.swift */,
+				ABF061F72A3A9F2400AE2491 /* SelectAvatarTabView.swift */,
 				AE5EC2F92A446EB900B18703 /* OnboardingModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AE5EC3082A44B68900B18703 /* Views */ = {
+			isa = PBXGroup;
+			children = (
 				AE5EC2FE2A446FAA00B18703 /* PetRegisterName.swift */,
 				AE5EC2FC2A446FAA00B18703 /* PetRegisterBuddy.swift */,
 				AE5EC2FD2A446FAA00B18703 /* PetRegisterBath.swift */,
 				AE5EC2FB2A446FAA00B18703 /* PetRegisterLazy.swift */,
-				ABF061EE2A3A9E5500AE2491 /* GenderPicker.swift */,
-				ABF061F12A3A9E9D00AE2491 /* AnimalTypePicker.swift */,
-				ABF061F72A3A9F2400AE2491 /* SelectAvatarTabView.swift */,
 			);
-			path = Onboarding;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		DF0221A02A38AA8D00877319 /* Utils */ = {
@@ -623,6 +651,7 @@
 				DF02219D2A38AA2F00877319 /* BathSchedule.swift in Sources */,
 				DFFEC0CF2A408BCE00A2D897 /* FunAction.swift in Sources */,
 				DFC4FA3C2A3A23F900A78E51 /* BathManagement.swift in Sources */,
+				AE5EC30B2A44B69B00B18703 /* CustomAlert.swift in Sources */,
 				ABF061F22A3A9E9D00AE2491 /* AnimalTypePicker.swift in Sources */,
 				DFFEC0D32A40EF5F00A2D897 /* BuddyCare.xcdatamodeld in Sources */,
 			);
@@ -656,6 +685,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFA2BD5B2A373BFA00BFB964 /* BuddyCare_Watch_AppTests.swift in Sources */,
+				AE5EC30D2A44C11B00B18703 /* AnimalTypePicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -862,7 +892,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BuddyCare/Preview Content\"";
-				DEVELOPMENT_TEAM = 3PC4MSN8T7;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BuddyCare/Info.plist;
@@ -872,7 +902,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -897,7 +927,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BuddyCare/Preview Content\"";
-				DEVELOPMENT_TEAM = 3PC4MSN8T7;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BuddyCare/Info.plist;
@@ -907,7 +937,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
