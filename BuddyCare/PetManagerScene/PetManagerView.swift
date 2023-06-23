@@ -7,24 +7,24 @@ struct PetManagerView: View {
     var body: some View {
         
         NavigationStack {
-                GeometryReader { proxy in
-                    ZStack {
-                        background
-                            .ignoresSafeArea()
-                        
-                        VStack {
-                            Spacer()
-                            imageView
-                                .frame(
-                                    width: proxy.size.width,
-                                    height: proxy.size.width
-                                )
-                            Spacer()
-                            customTabBar
-                                .frame(maxHeight: proxy.size.height * 0.25)
-                        }
+            GeometryReader { proxy in
+                ZStack {
+                    background
+                        .ignoresSafeArea()
+
+                    VStack {
+                        Spacer()
+                        imageView
+                            .frame(
+                                width: proxy.size.width,
+                                height: proxy.size.width
+                            )
+                        Spacer()
+                        customTabBar
+                            .frame(maxHeight: proxy.size.height * 0.25)
                     }
                 }
+
                 .toolbar {
                     ToolbarItem {
                         Button(action: {
