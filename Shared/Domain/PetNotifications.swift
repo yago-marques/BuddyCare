@@ -9,9 +9,9 @@ import Foundation
 
 import UserNotifications
 
-class PetNotifications {
+final class PetNotifications {
 
-    let shared = PetNotifications()
+    static let shared = PetNotifications()
 
     private init () {}
 
@@ -44,7 +44,7 @@ class PetNotifications {
         notificationCenter.add(request)
     }
 
-    func dispatchBathNotification(date: Date, identifier: String, frequency: Int) {
+    func dispatchBathNotification(frequency: Int) {
         let title = "Time for some clean up!"
         let body = "It's time for your pet's hygiene"
 
@@ -57,8 +57,8 @@ class PetNotifications {
 
         let calendar = Calendar.current
 
-        let month = calendar.component(.month, from: date)
-        let day = calendar.component(.day, from: date)
+        let month = calendar.component(.month, from: Date())
+        let day = calendar.component(.day, from: Date())
 
         var dateComponents = DateComponents(calendar: calendar, timeZone: TimeZone.current)
 
@@ -83,9 +83,9 @@ class PetNotifications {
         }
 
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
-        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: "Bath-Notification", content: content, trigger: trigger)
 
-        notificationCenter.removePendingNotificationRequests(withIdentifiers: [identifier])
+        notificationCenter.removePendingNotificationRequests(withIdentifiers: ["Bath-Notification"])
         notificationCenter.add(request)
     }
 

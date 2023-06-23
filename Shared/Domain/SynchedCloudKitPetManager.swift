@@ -74,21 +74,22 @@ extension SynchedCloudKitPetManager: BathManagement {
     private func getNeededBathActions(id: String) async throws -> [BathAction] {
         let actions = try await getFilteredBathActions(id: id)
 
-        return actions.filter { $0.day.isFuture() && $0.isDone == 0 }
+        return actions.filter { Date.isToday($0.day) && $0.isDone == 0 }
     }
 
     private func createBathAction(id: String) async throws {
         guard let bathSchedule = try await getBathSchedule() else { return }
         guard let futureDate = Date.dateWithFrequencyAugmented(frequency: bathSchedule.frequency) else { return }
 
-        let bathAction: BathAction = .init(
+        var bathAction: BathAction = .init(
             petId: id,
             isDone: 0,
             day: futureDate
         )
 
-        try await iCloud.createBathAction(bathAction)
-        try await localStorage.createBathAction(bathAction)
+        let id = try await iCloud.createBathAction(bathAction)
+        bathAction.id = id
+        _ = try await localStorage.createBathAction(bathAction)
     }
 
     private func deleteBathActionsIfNeeded(id: String) async throws {
@@ -113,11 +114,12 @@ extension SynchedCloudKitPetManager: BathManagement {
             return true
         }
 
+
         return false
     }
 
     private func getFilteredBathActions(id: String) async throws -> [BathAction] {
-        return try await getBathActions().filter { $0.id == id }
+        return try await getBathActions().filter { $0.petId == id }
     }
 
     private func getBathActions() async throws -> [BathAction] {

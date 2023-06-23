@@ -168,8 +168,11 @@ extension CloudKitService: FunActionUseCases {
 }
 
 extension CloudKitService: BathActionUseCases {
-    func createBathAction(_ action: BathAction) async throws {
-        try await database.save(action.record())
+    func createBathAction(_ action: BathAction) async throws -> String {
+        let action = action.record()
+        try await database.save(action)
+
+        return action.recordID.recordName
     }
 
     func fetchBathActions() async throws -> [BathAction] {

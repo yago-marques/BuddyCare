@@ -8,7 +8,7 @@
 import Foundation
 
 protocol BathActionUseCases {
-    func createBathAction(_ action: BathAction) async throws
+    func createBathAction(_ action: BathAction) async throws -> String
     func fetchBathActions() async throws -> [BathAction]
     func deleteBathAction(of id: String) async throws
 }

@@ -392,7 +392,6 @@
 				36F868322A3758AD008FB1BB /* BuddyCare.entitlements */,
 				DFA2BD212A373BF800BFB964 /* BuddyCareApp.swift */,
 				DFA2BD232A373BF800BFB964 /* ContentView.swift */,
-				36E8556A2A39F26B000A58CD /* PetNotifications.swift */,
 				AE5EC3032A447BDD00B18703 /* StayPixel.ttf */,
 				DFA2BD252A373BF900BFB964 /* Assets.xcassets */,
 				DFA2BD272A373BF900BFB964 /* Preview Content */,
@@ -464,6 +463,7 @@
 				DFFEC0DB2A40F17100A2D897 /* Persistence */,
 				DFC4FA342A3A23B400A78E51 /* SynchedCloudKitPetManager.swift */,
 				DF9F9A882A44880600D12F93 /* CloudKitPetManager.swift */,
+				36E8556A2A39F26B000A58CD /* PetNotifications.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -997,9 +997,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.yago.BuddyCare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1032,9 +1035,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.yago.BuddyCare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

@@ -70,7 +70,10 @@ final class OnboardingModel: ObservableObject {
 private extension OnboardingModel {
     @MainActor
     func registerNewPetAndGiveId(_ pet: Pet) async throws  {
+        var pet = pet
         self.petId = try await iCloud.createPet(pet)
+        pet.id = self.petId
+        _ = try await localStarage.createPet(pet)
     }
     
     @MainActor

@@ -96,6 +96,9 @@ struct PetRegisterBuddy: View {
                 }
             }
         }
+        .onAppear {
+            PetNotifications.shared.checkForNotificationAuthorization()
+        }
 
     }
 }
