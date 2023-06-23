@@ -42,8 +42,24 @@ struct PetManagerView: View {
                     }
                 }
             }
+            .toolbar {
+                ToolbarItem {
+                    Button(action: {
+                        print("ok")
+                    }, label: {
+                        Image("adjustsButtonIcon")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                    })
+                }
+            }
+            .onAppear {
+                Task {
+                    try await viewModel.buildLayout()
+                }
+            }
+        }
         .background(.clear)
-            
     }
     
     

@@ -14,7 +14,7 @@ struct CloudKitService {
     let database: CKDatabase
     static let shared: CloudKitServiceDelegate = CloudKitService()
 
-    private init(database: CKDatabase = CKContainer.default().privateCloudDatabase) {
+    private init(database: CKDatabase = CKContainer(identifier: "iCloud.br.com.yago.BuddyCare").privateCloudDatabase) {
         self.database = database
     }
 }

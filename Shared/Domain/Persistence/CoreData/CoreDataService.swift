@@ -7,9 +7,8 @@
 
 import Foundation
 import CoreData
-import SwiftUI
 
-typealias CoreDataManager = BathScheduleUseCases & FunScheduleUseCases & FunActionUseCases & BathActionUseCases & LocalPetIdUseCases
+typealias CoreDataManager = BathScheduleUseCases & FunScheduleUseCases & FunActionUseCases & BathActionUseCases & LocalPetIdUseCases & PetUseCases
 
 struct CoreDataService {
     let persistentContainer: NSPersistentContainer
@@ -290,5 +289,74 @@ extension CoreDataService: LocalPetIdUseCases {
         if let id = try context.fetch(fetchRequest).first?.content {
             return id
         } else { return "invalid" }
+    }
+}
+
+
+extension CoreDataService: PetUseCases {
+    func createPet(_ pet: Pet) async throws -> String {
+        let context = persistentContainer.viewContext
+
+        let entity = PetEntity(context: context)
+
+        entity.data = try pet.toData()
+
+        try context.save()
+
+        return pet.id
+    }
+
+    func updatePet(of id: String, new pet: Pet) async throws {
+        let context = persistentContainer.viewContext
+
+        guard let entityToUpdate = try findPetEntity(for: id) else { return }
+
+        entityToUpdate.data = try pet.toData()
+        try context.save()
+    }
+
+    func fetchPets() async throws -> [Pet] {
+        let entities = try getRawPetEntities()
+
+        let funSchedules = try entities
+            .compactMap { try Pet.fromData($0.data ?? Data()) as? Pet }
+
+        return funSchedules
+    }
+
+    func deletePet(of id: String) async throws {
+        let context = persistentContainer.viewContext
+
+        guard let entityToDelete = try findPetEntity(for: id) else { return }
+
+        context.delete(entityToDelete)
+    }
+
+    private func findPetEntity(for id: String) throws -> PetEntity? {
+        let entities = try getRawPetEntities()
+
+        guard let foundedEntity = try entities.filter({ entity in
+            if
+                let data = entity.data,
+                let decodedEntity = try Pet.fromData(data) as? Pet,
+                decodedEntity.id == id
+            {
+                return true
+            } else {
+                return false
+            }
+        }).first else {
+            return nil
+        }
+
+        return foundedEntity
+    }
+
+    private func getRawPetEntities() throws -> [PetEntity] {
+        let context = persistentContainer.viewContext
+
+        let fetchRequest = NSFetchRequest<PetEntity>(entityName: "PetEntity")
+
+        return try context.fetch(fetchRequest)
     }
 }
