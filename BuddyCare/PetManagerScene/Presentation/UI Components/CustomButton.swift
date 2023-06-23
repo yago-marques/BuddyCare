@@ -7,18 +7,20 @@
 
 import SwiftUI
 
-struct CustomButton: View {
+struct CustomButton<Destination: View>: View {
     let title: String
     @Binding var isActive: Bool
-
+    let destination: Destination
+    
     var body: some View {
-        RoundedRectangle(cornerRadius: 10)
-            .fill(isActive ? .white : .init(red: 0.88, green: 0.88, blue: 0.88))
-            .padding(20)
-            .overlay {
-                Image(title)
-                    .foregroundColor(.white)
-            }
-            .opacity(isActive ? 1 : 0.8)
+        NavigationLink(destination: destination) {
+            Image(title)
+                .foregroundColor(.white)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(isActive ? .white : .init(red: 0.88, green: 0.88, blue: 0.88))
+                .cornerRadius(12)
+                .padding(20)
+                .opacity(isActive ? 1 : 0.8)
+        }
     }
 }

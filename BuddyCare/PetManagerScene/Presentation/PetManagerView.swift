@@ -6,7 +6,7 @@ struct PetManagerView: View {
     
     var body: some View {
         
-        NavigationView {
+        NavigationStack {
                 GeometryReader { proxy in
                     ZStack {
                         background
@@ -50,7 +50,7 @@ struct PetManagerView: View {
     private var customTabBar: some View {
         HStack {
             Spacer()
-            CustomButton(title: "ball", isActive: $viewModel.funActionIsActive)
+            CustomButton(title: "ball", isActive: $viewModel.funActionIsActive, destination: PetPlayView())
                 .onTapGesture {
                     if viewModel.funActionIsActive {
                         Task {
@@ -59,7 +59,7 @@ struct PetManagerView: View {
                     }
                 }
             Spacer()
-            CustomButton(title: "catHygiene", isActive: $viewModel.bathActionIsActive)
+            CustomButton(title: "catHygiene", isActive: $viewModel.bathActionIsActive, destination: PetBathView())
                 .onTapGesture {
                     if viewModel.bathActionIsActive {
                         Task {
