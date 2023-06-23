@@ -38,6 +38,29 @@
 		DF7F21592A41E4590007AB30 /* FunScheduleUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7F21582A41E4590007AB30 /* FunScheduleUseCases.swift */; };
 		DF7F215B2A41E47A0007AB30 /* FunActionUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7F215A2A41E47A0007AB30 /* FunActionUseCases.swift */; };
 		DF7F215D2A41E49A0007AB30 /* BathActionUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7F215C2A41E49A0007AB30 /* BathActionUseCases.swift */; };
+		DF9F9A752A4470A600D12F93 /* FetchPet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC4FA372A3A23E200A78E51 /* FetchPet.swift */; };
+		DF9F9A762A4470AA00D12F93 /* FunManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC4FA392A3A23EC00A78E51 /* FunManagement.swift */; };
+		DF9F9A772A4470AC00D12F93 /* BathManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC4FA3B2A3A23F900A78E51 /* BathManagement.swift */; };
+		DF9F9A782A4470CE00D12F93 /* PetUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7F21542A41E4210007AB30 /* PetUseCases.swift */; };
+		DF9F9A792A4470D200D12F93 /* BathScheduleUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7F21562A41E4400007AB30 /* BathScheduleUseCases.swift */; };
+		DF9F9A7A2A4470D500D12F93 /* FunScheduleUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7F21582A41E4590007AB30 /* FunScheduleUseCases.swift */; };
+		DF9F9A7B2A4470D800D12F93 /* FunActionUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7F215A2A41E47A0007AB30 /* FunActionUseCases.swift */; };
+		DF9F9A7C2A4470DB00D12F93 /* BathActionUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7F215C2A41E49A0007AB30 /* BathActionUseCases.swift */; };
+		DF9F9A7D2A4470DD00D12F93 /* LocalPetIdUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF234C182A41ECCA00B8D916 /* LocalPetIdUseCases.swift */; };
+		DF9F9A7E2A4470E700D12F93 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F868302A37458F008FB1BB /* Pet.swift */; };
+		DF9F9A7F2A4470EA00D12F93 /* BathSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02219C2A38AA2F00877319 /* BathSchedule.swift */; };
+		DF9F9A802A4470EC00D12F93 /* FunSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF02219E2A38AA5B00877319 /* FunSchedule.swift */; };
+		DF9F9A812A4470EF00D12F93 /* BathAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC4FA4B2A3A2C7C00A78E51 /* BathAction.swift */; };
+		DF9F9A822A4470F200D12F93 /* FunAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFEC0CE2A408BCE00A2D897 /* FunAction.swift */; };
+		DF9F9A832A4470FA00D12F93 /* CKCustomErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0221A12A38AA9A00877319 /* CKCustomErrors.swift */; };
+		DF9F9A842A4470FD00D12F93 /* CKModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0221A32A38AAC300877319 /* CKModelProtocol.swift */; };
+		DF9F9A852A4470FF00D12F93 /* CloudKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F868342A3758FB008FB1BB /* CloudKitService.swift */; };
+		DF9F9A862A44713800D12F93 /* CDModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFFEC0D92A40EFEE00A2D897 /* CDModelProtocol.swift */; };
+		DF9F9A872A44716000D12F93 /* DisplayedPet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC4FA472A3A24F300A78E51 /* DisplayedPet.swift */; };
+		DF9F9A892A44880600D12F93 /* CloudKitPetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9F9A882A44880600D12F93 /* CloudKitPetManager.swift */; };
+		DF9F9A8A2A44880600D12F93 /* CloudKitPetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9F9A882A44880600D12F93 /* CloudKitPetManager.swift */; };
+		DF9F9A972A448B9D00D12F93 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9F9A962A448B9D00D12F93 /* Date.swift */; };
+		DF9F9A982A448B9D00D12F93 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9F9A962A448B9D00D12F93 /* Date.swift */; };
 		DFA2BD222A373BF800BFB964 /* BuddyCareApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA2BD212A373BF800BFB964 /* BuddyCareApp.swift */; };
 		DFA2BD242A373BF800BFB964 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA2BD232A373BF800BFB964 /* ContentView.swift */; };
 		DFA2BD262A373BF900BFB964 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFA2BD252A373BF900BFB964 /* Assets.xcassets */; };
@@ -50,7 +73,7 @@
 		DFA2BD512A373BFA00BFB964 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFA2BD502A373BFA00BFB964 /* Preview Assets.xcassets */; };
 		DFA2BD5B2A373BFA00BFB964 /* BuddyCare_Watch_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA2BD5A2A373BFA00BFB964 /* BuddyCare_Watch_AppTests.swift */; };
 		DFB054F82A3891D200BD2844 /* CloudKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F868342A3758FB008FB1BB /* CloudKitService.swift */; };
-		DFC4FA352A3A23B400A78E51 /* CloudKitPetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC4FA342A3A23B400A78E51 /* CloudKitPetManager.swift */; };
+		DFC4FA352A3A23B400A78E51 /* SynchedCloudKitPetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC4FA342A3A23B400A78E51 /* SynchedCloudKitPetManager.swift */; };
 		DFC4FA382A3A23E200A78E51 /* FetchPet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC4FA372A3A23E200A78E51 /* FetchPet.swift */; };
 		DFC4FA3A2A3A23EC00A78E51 /* FunManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC4FA392A3A23EC00A78E51 /* FunManagement.swift */; };
 		DFC4FA3C2A3A23F900A78E51 /* BathManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC4FA3B2A3A23F900A78E51 /* BathManagement.swift */; };
@@ -138,6 +161,9 @@
 		DF7F21582A41E4590007AB30 /* FunScheduleUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunScheduleUseCases.swift; sourceTree = "<group>"; };
 		DF7F215A2A41E47A0007AB30 /* FunActionUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunActionUseCases.swift; sourceTree = "<group>"; };
 		DF7F215C2A41E49A0007AB30 /* BathActionUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BathActionUseCases.swift; sourceTree = "<group>"; };
+		DF9F9A882A44880600D12F93 /* CloudKitPetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitPetManager.swift; sourceTree = "<group>"; };
+		DF9F9A962A448B9D00D12F93 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		DF9F9A992A448C7D00D12F93 /* BuddyCare Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "BuddyCare Watch App.entitlements"; sourceTree = "<group>"; };
 		DFA2BD1E2A373BF800BFB964 /* BuddyCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuddyCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFA2BD212A373BF800BFB964 /* BuddyCareApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyCareApp.swift; sourceTree = "<group>"; };
 		DFA2BD232A373BF800BFB964 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -152,7 +178,7 @@
 		DFA2BD502A373BFA00BFB964 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DFA2BD562A373BFA00BFB964 /* BuddyCare Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BuddyCare Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFA2BD5A2A373BFA00BFB964 /* BuddyCare_Watch_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyCare_Watch_AppTests.swift; sourceTree = "<group>"; };
-		DFC4FA342A3A23B400A78E51 /* CloudKitPetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitPetManager.swift; sourceTree = "<group>"; };
+		DFC4FA342A3A23B400A78E51 /* SynchedCloudKitPetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchedCloudKitPetManager.swift; sourceTree = "<group>"; };
 		DFC4FA372A3A23E200A78E51 /* FetchPet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPet.swift; sourceTree = "<group>"; };
 		DFC4FA392A3A23EC00A78E51 /* FunManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunManagement.swift; sourceTree = "<group>"; };
 		DFC4FA3B2A3A23F900A78E51 /* BathManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BathManagement.swift; sourceTree = "<group>"; };
@@ -282,7 +308,7 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		DF7F21532A41E40D0007AB30 /* UseCaes */ = {
+		DF7F21532A41E40D0007AB30 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
 				DF7F21542A41E4210007AB30 /* PetUseCases.swift */,
@@ -292,12 +318,30 @@
 				DF7F215C2A41E49A0007AB30 /* BathActionUseCases.swift */,
 				DF234C182A41ECCA00B8D916 /* LocalPetIdUseCases.swift */,
 			);
-			path = UseCaes;
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		DF9F9A732A44705500D12F93 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				DFC4FA332A3A239800A78E51 /* Domain */,
+				DFC4FA362A3A23D300A78E51 /* UseCases */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		DF9F9A952A448B9100D12F93 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DF9F9A962A448B9D00D12F93 /* Date.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		DFA2BD152A373BF800BFB964 = {
 			isa = PBXGroup;
 			children = (
+				DF9F9A732A44705500D12F93 /* Shared */,
 				DFA2BD202A373BF800BFB964 /* BuddyCare */,
 				DFA2BD312A373BF900BFB964 /* BuddyCareTests */,
 				DFA2BD482A373BF900BFB964 /* BuddyCare Watch App */,
@@ -322,7 +366,6 @@
 			children = (
 				AE5EC3052A447BF300B18703 /* Info.plist */,
 				AE5EC2F82A446EA400B18703 /* Onboarding */,
-				DFFEC0DB2A40F17100A2D897 /* Persistence */,
 				DFC4FA322A3A238C00A78E51 /* PetManagerScene */,
 				36F868322A3758AD008FB1BB /* BuddyCare.entitlements */,
 				DFA2BD212A373BF800BFB964 /* BuddyCareApp.swift */,
@@ -354,6 +397,7 @@
 		DFA2BD482A373BF900BFB964 /* BuddyCare Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				DF9F9A992A448C7D00D12F93 /* BuddyCare Watch App.entitlements */,
 				ABBEE58B2A43454500421168 /* BuddyCare-Watch-App-Info.plist */,
 				ABBEE57E2A4343A000421168 /* PetCare */,
 				DFA2BD492A373BF900BFB964 /* BuddyCareApp.swift */,
@@ -384,9 +428,10 @@
 		DFC4FA322A3A238C00A78E51 /* PetManagerScene */ = {
 			isa = PBXGroup;
 			children = (
-				DFC4FA332A3A239800A78E51 /* Domain */,
-				DFC4FA362A3A23D300A78E51 /* UseCases */,
-				DFC4FA3D2A3A241F00A78E51 /* Presentation */,
+				DFC4FA442A3A24B700A78E51 /* UI Components */,
+				DFC4FA3E2A3A248C00A78E51 /* PetManagerView.swift */,
+				DFC4FA402A3A249B00A78E51 /* PetManagerCompositionRoot.swift */,
+				DFC4FA422A3A24AB00A78E51 /* PetManagerViewModel.swift */,
 			);
 			path = PetManagerScene;
 			sourceTree = "<group>";
@@ -394,7 +439,9 @@
 		DFC4FA332A3A239800A78E51 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				DFC4FA342A3A23B400A78E51 /* CloudKitPetManager.swift */,
+				DFFEC0DB2A40F17100A2D897 /* Persistence */,
+				DFC4FA342A3A23B400A78E51 /* SynchedCloudKitPetManager.swift */,
+				DF9F9A882A44880600D12F93 /* CloudKitPetManager.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -402,23 +449,12 @@
 		DFC4FA362A3A23D300A78E51 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				DFC4FA472A3A24F300A78E51 /* DisplayedPet.swift */,
 				DFC4FA372A3A23E200A78E51 /* FetchPet.swift */,
 				DFC4FA392A3A23EC00A78E51 /* FunManagement.swift */,
 				DFC4FA3B2A3A23F900A78E51 /* BathManagement.swift */,
 			);
 			path = UseCases;
-			sourceTree = "<group>";
-		};
-		DFC4FA3D2A3A241F00A78E51 /* Presentation */ = {
-			isa = PBXGroup;
-			children = (
-				DFC4FA442A3A24B700A78E51 /* UI Components */,
-				DFC4FA3E2A3A248C00A78E51 /* PetManagerView.swift */,
-				DFC4FA402A3A249B00A78E51 /* PetManagerCompositionRoot.swift */,
-				DFC4FA422A3A24AB00A78E51 /* PetManagerViewModel.swift */,
-				DFC4FA472A3A24F300A78E51 /* DisplayedPet.swift */,
-			);
-			path = Presentation;
 			sourceTree = "<group>";
 		};
 		DFC4FA442A3A24B700A78E51 /* UI Components */ = {
@@ -443,7 +479,8 @@
 		DFFEC0DB2A40F17100A2D897 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
-				DF7F21532A41E40D0007AB30 /* UseCaes */,
+				DF9F9A952A448B9100D12F93 /* Utils */,
+				DF7F21532A41E40D0007AB30 /* UseCases */,
 				36F8682F2A37456B008FB1BB /* Models */,
 				36F868332A3758DC008FB1BB /* iCloud */,
 				DFFEC0D02A40EEF100A2D897 /* CoreData */,
@@ -615,6 +652,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF9F9A892A44880600D12F93 /* CloudKitPetManager.swift in Sources */,
 				DFFEC0DA2A40EFEE00A2D897 /* CDModelProtocol.swift in Sources */,
 				DFC4FA4C2A3A2C7C00A78E51 /* BathAction.swift in Sources */,
 				DFB054F82A3891D200BD2844 /* CloudKitService.swift in Sources */,
@@ -646,13 +684,14 @@
 				DFC4FA3F2A3A248C00A78E51 /* PetManagerView.swift in Sources */,
 				DFFEC0D62A40EF7B00A2D897 /* CoreDataService.swift in Sources */,
 				DFC4FA462A3A24CC00A78E51 /* CustomButton.swift in Sources */,
-				DFC4FA352A3A23B400A78E51 /* CloudKitPetManager.swift in Sources */,
+				DFC4FA352A3A23B400A78E51 /* SynchedCloudKitPetManager.swift in Sources */,
 				DF234C192A41ECCB00B8D916 /* LocalPetIdUseCases.swift in Sources */,
 				DF02219D2A38AA2F00877319 /* BathSchedule.swift in Sources */,
 				DFFEC0CF2A408BCE00A2D897 /* FunAction.swift in Sources */,
 				DFC4FA3C2A3A23F900A78E51 /* BathManagement.swift in Sources */,
 				AE5EC30B2A44B69B00B18703 /* CustomAlert.swift in Sources */,
 				ABF061F22A3A9E9D00AE2491 /* AnimalTypePicker.swift in Sources */,
+				DF9F9A972A448B9D00D12F93 /* Date.swift in Sources */,
 				DFFEC0D32A40EF5F00A2D897 /* BuddyCare.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -669,14 +708,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF9F9A812A4470EF00D12F93 /* BathAction.swift in Sources */,
+				DF9F9A7C2A4470DB00D12F93 /* BathActionUseCases.swift in Sources */,
 				ABBEE5882A43445C00421168 /* PlayTimerView.swift in Sources */,
+				DF9F9A7E2A4470E700D12F93 /* Pet.swift in Sources */,
+				DF9F9A7D2A4470DD00D12F93 /* LocalPetIdUseCases.swift in Sources */,
+				DF9F9A982A448B9D00D12F93 /* Date.swift in Sources */,
+				DF9F9A832A4470FA00D12F93 /* CKCustomErrors.swift in Sources */,
+				DF9F9A862A44713800D12F93 /* CDModelProtocol.swift in Sources */,
+				DF9F9A852A4470FF00D12F93 /* CloudKitService.swift in Sources */,
 				ABBEE5822A4343E000421168 /* NotRegisterView.swift in Sources */,
+				DF9F9A7A2A4470D500D12F93 /* FunScheduleUseCases.swift in Sources */,
+				DF9F9A8A2A44880600D12F93 /* CloudKitPetManager.swift in Sources */,
+				DF9F9A782A4470CE00D12F93 /* PetUseCases.swift in Sources */,
+				DF9F9A872A44716000D12F93 /* DisplayedPet.swift in Sources */,
 				DFA2BD4C2A373BF900BFB964 /* ContentView.swift in Sources */,
+				DF9F9A7B2A4470D800D12F93 /* FunActionUseCases.swift in Sources */,
 				365D96182A408FA800F513F4 /* PetNotifications.swift in Sources */,
+				DF9F9A752A4470A600D12F93 /* FetchPet.swift in Sources */,
 				DFA2BD4A2A373BF900BFB964 /* BuddyCareApp.swift in Sources */,
+				DF9F9A842A4470FD00D12F93 /* CKModelProtocol.swift in Sources */,
 				ABBEE5862A43443800421168 /* PlayNotificationView.swift in Sources */,
+				DF9F9A772A4470AC00D12F93 /* BathManagement.swift in Sources */,
+				DF9F9A792A4470D200D12F93 /* BathScheduleUseCases.swift in Sources */,
 				ABBEE5802A4343B800421168 /* PetCareView.swift in Sources */,
 				ABBEE5842A43441700421168 /* HygieneNotificationView.swift in Sources */,
+				DF9F9A7F2A4470EA00D12F93 /* BathSchedule.swift in Sources */,
+				DF9F9A762A4470AA00D12F93 /* FunManagement.swift in Sources */,
+				DF9F9A822A4470F200D12F93 /* FunAction.swift in Sources */,
+				DF9F9A802A4470EC00D12F93 /* FunSchedule.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -824,6 +884,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "BuddyCare Watch App/BuddyCare Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BuddyCare Watch App/Preview Content\"";
@@ -855,6 +916,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "BuddyCare Watch App/BuddyCare Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BuddyCare Watch App/Preview Content\"";
@@ -892,7 +954,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BuddyCare/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3PC4MSN8T7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BuddyCare/Info.plist;
@@ -927,7 +989,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BuddyCare/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3PC4MSN8T7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BuddyCare/Info.plist;

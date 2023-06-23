@@ -7,43 +7,42 @@ struct PetManagerView: View {
     var body: some View {
         
         NavigationView {
-                GeometryReader { proxy in
-                    ZStack {
-                        background
-                            .ignoresSafeArea()
-                        
-                        VStack {
-                            Spacer()
-                            imageView
-                                .frame(
-                                    width: proxy.size.width,
-                                    height: proxy.size.width
-                                )
-                            Spacer()
-                            customTabBar
-                                .frame(maxHeight: proxy.size.height * 0.25)
-                        }
-                    }
-                }
-                .toolbar {
-                    ToolbarItem {
-                        Button(action: {
-                            print("ok")
-                        }, label: {
-                            Image("adjustsButtonIcon")
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                        })
-                    }
-                }
-                .onAppear {
-                    Task {
-                        try await viewModel.buildLayout()
+            GeometryReader { proxy in
+                ZStack {
+                    background
+                        .ignoresSafeArea()
+
+                    VStack {
+                        Spacer()
+                        imageView
+                            .frame(
+                                width: proxy.size.width,
+                                height: proxy.size.width
+                            )
+                        Spacer()
+                        customTabBar
+                            .frame(maxHeight: proxy.size.height * 0.25)
                     }
                 }
             }
+            .toolbar {
+                ToolbarItem {
+                    Button(action: {
+                        print("ok")
+                    }, label: {
+                        Image("adjustsButtonIcon")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                    })
+                }
+            }
+            .onAppear {
+                Task {
+                    try await viewModel.buildLayout()
+                }
+            }
+        }
         .background(.clear)
-            
     }
     
     
