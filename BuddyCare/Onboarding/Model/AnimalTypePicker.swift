@@ -4,7 +4,7 @@ struct AnimalTypePicker: View {
     @State var index = 0
     @Binding var species: String
     
-    var species2: [String] = ["cat3", "dog3"]
+    var species2: [String] = ["WhiteCat", "WhiteDog"]
     @State var selectedAvatar: String = ""
     
     var body: some View {

@@ -24,7 +24,7 @@ struct PetManagerView: View {
                                 x:proxy.size.width * 0.5,
                                 y:proxy.size.height * 0.6)
                             .onAppear() {
-                                petAnimationTimer()
+                                petIdleTimer()
                             }
                         Spacer()
                         customTabBar
@@ -104,20 +104,5 @@ struct PetManagerView: View {
     private var background: some View {
         Image("petHomeBackground")
             .resizable()
-    }
-
-    func petAnimationTimer() {
-        var index = 1
-          let timer = Timer.scheduledTimer(withTimeInterval: 0.08, repeats: true) { (Timer) in
-
-              petSprite = "\(viewModel.pet?.avatar)\(index)"
-
-                index += 1
-
-                if (index > 5){
-                    index = 1
-
-            }
-        }
     }
 }

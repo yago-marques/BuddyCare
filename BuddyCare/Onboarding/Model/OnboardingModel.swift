@@ -35,12 +35,12 @@ final class OnboardingModel: ObservableObject {
     
     init() {
         avatars = [
-            "cat": ["cat1", "cat2", "cat3"],
-            "dog": ["dog1", "dog2", "dog3"]
+            "cat": ["OrangeCat", "BlackCat", "WhiteCat"],
+            "dog": ["CaramelDog", "BlackDog", "WhiteDog"]
         ]
         genterTypes = [
-            "cat": ["cat3"],
-            "dog": ["dog3"]
+            "cat": ["WhiteCat"],
+            "dog": ["WhiteDog"]
         ]
     }
     

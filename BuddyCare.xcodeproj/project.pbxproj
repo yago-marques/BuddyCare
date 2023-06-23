@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		362E6C512A46277100647C65 /* AnimationsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362E6C502A46277100647C65 /* AnimationsExtension.swift */; };
 		365D96182A408FA800F513F4 /* PetNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E8556A2A39F26B000A58CD /* PetNotifications.swift */; };
 		36E8556B2A39F26B000A58CD /* PetNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E8556A2A39F26B000A58CD /* PetNotifications.swift */; };
 		36F868312A374590008FB1BB /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F868302A37458F008FB1BB /* Pet.swift */; };
@@ -130,6 +131,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		362E6C502A46277100647C65 /* AnimationsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationsExtension.swift; sourceTree = "<group>"; };
 		36E8556A2A39F26B000A58CD /* PetNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetNotifications.swift; sourceTree = "<group>"; };
 		36F868302A37458F008FB1BB /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		36F868322A3758AD008FB1BB /* BuddyCare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BuddyCare.entitlements; sourceTree = "<group>"; };
@@ -393,6 +395,7 @@
 				DFA2BD212A373BF800BFB964 /* BuddyCareApp.swift */,
 				DFA2BD232A373BF800BFB964 /* ContentView.swift */,
 				36E8556A2A39F26B000A58CD /* PetNotifications.swift */,
+				362E6C502A46277100647C65 /* AnimationsExtension.swift */,
 				AE5EC3032A447BDD00B18703 /* StayPixel.ttf */,
 				DFA2BD252A373BF900BFB964 /* Assets.xcassets */,
 				DFA2BD272A373BF900BFB964 /* Preview Content */,
@@ -674,6 +677,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				362E6C512A46277100647C65 /* AnimationsExtension.swift in Sources */,
 				DF9F9A892A44880600D12F93 /* CloudKitPetManager.swift in Sources */,
 				DFFEC0DA2A40EFEE00A2D897 /* CDModelProtocol.swift in Sources */,
 				DFC4FA4C2A3A2C7C00A78E51 /* BathAction.swift in Sources */,
