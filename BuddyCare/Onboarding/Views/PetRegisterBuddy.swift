@@ -99,7 +99,6 @@ struct PetRegisterBuddy: View {
                 }
             }
         }
-        
     }
     private var backButton: some View {
         Button {

@@ -91,16 +91,13 @@ extension Date {
     func isFuture() -> Bool {
         let day = Calendar.current.component(.day, from: self)
         let month = Calendar.current.component(.month, from: self)
-        let hour = Calendar.current.component(.hour, from: self)
 
         let currentDay = Calendar.current.component(.day, from: Date())
         let currentMonth = Calendar.current.component(.month, from: Date())
-        let currentHour = Calendar.current.component(.hour, from: Date())
 
         if
-            day > currentDay,
-            month > currentMonth,
-            hour > currentHour
+            day > currentDay ||
+            month > currentMonth
         {
             return true
         }

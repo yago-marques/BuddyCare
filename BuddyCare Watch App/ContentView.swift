@@ -16,17 +16,6 @@ struct ContentView: View {
             Text("Hello, world!")
         }
         .padding()
-        .onAppear {
-            Task {
-                do {
-                    let pet = try await CloudKitPetManager.shared.fetchPet()
-
-                    print(pet)
-                } catch {
-                    print(error)
-                }
-            }
-        }
     }
 }
 

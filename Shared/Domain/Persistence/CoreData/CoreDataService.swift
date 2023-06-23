@@ -214,7 +214,7 @@ extension CoreDataService: FunActionUseCases {
 }
 
 extension CoreDataService: BathActionUseCases {
-    func createBathAction(_ action: BathAction) async throws {
+    func createBathAction(_ action: BathAction) async throws -> String {
         let context = persistentContainer.viewContext
 
         let entity = BathActionEntity(context: context)
@@ -222,6 +222,8 @@ extension CoreDataService: BathActionUseCases {
         entity.data = try action.toData()
 
         try context.save()
+
+        return ""
     }
 
     func fetchBathActions() async throws -> [BathAction] {
