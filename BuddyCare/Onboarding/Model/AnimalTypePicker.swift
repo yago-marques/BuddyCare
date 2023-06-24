@@ -5,7 +5,7 @@ struct AnimalTypePicker: View {
     @Binding var species: String
     @EnvironmentObject var viewModel: OnboardingModel
     
-    var species2: [String] = ["cat3", "dog3"]
+    var species2: [String] = ["WhiteCat", "WhiteDog"]
     @State var selectedAvatar: String = ""
     
     var body: some View {

@@ -6,6 +6,7 @@ struct PetManagerView: View {
   
     @State private var showBathView = false
     @State private var showPlayView = false
+    @State var petSprite = ""
     var body: some View {
         
         NavigationStack {
@@ -21,6 +22,11 @@ struct PetManagerView: View {
                                 width: 300,
                                 height: 300
                             )
+                            .position(x:proxy.size.width * 0.5,
+                                      y:proxy.size.height * 0.623 )
+                            .onAppear {
+                                petIdleAnimation()
+                            }
                         Spacer()
                         customTabBar
                             .frame(maxHeight: proxy.size.height * 0.25)
@@ -92,7 +98,7 @@ struct PetManagerView: View {
         }
     
     private var imageView: some View {
-        Image("CaramelDog1")
+        Image(petSprite)
             .resizable()
             .scaledToFit()
     }
