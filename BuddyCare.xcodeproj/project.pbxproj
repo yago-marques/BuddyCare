@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		365D96182A408FA800F513F4 /* PetNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E8556A2A39F26B000A58CD /* PetNotifications.swift */; };
+		3675E7822A46883F00B2DBE0 /* AnimationsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3675E7812A46883F00B2DBE0 /* AnimationsExtension.swift */; };
 		36A2E36E2A41DDB0009B64B5 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36A2E36D2A41DDB0009B64B5 /* WidgetKit.framework */; };
 		36A2E3702A41DDB0009B64B5 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36A2E36F2A41DDB0009B64B5 /* SwiftUI.framework */; };
 		36A2E3732A41DDB0009B64B5 /* BuddyCareWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A2E3722A41DDB0009B64B5 /* BuddyCareWidgetBundle.swift */; };
@@ -156,6 +157,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3675E7812A46883F00B2DBE0 /* AnimationsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationsExtension.swift; sourceTree = "<group>"; };
 		36A2E36B2A41DDB0009B64B5 /* BuddyCareWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BuddyCareWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		36A2E36D2A41DDB0009B64B5 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		36A2E36F2A41DDB0009B64B5 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -457,6 +459,7 @@
 				36F868322A3758AD008FB1BB /* BuddyCare.entitlements */,
 				DFA2BD212A373BF800BFB964 /* BuddyCareApp.swift */,
 				DFA2BD232A373BF800BFB964 /* ContentView.swift */,
+				3675E7812A46883F00B2DBE0 /* AnimationsExtension.swift */,
 				AE5EC3032A447BDD00B18703 /* StayPixel.ttf */,
 				DFA2BD252A373BF900BFB964 /* Assets.xcassets */,
 				DFA2BD272A373BF900BFB964 /* Preview Content */,
@@ -781,6 +784,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3675E7822A46883F00B2DBE0 /* AnimationsExtension.swift in Sources */,
 				DF9F9A892A44880600D12F93 /* CloudKitPetManager.swift in Sources */,
 				DFFEC0DA2A40EFEE00A2D897 /* CDModelProtocol.swift in Sources */,
 				DFC4FA4C2A3A2C7C00A78E51 /* BathAction.swift in Sources */,
