@@ -13,7 +13,7 @@ extension PetManagerView {
     func petIdleAnimation() {
         var index = 1
         var framesNumber = 0
-        let timer = Timer.scheduledTimer(withTimeInterval: 0.08, repeats: true) { (Timer) in
+        let timer = Timer.scheduledTimer(withTimeInterval: 0.09, repeats: true) { (Timer) in
 
             //mockado enquanto não tem o valor associado a um pet
             petSprite = "CaramelDog\(index)"
@@ -52,7 +52,7 @@ extension PetManagerView {
     func stinkingPetAnimation() {
         var index = 1
         var framesNumber = 0
-        let timer = Timer.scheduledTimer(withTimeInterval: 0.08, repeats: true) { (Timer) in
+        let timer = Timer.scheduledTimer(withTimeInterval: 0.12, repeats: true) { (Timer) in
 
             switch viewModel.pet?.avatar {
                 case "CaramelDog":
