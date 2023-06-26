@@ -25,8 +25,8 @@ struct ConfigurationsView: View {
                 .ignoresSafeArea()
                 
                 VStack  {
-                    //tem que chamar a ChangePlayConfigurationsview aqui 
-                    NavigationLink(destination: ContentView()) {
+                    Spacer()
+                    NavigationLink(destination: ChangeCleanConfigurations()) {
                         HStack {
                             Text("change play settings")
                                 .padding(.leading, 10)

@@ -13,7 +13,7 @@ struct ChangeCleanConfigurationsView: View {
     @State private var isActive: Bool = false
     @State private var index = 0
     @State var specie = "cat"
-    private var days = ["days"]
+    private var days = ["DAYS"]
     
     var body: some View {
         ZStack{
@@ -41,7 +41,7 @@ struct ChangeCleanConfigurationsView: View {
                 
                 HStack(spacing: 0) {
                     Picker("Select an option", selection: $index ) {
-                        ForEach(1...15, id: \.self) { number in
+                        ForEach(5...15, id: \.self) { number in
                             Text("\(number)").tag(number)
                                 .foregroundColor(.white)
                                 .font(.system(size: 30, design: .rounded))
@@ -62,7 +62,7 @@ struct ChangeCleanConfigurationsView: View {
                 }.padding(.top, -20)
                     .padding(.horizontal, 30)
                 Spacer()
-                Button("Save") {
+                Button("SAVE") {
 //                    isActive = true
                     dismiss()
                     
