@@ -35,13 +35,11 @@ struct PetManagerView: View {
 
                 .toolbar {
                     ToolbarItem {
-                        Button(action: {
-                            print("ok")
-                        }, label: {
+                        NavigationLink(destination: ConfigurationsView()) {
                             Image("adjustsButtonIcon")
                                 .resizable()
                                 .frame(width: 50, height: 50)
-                        })
+                        }
                     }
                 }
                 .onAppear {
@@ -55,11 +53,11 @@ struct PetManagerView: View {
         .overlay {
             Group {
                 if showPlayView {
-                    PetPlayView(isShowing: $showPlayView)
+                    PetPlayView(viewModel: viewModel, isShowing: $showPlayView)
                         .transition(.scale)
                 }
                 if showBathView {
-                    PetBathView(isShowing: $showBathView)
+                    PetBathView(viewModel: viewModel, isShowing: $showBathView)
                         .transition(.scale)
                 }
             }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PetPlayView: View {
     
+    @ObservedObject var viewModel: PetManagerViewModel
     @Binding var isShowing: Bool
     
     var body: some View {
@@ -26,15 +27,10 @@ struct PetPlayView: View {
     }
 }
 
-struct PetPlayView_Previews: PreviewProvider {
-    static var previews: some View {
-        PetPlayView(isShowing: .constant(true))
-    }
-}
 
 private extension PetPlayView {
     var icon: some View {
-        Image ("cat2")
+        Image (viewModel.pet?.avatar ?? "BlackDog")
     }
     
     var title: some View {
