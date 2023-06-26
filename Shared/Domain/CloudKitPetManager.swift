@@ -80,7 +80,6 @@ extension CloudKitPetManager: BathManagement {
         )
 
         _ = try await iCloud.createBathAction(bathAction)
-        PetNotifications.shared.dispatchBathNotification(frequency: bathSchedule.frequency)
     }
 
     private func deleteBathActionsIfNeeded(id: String) async throws {
@@ -143,10 +142,9 @@ extension CloudKitPetManager: FunManagement {
         guard let funcScheduleForUserPet = funSchedules.filter({ $0.petId == id }).first else { return }
         let funTimes = funcScheduleForUserPet.times
 
-        for (index, funTime) in funTimes.enumerated() {
+        for (_, funTime) in funTimes.enumerated() {
             guard let maximumDateToEnd = Date.dateWithTwoHoursAugmented(funTime) else { return }
             _ = try await iCloud.createFunAction(.init(petId: id, isDone: 0, start: funTime, end: maximumDateToEnd))
-            PetNotifications.shared.dispatchFunNotification(date: funTime, identifier: "Fun-Notification-\(index)")
         }
     }
 

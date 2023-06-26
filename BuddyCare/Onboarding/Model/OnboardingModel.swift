@@ -91,7 +91,7 @@ extension OnboardingModel {
     func registerFunScheduleForThisUserPet(id: String) async throws {
         let schedule: FunSchedule = .init(
             petId: id,
-            frequency: selectedDayTimes,
+            frequency: selectedLazyTimes,
             times: getValidDatesFromHourPickerCounter()
         )
         

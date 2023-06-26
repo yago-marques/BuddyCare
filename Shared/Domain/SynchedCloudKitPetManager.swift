@@ -90,6 +90,7 @@ extension SynchedCloudKitPetManager: BathManagement {
         let id = try await iCloud.createBathAction(bathAction)
         bathAction.id = id
         _ = try await localStorage.createBathAction(bathAction)
+        PetNotifications.shared.dispatchBathNotification(frequency: bathSchedule.frequency)
     }
 
     private func deleteBathActionsIfNeeded(id: String) async throws {
@@ -126,10 +127,10 @@ extension SynchedCloudKitPetManager: BathManagement {
     }
 
     private func getBathActions() async throws -> [BathAction] {
-        let bathActions = try await localStorage.fetchBathActions()
+        let bathActions = try await iCloud.fetchBathActions()
 
         if bathActions.isEmpty {
-            return try await iCloud.fetchBathActions()
+            return try await localStorage.fetchBathActions()
         }
 
         return bathActions
@@ -162,7 +163,7 @@ extension SynchedCloudKitPetManager: FunManagement {
 
     func registerFunActionIfNeeded(id: String) async throws {
         let existsValidActionForToday = try await hasValidActions(id: id)
-        
+
         if !existsValidActionForToday {
             try await deleteLastFunActionsIfNeeded(id: id)
             try await registerDailyFunActions(id: id)
@@ -181,13 +182,14 @@ extension SynchedCloudKitPetManager: FunManagement {
 
     private func registerDailyFunActions(id: String) async throws {
         let funSchedules = try await getFunSchedules()
-        guard let funcScheduleForUserPet = funSchedules.filter({ $0.petId == id }).first else { return }
-        let funTimes = funcScheduleForUserPet.times
+        let times = funSchedules.filter({ $0.petId == id }).first?.times ?? []
+        let frequency = funSchedules.filter({ $0.petId == id }).first?.frequency ?? 0
 
-        for funTime in funTimes {
-            guard let maximumDateToEnd = Date.dateWithTwoHoursAugmented(funTime) else { return }
-            let recordId = try await iCloud.createFunAction(.init(petId: id, isDone: 0, start: funTime, end: maximumDateToEnd))
-            _ = try await localStorage.createFunAction(.init(id: recordId, petId: id, isDone: 0, start: funTime, end: maximumDateToEnd))
+        for i in 0..<frequency {
+            PetNotifications.shared.dispatchFunNotification(date: times[i], identifier: "FunAction\(i)")
+            guard let maximumDateToEnd = Date.dateWithTwoHoursAugmented(times[i]) else { return }
+            let recordId = try await iCloud.createFunAction(.init(petId: id, isDone: 0, start: times[i], end: maximumDateToEnd))
+            _ = try await localStorage.createFunAction(.init(id: recordId, petId: id, isDone: 0, start: times[i], end: maximumDateToEnd))
         }
     }
 
@@ -226,10 +228,10 @@ extension SynchedCloudKitPetManager: FunManagement {
     }
 
     private func getFunActions() async throws -> [FunAction] {
-        let funActions = try await localStorage.fetchFunActions()
+        let funActions = try await iCloud.fetchFunActions()
 
         if funActions.isEmpty {
-            return try await iCloud.fetchFunActions()
+            return try await localStorage.fetchFunActions()
         } else { return funActions }
     }
 
