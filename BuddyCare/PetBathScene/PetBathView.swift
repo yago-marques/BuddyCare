@@ -9,6 +9,26 @@ import SwiftUI
 
 struct PetBathView: View {
     
+    private func cleanIcon() -> String {
+        var icon: String
+        if viewModel.pet?.species.rawValue == "cat" {
+            icon = "catHygiene"
+        } else {
+            icon = "dogHygiene"
+        }
+        return icon
+    }
+    
+    private func cleanText() -> String {
+        var text: String
+        if viewModel.pet?.species.rawValue == "cat" {
+            text = "Change the litter"
+        } else {
+            text = "Time to bath!"
+        }
+        return text
+    }
+    
     @ObservedObject var viewModel: PetManagerViewModel
     @Binding var isShowing: Bool
 
@@ -29,11 +49,11 @@ struct PetBathView: View {
 
 private extension PetBathView {
     var icon: some View {
-        Image ("catHygiene")
+        Image (cleanIcon())
     }
     
     var title: some View {
-        Text ("change the litter")
+        Text (cleanText())
         
             .font(.custom("StayPixel-Regular", size: 32))
             .foregroundColor(.white)
@@ -41,7 +61,7 @@ private extension PetBathView {
     }
     
     var content: some View {
-        Text ("Keeping your pet's space clean is always good!")
+        Text ("Taking care of your pet's hygiene is always good!")
             .font(.custom("StayPixel-Regular", size: 17))
             .foregroundColor(.white)
             .padding(.bottom)

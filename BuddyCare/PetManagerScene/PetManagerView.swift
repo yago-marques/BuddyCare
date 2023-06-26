@@ -2,6 +2,17 @@
 import SwiftUI
 
 struct PetManagerView: View {
+    
+    private func cleanIcon() -> String {
+        var icon: String
+        if viewModel.pet?.species.rawValue == "cat" {
+            icon = "catHygiene"
+        } else {
+            icon = "dogHygiene"
+        }
+        return icon
+    }
+    
     @ObservedObject var viewModel: PetManagerViewModel
     @State private var showBathView = false
     @State private var showPlayView = false
@@ -82,7 +93,7 @@ struct PetManagerView: View {
                         }
                     }
                 Spacer()
-                CustomButton(title: "catHygiene", isActive: $viewModel.bathActionIsActive)
+                CustomButton(title: cleanIcon(), isActive: $viewModel.bathActionIsActive)
                     .onTapGesture {
                         if viewModel.bathActionIsActive {
                             Task {
