@@ -11,7 +11,7 @@ import CloudKit
 struct BathAction: CKModel, CDModel {
     var id: String
     let petId: String
-    let isDone: Int
+    var isDone: Int
     let day: Date
 
     init(id: String = "", petId: String, isDone: Int, day: Date) {

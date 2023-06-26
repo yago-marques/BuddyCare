@@ -8,7 +8,7 @@
 import Foundation
 
 protocol FunActionUseCases {
-    func createFunAction(_ action: FunAction) async throws
+    func createFunAction(_ action: FunAction) async throws -> String
     func fetchFunActions() async throws -> [FunAction]
     func deleteFunAction(of id: String) async throws
 }

@@ -138,8 +138,11 @@ extension CloudKitService: FunScheduleUseCases {
 }
 
 extension CloudKitService: FunActionUseCases {
-    func createFunAction(_ action: FunAction) async throws {
-        try await database.save(action.record())
+    func createFunAction(_ action: FunAction) async throws -> String {
+        let record = action.record()
+        try await database.save(record)
+
+        return record.recordID.recordName
     }
 
     func fetchFunActions() async throws -> [FunAction] {

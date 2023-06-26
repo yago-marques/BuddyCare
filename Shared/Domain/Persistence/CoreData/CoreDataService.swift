@@ -59,6 +59,7 @@ extension CoreDataService: BathScheduleUseCases {
         guard let entityToDelete = try findEntity(for: id) else { return }
 
         context.delete(entityToDelete)
+        try context.save()
     }
 
     private func getRawEntities() throws -> [BathScheduleEntity] {
@@ -125,6 +126,7 @@ extension CoreDataService: FunScheduleUseCases {
         guard let entityToDelete = try findFunEntity(for: id) else { return }
 
         context.delete(entityToDelete)
+        try context.save()
     }
 
     private func findFunEntity(for id: String) throws -> FunScheduleEntity? {
@@ -157,7 +159,7 @@ extension CoreDataService: FunScheduleUseCases {
 }
 
 extension CoreDataService: FunActionUseCases {
-    func createFunAction(_ action: FunAction) async throws {
+    func createFunAction(_ action: FunAction) async throws -> String {
         let context = persistentContainer.viewContext
 
         let entity = FunActionEntity(context: context)
@@ -165,6 +167,8 @@ extension CoreDataService: FunActionUseCases {
         entity.data = try action.toData()
 
         try context.save()
+
+        return action.id
     }
 
     func fetchFunActions() async throws -> [FunAction] {
@@ -180,8 +184,11 @@ extension CoreDataService: FunActionUseCases {
         let context = persistentContainer.viewContext
 
         guard let entityToDelete = try findFunActionEntity(for: id) else { return }
+        guard var model = try FunAction.fromData(entityToDelete.data!) as? FunAction else { return }
+        model.isDone = 1
+        entityToDelete.data = try model.toData()
 
-        context.delete(entityToDelete)
+        try context.save()
     }
 
     private func findFunActionEntity(for id: String) throws -> FunActionEntity? {
@@ -239,8 +246,11 @@ extension CoreDataService: BathActionUseCases {
         let context = persistentContainer.viewContext
 
         guard let entityToDelete = try findBathActionEntity(for: id) else { return }
+        guard var model = try BathAction.fromData(entityToDelete.data!) as? BathAction else { return }
+        model.isDone = 1
+        entityToDelete.data = try model.toData()
 
-        context.delete(entityToDelete)
+        try context.save()
     }
 
     private func findBathActionEntity(for id: String) throws -> BathActionEntity? {
@@ -332,6 +342,7 @@ extension CoreDataService: PetUseCases {
         guard let entityToDelete = try findPetEntity(for: id) else { return }
 
         context.delete(entityToDelete)
+        try context.save()
     }
 
     private func findPetEntity(for id: String) throws -> PetEntity? {
