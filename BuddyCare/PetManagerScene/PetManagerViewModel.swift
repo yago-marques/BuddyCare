@@ -11,8 +11,8 @@ typealias PetManagerUseCases = FetchPet & BathManagement & FunManagement
 
 final class PetManagerViewModel: ObservableObject {
     @Published var pet: DisplayedPet? = nil
-    @Published var funActionIsActive = true
-    @Published var bathActionIsActive = true
+    @Published var funActionIsActive = false
+    @Published var bathActionIsActive = false
     private var systemId: String = ""
 
     private let useCases: PetManagerUseCases
@@ -29,12 +29,20 @@ final class PetManagerViewModel: ObservableObject {
         try await verifyNeededActions()
     }
 
-    func registerBathAction() async throws {
-//        try await useCases.registerBathAction(at: Date())
+    func markBathActionAsDone() async throws {
+        try await useCases.markBathActionAsCompleted(id: systemId)
+        try await verifyNeededActions()
     }
 
-    func registerFunAction() async throws {
-//        try await useCases.registerFunAction(at: Date(), id: "")
+    func markFunActionAsDone() async throws {
+        try await useCases.markFunActionAsCompleted(id: systemId)
+        try await verifyNeededActions()
+    }
+
+    func isCat() -> Bool {
+        guard let avatar = pet?.avatar else { return false }
+
+        return avatar.hasSuffix("Cat")
     }
 
 }

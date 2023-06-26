@@ -119,7 +119,10 @@ extension SynchedCloudKitPetManager: BathManagement {
     }
 
     private func getFilteredBathActions(id: String) async throws -> [BathAction] {
-        return try await getBathActions().filter { $0.petId == id }
+        return try await getBathActions().filter {
+            $0.petId == id &&
+            $0.isDone == 0
+        }
     }
 
     private func getBathActions() async throws -> [BathAction] {
@@ -183,14 +186,18 @@ extension SynchedCloudKitPetManager: FunManagement {
 
         for funTime in funTimes {
             guard let maximumDateToEnd = Date.dateWithTwoHoursAugmented(funTime) else { return }
-            try await iCloud.createFunAction(.init(petId: id, isDone: 0, start: funTime, end: maximumDateToEnd))
-            try await localStorage.createFunAction(.init(petId: id, isDone: 0, start: funTime, end: maximumDateToEnd))
+            let recordId = try await iCloud.createFunAction(.init(petId: id, isDone: 0, start: funTime, end: maximumDateToEnd))
+            _ = try await localStorage.createFunAction(.init(id: recordId, petId: id, isDone: 0, start: funTime, end: maximumDateToEnd))
         }
     }
 
     private func deleteLastFunActionsIfNeeded(id: String) async throws {
         let remoteFunActions = try await getFunActions()
-        let funActionsForThisUserPet = remoteFunActions.filter { $0.petId == id }
+        let funActionsForThisUserPet = remoteFunActions.filter {
+            $0.petId == id &&
+            $0.isDone == 0 &&
+            Date.isBetween(start: $0.start, end: $0.end)
+        }
 
         for action in funActionsForThisUserPet {
             try await iCloud.deleteFunAction(of: action.id)
@@ -228,6 +235,7 @@ extension SynchedCloudKitPetManager: FunManagement {
 
     private func hasValidActions(id: String) async throws -> Bool {
         let remoteActions = try await getFunActions()
+        
         if remoteActions.isEmpty {
             return false
         } else {

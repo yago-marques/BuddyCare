@@ -3,7 +3,6 @@ import SwiftUI
 
 struct PetManagerView: View {
     @ObservedObject var viewModel: PetManagerViewModel
-  
     @State private var showBathView = false
     @State private var showPlayView = false
     @State var petSprite = ""
@@ -74,7 +73,7 @@ struct PetManagerView: View {
                     .onTapGesture {
                         if viewModel.funActionIsActive {
                             Task {
-                                try await viewModel.registerFunAction()
+                                try await viewModel.markFunActionAsDone()
                                 showPlayView = true
                             }
                         }
@@ -84,9 +83,8 @@ struct PetManagerView: View {
                     .onTapGesture {
                         if viewModel.bathActionIsActive {
                             Task {
-                                try await viewModel.registerBathAction()
+                                try await viewModel.markBathActionAsDone()
                                 showBathView = true
-                                
                             }
                         }
                     }
@@ -99,6 +97,7 @@ struct PetManagerView: View {
         Image(petSprite)
             .resizable()
             .scaledToFit()
+            .padding([.bottom], viewModel.isCat() ? 90 : 0)
     }
     
     private var background: some View {

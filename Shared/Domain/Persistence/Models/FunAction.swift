@@ -11,7 +11,7 @@ import CloudKit
 struct FunAction: CKModel, CDModel {
     let id: String
     let petId: String
-    let isDone: Int
+    var isDone: Int
     let start: Date
     let end: Date
 

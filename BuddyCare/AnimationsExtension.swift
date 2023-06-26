@@ -13,34 +13,11 @@ extension PetManagerView {
     func petIdleAnimation() {
         var index = 1
         var framesNumber = 0
-        let timer = Timer.scheduledTimer(withTimeInterval: 0.09, repeats: true) { (Timer) in
+        _ = Timer.scheduledTimer(withTimeInterval: 0.09, repeats: true) { (Timer) in
 
             //mockado enquanto não tem o valor associado a um pet
-            petSprite = "CaramelDog\(index)"
+            petSprite = "\(viewModel.pet?.avatar ?? "CaramelDog")\(index)"
             framesNumber = 5
-
-//            switch viewModel.pet?.avatar {
-//                case "CaramelDog":
-//                    petSprite = "CaramelDog\(index)"
-//                    framesNumber = 5
-//                case "BlackDog":
-//                    petSprite = "BlackDog\(index)"
-//                    framesNumber = 5
-//                case "WhiteDog":
-//                    petSprite = "WhiteDog\(index)"
-//                    framesNumber = 5
-//                case "OrangeCat":
-//                    petSprite = "OrangeCat\(index)"
-//                    framesNumber = 8
-//                case "BlackCat":
-//                    petSprite = "BlackCat\(index)"
-//                    framesNumber = 8
-//                case "WhiteCat":
-//                    petSprite = "WhiteCat\(index)"
-//                    framesNumber = 8
-//                default:
-//                    break
-//            }
 
             index += 1
             if (index > framesNumber){
@@ -52,7 +29,7 @@ extension PetManagerView {
     func stinkingPetAnimation() {
         var index = 1
         var framesNumber = 0
-        let timer = Timer.scheduledTimer(withTimeInterval: 0.12, repeats: true) { (Timer) in
+        _ = Timer.scheduledTimer(withTimeInterval: 0.12, repeats: true) { (Timer) in
 
             switch viewModel.pet?.avatar {
                 case "CaramelDog":
@@ -87,7 +64,7 @@ extension PetManagerView {
 
     func ssleepingPetAnimation() {
         var index = 1
-        let timer = Timer.scheduledTimer(withTimeInterval: 0.29, repeats: true) { (Timer) in
+        _ = Timer.scheduledTimer(withTimeInterval: 0.29, repeats: true) { (Timer) in
 
             switch viewModel.pet?.avatar {
                 case "CaramelDog":
