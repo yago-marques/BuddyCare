@@ -85,7 +85,9 @@ struct PetRegisterBuddy: View {
         
         .navigationBarBackButtonHidden()
         .navigationBarItems(leading: backButton)
-        
+        .onAppear {
+            PetNotifications.shared.checkForNotificationAuthorization()
+        }
         .overlay{
             if presentAlert{
                 CustomAlert(presentAlert: $presentAlert, alertType: .error(title: "OOOOOPS...", message: "select a companion that most resembles yours"), isShowVerticalButtons: false){

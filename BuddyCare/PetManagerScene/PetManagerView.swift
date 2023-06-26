@@ -5,6 +5,7 @@ struct PetManagerView: View {
     @ObservedObject var viewModel: PetManagerViewModel
     @State private var showBathView = false
     @State private var showPlayView = false
+    @State private var animationDidCalled = false
     @State var petSprite = ""
     var body: some View {
         
@@ -23,9 +24,6 @@ struct PetManagerView: View {
                             )
                             .position(x:proxy.size.width * 0.5,
                                       y:proxy.size.height * 0.623 )
-                            .onAppear {
-                                petIdleAnimation()
-                            }
                         Spacer()
                         customTabBar
                             .frame(maxHeight: proxy.size.height * 0.25)
@@ -42,6 +40,11 @@ struct PetManagerView: View {
                     }
                 }
                 .onAppear {
+                    if !animationDidCalled {
+                        petIdleAnimation()
+                        animationDidCalled = true
+                    }
+
                     Task {
                         try await viewModel.buildLayout()
                     }
@@ -73,8 +76,8 @@ struct PetManagerView: View {
                     .onTapGesture {
                         if viewModel.funActionIsActive {
                             Task {
-                                try await viewModel.markFunActionAsDone()
                                 showPlayView = true
+                                try await viewModel.markFunActionAsDone()
                             }
                         }
                     }
@@ -83,8 +86,8 @@ struct PetManagerView: View {
                     .onTapGesture {
                         if viewModel.bathActionIsActive {
                             Task {
-                                try await viewModel.markBathActionAsDone()
                                 showBathView = true
+                                try await viewModel.markBathActionAsDone()
                             }
                         }
                     }

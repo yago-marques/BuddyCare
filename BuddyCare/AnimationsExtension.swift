@@ -13,11 +13,11 @@ extension PetManagerView {
     func petIdleAnimation() {
         var index = 1
         var framesNumber = 0
-        _ = Timer.scheduledTimer(withTimeInterval: 0.09, repeats: true) { (Timer) in
+        _ = Timer.scheduledTimer(withTimeInterval: 0.11, repeats: true) { (Timer) in
 
             //mockado enquanto não tem o valor associado a um pet
             petSprite = "\(viewModel.pet?.avatar ?? "CaramelDog")\(index)"
-            framesNumber = 5
+            framesNumber = viewModel.pet?.species == .cat ? 8 : 5
 
             index += 1
             if (index > framesNumber){
