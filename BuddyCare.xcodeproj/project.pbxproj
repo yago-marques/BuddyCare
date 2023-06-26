@@ -27,6 +27,7 @@
 		ABBEE58A2A43450F00421168 /* Stay_Pixel_DEMO.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ABBEE5892A43450F00421168 /* Stay_Pixel_DEMO.ttf */; };
 		ABBEE5922A44D4E000421168 /* PetPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBEE58F2A44D49D00421168 /* PetPlayView.swift */; };
 		ABBEE5952A45BC2700421168 /* PetBathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBEE5942A45BC2700421168 /* PetBathView.swift */; };
+		ABBEE5992A4898CC00421168 /* ConfigurationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBEE5982A4898CC00421168 /* ConfigurationsView.swift */; };
 		ABF061EF2A3A9E5500AE2491 /* GenderPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF061EE2A3A9E5500AE2491 /* GenderPicker.swift */; };
 		ABF061F22A3A9E9D00AE2491 /* AnimalTypePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF061F12A3A9E9D00AE2491 /* AnimalTypePicker.swift */; };
 		ABF061F82A3A9F2400AE2491 /* SelectAvatarTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF061F72A3A9F2400AE2491 /* SelectAvatarTabView.swift */; };
@@ -178,6 +179,7 @@
 		ABBEE58B2A43454500421168 /* BuddyCare-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "BuddyCare-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		ABBEE58F2A44D49D00421168 /* PetPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetPlayView.swift; sourceTree = "<group>"; };
 		ABBEE5942A45BC2700421168 /* PetBathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetBathView.swift; sourceTree = "<group>"; };
+		ABBEE5982A4898CC00421168 /* ConfigurationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationsView.swift; sourceTree = "<group>"; };
 		ABF061EE2A3A9E5500AE2491 /* GenderPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderPicker.swift; sourceTree = "<group>"; };
 		ABF061F12A3A9E9D00AE2491 /* AnimalTypePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTypePicker.swift; sourceTree = "<group>"; };
 		ABF061F72A3A9F2400AE2491 /* SelectAvatarTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAvatarTabView.swift; sourceTree = "<group>"; };
@@ -463,6 +465,7 @@
 				AE5EC3032A447BDD00B18703 /* StayPixel.ttf */,
 				DFA2BD252A373BF900BFB964 /* Assets.xcassets */,
 				DFA2BD272A373BF900BFB964 /* Preview Content */,
+				ABBEE5982A4898CC00421168 /* ConfigurationsView.swift */,
 			);
 			path = BuddyCare;
 			sourceTree = "<group>";
@@ -792,6 +795,7 @@
 				36F868312A374590008FB1BB /* Pet.swift in Sources */,
 				36E8556B2A39F26B000A58CD /* PetNotifications.swift in Sources */,
 				DF0221A22A38AA9A00877319 /* CKCustomErrors.swift in Sources */,
+				ABBEE5992A4898CC00421168 /* ConfigurationsView.swift in Sources */,
 				ABF061EF2A3A9E5500AE2491 /* GenderPicker.swift in Sources */,
 				ABBEE5952A45BC2700421168 /* PetBathView.swift in Sources */,
 				DFC4FA412A3A249B00A78E51 /* PetManagerCompositionRoot.swift in Sources */,

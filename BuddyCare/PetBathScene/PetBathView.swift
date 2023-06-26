@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct PetBathView: View {
+    
+    @ObservedObject var viewModel: PetManagerViewModel
     @Binding var isShowing: Bool
 
     var body: some View {
@@ -22,12 +24,6 @@ struct PetBathView: View {
         .multilineTextAlignment(.center)
         .background(LinearGradient(gradient: Gradient(colors: [Color(red: 0.98, green: 0.45, blue: 0.63), Color(red: 0.85, green: 0.25, blue: 0.45)]), startPoint: .top, endPoint: .bottom))
         .cornerRadius(17)
-    }
-}
-
-struct PetBath_Previews: PreviewProvider {
-    static var previews: some View {
-        PetBathView(isShowing: .constant(true))
     }
 }
 
