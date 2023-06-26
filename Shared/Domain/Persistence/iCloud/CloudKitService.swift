@@ -166,7 +166,7 @@ extension CloudKitService: FunActionUseCases {
     }
 
     func deleteFunAction(of id: String) async throws {
-        try await database.deleteRecord(withID: .init(recordName: id))
+//        try await database.deleteRecord(withID: .init(recordName: id))
     }
 }
 

@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct ConfigurationsView: View {
+    
+    @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject var viewModel: OnboardingModel
+    @State var id = "00"
+    
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -19,7 +25,8 @@ struct ConfigurationsView: View {
                 .ignoresSafeArea()
                 
                 VStack  {
-                    NavigationLink(destination: ContentView()) {
+                    Spacer()
+                    NavigationLink(destination: ChangeCleanConfigurations()) {
                         HStack {
                             Text("change play settings")
                                 .padding(.leading, 10)
@@ -29,13 +36,13 @@ struct ConfigurationsView: View {
                         }
                             .frame(maxWidth: 325, maxHeight: 50)
                             .background(.white)
-                            .foregroundColor(.pink)
+                            .foregroundColor(.init(red: 0.85, green: 0.25, blue: 0.45))
                             .font(.custom("StayPixel-Regular", size: 20))
                             .cornerRadius(15)
                             .shadow(radius: 1, y: 5)
                             .padding(.top)
                     }
-                    NavigationLink(destination: ContentView()) {
+                    NavigationLink(destination: ChangeCleanConfigurationsView()) {
                         HStack {
                             Text("change clean settings")
                                 .padding(.leading, 10)
@@ -45,8 +52,8 @@ struct ConfigurationsView: View {
                         }
                             .frame(maxWidth: 325, maxHeight: 50)
                             .background(.white)
-                            .foregroundColor(.pink)
-                            .font(.custom("StayPixel-Regular", size: 32))
+                            .foregroundColor(.init(red: 0.85, green: 0.25, blue: 0.45))
+                            .font(.custom("StayPixel-Regular", size: 20))
                             .cornerRadius(15)
                             .shadow(radius: 1, y: 5)
                     }
@@ -54,10 +61,28 @@ struct ConfigurationsView: View {
                 }
                 
             }
-            .navigationTitle("Settings")
             .foregroundColor(.white)
-            .navigationBarTitleDisplayMode(.inline)
+            .font(.custom("StayPixel-Regular", size: 17))
+            .navigationBarBackButtonHidden()
+            .navigationBarItems(leading: backButton)
         }
   
+    }
+    
+    private var backButton: some View {
+        Button {
+            dismiss()
+        } label: {
+            HStack {
+                Image(systemName: "chevron.left")
+                    .font(.system(size: 20))
+                    .foregroundColor(.white)
+                
+                    .padding(.bottom, 3)
+                Text("Back")
+                    .font(Font.custom("StayPixel-Regular", size: 17))
+                    .foregroundColor(.white)
+            }
+        }
     }
 }
